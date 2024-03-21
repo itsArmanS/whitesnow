@@ -8,26 +8,11 @@
 }
 
 .app-header {
-  background-color: orange;
+  border: 1px solid black;
   flex: 0.3;
 }
 
 .app-panel-wrapper {
   display: flex;
   flex: 1;
-}
-
-.left-panel,
-.right-panel {
-  flex: 0.5;
-  height: 100%;
-  background-color: blue;
-  display: flex;
-  justify-content: center;
-}
-
-.main-feed {
-  flex: 1;
-  display: flex;
-  justify-content: center;
 }

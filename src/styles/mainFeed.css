@@ -1,0 +1,63 @@
+.main-feed {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  overflow: scroll;
+}
+
+.post-body {
+  display: flex;
+  background-color: #89cff0;
+  font-weight: bold;
+  border-radius: 1.5rem;
+  box-sizing: border-box;
+  padding: 0.7rem;
+}
+
+.post-user-data {
+  flex: 1;
+}
+
+.post-user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.post-user img,
+.profile-image {
+  width: 2rem;
+  height: 2rem;
+}
+
+.post-text {
+  border: 3px solid white;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.post-date {
+  text-align: end;
+}
+
+.post-user-buttons {
+  flex: 0.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.snowflakeButton {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  background-color: transparent;
+  background-image: url("/public/images/snowflake-vote.svg");
+}
