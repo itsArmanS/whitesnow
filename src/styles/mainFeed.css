@@ -23,6 +23,7 @@
 
 .post-body {
   display: flex;
+  width: 90%;
   background-color: #89cff0;
   font-weight: bold;
   border-radius: 1.5rem;

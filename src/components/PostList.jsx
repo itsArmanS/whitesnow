@@ -1,13 +1,18 @@
-import React from "react";
-import "../styles/homePanels.css"
-import "../styles/mainFeed.css"
+import React, { useState, useEffect } from "react";
+import "../styles/homePanels.css";
+import "../styles/mainFeed.css";
 import SnowflakeButton from "./SnowflakeButton";
+import useFetchDatabase from "./useFetchDatabase";
 
-function PostList(props) {
+function PostList() {
+  const [posts, setPosts] = useState([]);
+
+  useFetchDatabase({ setPosts });
+
 
   return (
     <>
-      {/* {posts.map((post) => (
+      {posts.map((post) => (
         <div className="post-body" key={post.id}>
           <div className="post-user-buttons">
             <SnowflakeButton />
@@ -29,9 +34,9 @@ function PostList(props) {
             </div>
           </div>
         </div>
-      ))} */}
+      ))}
     </>
-  )
+  );
 }
 
-export default PostList
+export default PostList;

@@ -1,21 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/homeLayout.css";
+import useFetchDatabase from "./useFetchDatabase";
 
 function NewPostForm(props) {
+  const [newPost, setNewPost] = useState([]);
   const [currentID, setCurrentID] = useState(1);
   const [postBody, setPostBody] = useState("");
 
   const closeNewPostDialog = props.closeNewPostDialog;
-  const addNewPost = props.addNewPost;
 
-  const handleInputChange = (event) => {
-    setPostBody(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const postData = {
+    setCurrentID(currentID + 1);
+
+    const newPostData = {
       user: "albert",
       profileImage: "/images/default-user-image.png",
       body: postBody,
@@ -24,9 +23,28 @@ function NewPostForm(props) {
     }
 
     setCurrentID(currentID + 1);
-    addNewPost(postData);
+    setNewPost(newPostData);
+
+    const response = await fetch("http://localhost:3005/posts", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newPostData)
+    })
+    const data = await response.json();
+    console.log(data, "new data added")
+
     closeNewPostDialog();
   };
+
+  const handlePostBodyChange = event => {
+    setPostBody(event.target.value);
+  };
+
+
+  useFetchDatabase({ setNewPost });
+
 
   return (
     <>
@@ -36,7 +54,7 @@ function NewPostForm(props) {
           type="text"
           id="newPostBody"
           value={postBody}
-          onChange={handleInputChange}
+          onChange={handlePostBodyChange}
         />
         <button type="submit">Create</button>
         <button onClick={closeNewPostDialog}>Close</button>
