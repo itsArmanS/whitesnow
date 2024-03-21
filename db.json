@@ -1,0 +1,18 @@
+{
+  "posts": [
+    {
+      "user": "albert",
+      "profileImage": "/images/default-user-image.png",
+      "body": "Lorem ipsum dolor sit amet, consectetur",
+      "date": "04/21",
+      "id": 1
+    },
+    {
+      "user": "johny",
+      "profileImage": "/images/default-user-image.png",
+      "body": "Lorem ipsum dolor sit amet, consectetur",
+      "date": "04/27",
+      "id": 2
+    }
+  ]
+}

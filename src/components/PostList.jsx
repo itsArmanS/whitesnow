@@ -4,11 +4,10 @@ import "../styles/mainFeed.css"
 import SnowflakeButton from "./SnowflakeButton";
 
 function PostList(props) {
-  const posts = props.posts;
 
   return (
     <>
-      {posts.map((post) => (
+      {/* {posts.map((post) => (
         <div className="post-body" key={post.id}>
           <div className="post-user-buttons">
             <SnowflakeButton />
@@ -19,18 +18,18 @@ function PostList(props) {
                 <img src={post.profileImage} alt="" />
               </div>
               <div className="user-username">
-                {`@${post.user}`}
+                {`@${post.user} • `}
+              </div>
+              <div className="post-date">
+                {post.date}
               </div>
             </div>
             <div className="post-text">
               {post.body}
             </div>
-            <div className="post-date">
-              {post.date}
-            </div>
           </div>
         </div>
-      ))}
+      ))} */}
     </>
   )
 }

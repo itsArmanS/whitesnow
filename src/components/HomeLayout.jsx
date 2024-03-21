@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import LeftPanel from "./LeftPanel";
 import RightPanel from "./RightPanel";
 import MainFeed from "./MainFeed";
