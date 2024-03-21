@@ -1,0 +1,33 @@
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  box-sizing: border-box;
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+.app-header {
+  background-color: orange;
+  flex: 0.3;
+}
+
+.app-panel-wrapper {
+  display: flex;
+  flex: 1;
+}
+
+.left-panel,
+.right-panel {
+  flex: 0.5;
+  height: 100%;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+}
+
+.main-feed {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
