@@ -3,11 +3,11 @@ import "../styles/homePanels.css"
 import "../styles/homeLayout.css";
 import CreatePostButton from "./CreatePostButton";
 
-function LeftPanel(props) {
+function LeftPanel({ handleRefreshPosts }) {
 
   return (
     <div className="left-panel">
-      <CreatePostButton />
+      <CreatePostButton handleRefreshPosts={handleRefreshPosts} />
     </div>
   )
 }

@@ -1,28 +1,24 @@
 import React, { useEffect, useState } from "react";
 import "../styles/homeLayout.css";
-import useFetchDatabase from "./useFetchDatabase";
+import PostList from "./PostList";
+import { v4 as uuid } from "uuid";
 
-function NewPostForm(props) {
+function NewPostForm({ closeNewPostDialog, handleRefreshPosts }) {
   const [newPost, setNewPost] = useState([]);
-  const [currentID, setCurrentID] = useState(1);
   const [postBody, setPostBody] = useState("");
-
-  const closeNewPostDialog = props.closeNewPostDialog;
+  const [signedAs, setSignedAs] = useState("");
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    setCurrentID(currentID + 1);
-
     const newPostData = {
-      user: "albert",
+      user: signedAs,
       profileImage: "/images/default-user-image.png",
       body: postBody,
       date: "04/21",
-      id: currentID,
+      id: uuid(),
     }
 
-    setCurrentID(currentID + 1);
     setNewPost(newPostData);
 
     const response = await fetch("http://localhost:3005/posts", {
@@ -32,29 +28,39 @@ function NewPostForm(props) {
       },
       body: JSON.stringify(newPostData)
     })
-    const data = await response.json();
-    console.log(data, "new data added")
-
-    closeNewPostDialog();
+    if (response.ok) {
+      console.log("New post added successfully");
+      handleRefreshPosts();
+      closeNewPostDialog();
+    } else {
+      console.error("Failed to add new post");
+    }
   };
 
-  const handlePostBodyChange = event => {
-    setPostBody(event.target.value);
+  const handlePostBodyChange = (e) => {
+    setPostBody(e.target.value);
   };
 
-
-  useFetchDatabase({ setNewPost });
-
+  const handleSignedAsChange = (e) => {
+    setSignedAs(e.target.value);
+  }
 
   return (
     <>
-      <form className="new-post-form" action="" onSubmit={handleSubmit}>
+      <form className="new-post-form" action="POST" onSubmit={handleSubmit}>
         <label htmlFor="newPostBody">Enter your thoughts below</label>
         <textarea
           type="text"
           id="newPostBody"
           value={postBody}
           onChange={handlePostBodyChange}
+        />
+        <label htmlFor=""></label>
+        <input type="text"
+          className="sign-as-input"
+          id="sign-as-input"
+          value={signedAs}
+          onChange={handleSignedAsChange}
         />
         <button type="submit">Create</button>
         <button onClick={closeNewPostDialog}>Close</button>

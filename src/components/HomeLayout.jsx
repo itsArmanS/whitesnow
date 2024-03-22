@@ -5,14 +5,21 @@ import MainFeed from "./MainFeed";
 import "../styles/homeLayout.css";
 
 function HomeLayout() {
+  const [refreshPosts, setRefreshPosts] = useState(false);
+
+  const handleRefreshPosts = () => {
+    setRefreshPosts(prevState => !prevState);
+    console.log(refreshPosts, "REFRESH")
+  }
+
   return (
     <div className="app-layout">
       <div className="app-header">
 
       </div>
       <div className="app-panel-wrapper">
-        <LeftPanel />
-        <MainFeed />
+        <LeftPanel handleRefreshPosts={handleRefreshPosts} />
+        <MainFeed refreshPosts={refreshPosts} />
         <RightPanel />
       </div>
     </div>

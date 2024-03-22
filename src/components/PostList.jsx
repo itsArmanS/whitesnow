@@ -2,14 +2,8 @@ import React, { useState, useEffect } from "react";
 import "../styles/homePanels.css";
 import "../styles/mainFeed.css";
 import SnowflakeButton from "./SnowflakeButton";
-import useFetchDatabase from "./useFetchDatabase";
 
-function PostList() {
-  const [posts, setPosts] = useState([]);
-
-  useFetchDatabase({ setPosts });
-
-
+function PostList({ posts }) {
   return (
     <>
       {posts.map((post) => (
