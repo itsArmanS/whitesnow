@@ -1,40 +1,47 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../styles/homeLayout.css";
-import PostList from "./PostList";
-import { v4 as uuid } from "uuid";
+import shortid from "shortid";
 
 function NewPostForm({ closeNewPostDialog, handleRefreshPosts }) {
   const [newPost, setNewPost] = useState([]);
   const [postBody, setPostBody] = useState("");
   const [signedAs, setSignedAs] = useState("");
 
+  let todaysDate = new Date(),
+    fullDate = (todaysDate.getMonth() + 1) + '-' + todaysDate.getDate();
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const newPostData = {
-      user: signedAs,
-      profileImage: "/images/default-user-image.png",
-      body: postBody,
-      date: "04/21",
-      id: uuid(),
-    }
-
-    setNewPost(newPostData);
-
-    const response = await fetch("http://localhost:3005/posts", {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newPostData)
-    })
-    if (response.ok) {
-      console.log("New post added successfully");
-      handleRefreshPosts();
-      closeNewPostDialog();
+    if (postBody.length <= 10 && signedAs <= 5) {
+      alert("Signed as has to be over 5 characters / Post has to have over 10 characters")
     } else {
-      console.error("Failed to add new post");
+      const newPostData = {
+        user: signedAs,
+        profileImage: "/images/default-user-image.png",
+        body: postBody,
+        date: fullDate,
+        id: shortid.generate(),
+      }
+
+      setNewPost(newPostData);
+
+      const response = await fetch("http://localhost:3005/posts", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newPostData)
+      })
+      if (response.ok) {
+        console.log("New post added successfully");
+        handleRefreshPosts();
+        closeNewPostDialog();
+      } else {
+        console.error("Failed to add new post");
+      }
     }
+
   };
 
   const handlePostBodyChange = (e) => {
@@ -48,6 +55,13 @@ function NewPostForm({ closeNewPostDialog, handleRefreshPosts }) {
   return (
     <>
       <form className="new-post-form" action="POST" onSubmit={handleSubmit}>
+        <label htmlFor="sign-as-input">Sign as?</label>
+        <input type="text"
+          className="sign-as-input"
+          id="sign-as-input"
+          value={signedAs}
+          onChange={handleSignedAsChange}
+        />
         <label htmlFor="newPostBody">Enter your thoughts below</label>
         <textarea
           type="text"
@@ -55,15 +69,10 @@ function NewPostForm({ closeNewPostDialog, handleRefreshPosts }) {
           value={postBody}
           onChange={handlePostBodyChange}
         />
-        <label htmlFor=""></label>
-        <input type="text"
-          className="sign-as-input"
-          id="sign-as-input"
-          value={signedAs}
-          onChange={handleSignedAsChange}
-        />
-        <button type="submit">Create</button>
-        <button onClick={closeNewPostDialog}>Close</button>
+        <div className="form-button-wrapper">
+          <button type="submit">Create</button>
+          <button onClick={closeNewPostDialog}>Close</button>
+        </div>
       </form>
     </>
   )

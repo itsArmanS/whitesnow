@@ -3,6 +3,7 @@ import LeftPanel from "./LeftPanel";
 import RightPanel from "./RightPanel";
 import MainFeed from "./MainFeed";
 import "../styles/homeLayout.css";
+import SiteToolbar from "./SiteToolbar";
 
 function HomeLayout() {
   const [refreshPosts, setRefreshPosts] = useState(false);
@@ -13,15 +14,8 @@ function HomeLayout() {
   }
 
   return (
-    <div className="app-layout">
-      <div className="app-header">
-
-      </div>
-      <div className="app-panel-wrapper">
-        <LeftPanel handleRefreshPosts={handleRefreshPosts} />
-        <MainFeed refreshPosts={refreshPosts} />
-        <RightPanel />
-      </div>
+    <div className="app">
+      <SiteToolbar />
     </div>
   )
 }

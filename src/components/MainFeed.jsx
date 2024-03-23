@@ -12,7 +12,9 @@ function MainFeed({ refreshPosts }) {
       <div className="feed-header">
         MY FLAKES
       </div>
-      <PostList posts={posts} />
+      <div className="profile-posts">
+        <PostList posts={posts} />
+      </div>
     </div>
   )
 }

@@ -1,25 +1,68 @@
 {
+  "users": [
+    {
+      "username": "gaben",
+      "profileImage": "gaben",
+      "joinedSince": "04-20-1969",
+      "flakeCount": "gaben"
+    }
+  ],
   "posts": [
     {
-      "id": "62dbce00-4461-416e-918d-6e99f70a2d8b",
-      "user": "a",
+      "id": "ie5V2jhaY",
+      "user": "sadasd",
       "profileImage": "/images/default-user-image.png",
-      "body": "a",
-      "date": "04/21"
+      "body": "asdasd",
+      "date": "3-22"
     },
     {
-      "id": "c340240d-6317-4d12-8c6e-d41a134fe0b1",
+      "id": "oAD3vuUST",
+      "user": "asdsadasd",
+      "profileImage": "/images/default-user-image.png",
+      "body": "sadasdasd",
+      "date": "3-23"
+    },
+    {
+      "id": "yT-caTTM_",
       "user": "asd",
       "profileImage": "/images/default-user-image.png",
       "body": "asd",
-      "date": "04/21"
+      "date": "3-23"
     },
     {
-      "id": "4d37cfd9-5e86-498d-916d-f563486a57c8",
-      "user": "zxc",
+      "id": "ie5V2jhaY",
+      "user": "sadasd",
       "profileImage": "/images/default-user-image.png",
-      "body": "xczxc",
-      "date": "04/21"
+      "body": "asdasd",
+      "date": "3-22"
+    },
+    {
+      "id": "ie5V2jhaY",
+      "user": "sadasd",
+      "profileImage": "/images/default-user-image.png",
+      "body": "asdasd",
+      "date": "3-22"
+    },
+    {
+      "id": "ie5V2jhaY",
+      "user": "sadasd",
+      "profileImage": "/images/default-user-image.png",
+      "body": "asdasd",
+      "date": "3-22"
+    },
+    {
+      "id": "ie5V2jhaY",
+      "user": "sadasd",
+      "profileImage": "/images/default-user-image.png",
+      "body": "asdasd",
+      "date": "3-22"
+    },
+    {
+      "id": "ie5V2jhaY",
+      "user": "sadasd",
+      "profileImage": "/images/default-user-image.png",
+      "body": "asdasd",
+      "date": "3-22"
     }
   ]
 }

@@ -1,0 +1,48 @@
+.site-toolbar {
+  position: fixed;
+  width: 100%;
+  height: rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  background-color: black;
+  display: flex;
+  gap: 1rem;
+}
+
+
+.open-create-post-dialog {
+  width: 15rem;
+  height: 3rem;
+  border-radius: 5rem;
+  font-size: 2rem;
+  transition: box-shadow 0.65s ease-in-out;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.open-create-post-dialog:hover,
+.profile-button:hover {
+  box-shadow: 3px 3px white;
+}
+
+.profile-button {
+  width: 15rem;
+  height: 3rem;
+  border-radius: 5rem;
+  transition: box-shadow 0.5s ease-in-out;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.profile-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.5rem;
+}

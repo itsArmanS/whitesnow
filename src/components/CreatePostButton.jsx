@@ -15,14 +15,14 @@ function CreatePostButton({ handleRefreshPosts }) {
 
 
   return (
-    <div>
+    <>
       <button className="open-create-post-dialog" onClick={openNewPostDialog}>Create Flake +</button>
       {isOpen && (
         <dialog className="new-post-dialog" open>
           <NewPostForm closeNewPostDialog={closeNewPostDialog} handleRefreshPosts={handleRefreshPosts} />
         </dialog>
       )}
-    </div>
+    </>
   )
 }
 
