@@ -9,6 +9,7 @@
   .profile-banner {
     flex: 0.4;
     overflow: hidden;
+    background-color: blue;
   }
 
   .profile-banner img {
@@ -23,16 +24,19 @@
   }
 
   .user-profile-information {
-    flex: 0.5;
+    flex: 0.4;
     display: flex;
     justify-content: center;
     position: relative;
-    background-color: white;
+    background-color: black;
+    color: white;
+    /* background-color: #b7b7b7; */
   }
 
   .user-profile-posts {
     flex: 1.5;
     height: 100%;
+    background-color: black;
   }
 
   .user-profile-image {
@@ -66,8 +70,8 @@
 
 
   .user-profile-name {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     position: absolute;
-    top: 7.5rem;
-    left: 4.5rem;
+    top: 7.8rem;
+    left: 4.7rem;
   }

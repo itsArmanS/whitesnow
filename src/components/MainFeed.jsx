@@ -9,8 +9,10 @@ function MainFeed({ refreshPosts }) {
 
   return (
     <div className="main-feed">
-      <div className="feed-header">
-        MY FLAKES
+      <div className="profile-header-buttons">
+        <button>FLAKES</button>
+        <button>STARS</button>
+        <button>FOLLOWERS</button>
       </div>
       <div className="profile-posts">
         <PostList posts={posts} />
