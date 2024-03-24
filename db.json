@@ -1,68 +1,22 @@
 {
   "users": [
     {
-      "username": "gaben",
-      "profileImage": "gaben",
-      "joinedSince": "04-20-1969",
-      "flakeCount": "gaben"
-    }
-  ],
-  "posts": [
-    {
-      "id": "ie5V2jhaY",
-      "user": "sadasd",
-      "profileImage": "/images/default-user-image.png",
-      "body": "asdasd",
-      "date": "3-22"
-    },
-    {
-      "id": "oAD3vuUST",
-      "user": "asdsadasd",
-      "profileImage": "/images/default-user-image.png",
-      "body": "sadasdasd",
-      "date": "3-23"
-    },
-    {
-      "id": "yT-caTTM_",
-      "user": "asd",
-      "profileImage": "/images/default-user-image.png",
-      "body": "asd",
-      "date": "3-23"
-    },
-    {
-      "id": "ie5V2jhaY",
-      "user": "sadasd",
-      "profileImage": "/images/default-user-image.png",
-      "body": "asdasd",
-      "date": "3-22"
-    },
-    {
-      "id": "ie5V2jhaY",
-      "user": "sadasd",
-      "profileImage": "/images/default-user-image.png",
-      "body": "asdasd",
-      "date": "3-22"
-    },
-    {
-      "id": "ie5V2jhaY",
-      "user": "sadasd",
-      "profileImage": "/images/default-user-image.png",
-      "body": "asdasd",
-      "date": "3-22"
-    },
-    {
-      "id": "ie5V2jhaY",
-      "user": "sadasd",
-      "profileImage": "/images/default-user-image.png",
-      "body": "asdasd",
-      "date": "3-22"
-    },
-    {
-      "id": "ie5V2jhaY",
-      "user": "sadasd",
-      "profileImage": "/images/default-user-image.png",
-      "body": "asdasd",
-      "date": "3-22"
+      "username": "admin",
+      "password": "admin",
+      "dateJoined": "4/20",
+      "flakes": "1",
+      "userPosts": {
+        "posts": [
+          {
+            "id": "ie5V2jhaY",
+            "user": "sadasd",
+            "profileImage": "/images/default-user-image.png",
+            "body": "asdasd",
+            "date": "3-22"
+          }
+        ]
+      },
+      "userFollowers": {}
     }
   ]
 }
