@@ -3,6 +3,7 @@ import "../styles/siteToolbar.css"
 import CreatePostButton from "./CreatePostButton";
 import ProfileButton from "./ProfileButton";
 import HomeButton from "./HomeButton";
+import LogoutButton from "./LogoutButton";
 
 function SiteToolbar() {
   return (
@@ -11,6 +12,7 @@ function SiteToolbar() {
         <HomeButton />
         <CreatePostButton />
         <ProfileButton />
+        <LogoutButton />
       </div>
     </>
   )

@@ -1,23 +1,16 @@
 {
   "users": [
     {
-      "admin": {
-        "password": "dev",
-        "dateJoined": "4/20",
-        "flakes": "1",
-        "userPosts": {
-          "posts": [
-            {
-              "id": "ie5V2jhaY",
-              "user": "sadasd",
-              "profileImage": "/images/default-user-image.png",
-              "body": "asdasd",
-              "date": "3-22"
-            }
-          ]
-        },
-        "userFollowers": {}
-      }
+      "username": "admin",
+      "password": "dev"
+    },
+    {
+      "username": "snoop",
+      "password": "dogg"
+    },
+    {
+      "username": "test",
+      "password": "test"
     }
   ]
 }
