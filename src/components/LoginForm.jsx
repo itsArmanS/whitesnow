@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/login.css"
 
-function LoginForm() {
+function LoginForm({ sendLoginDataToParent }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -12,6 +12,8 @@ function LoginForm() {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
+
+  sendLoginDataToParent(username, password);
 
   return (
     <form className="login-form" action="">

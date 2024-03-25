@@ -2,7 +2,7 @@
   "users": [
     {
       "admin": {
-        "password": "admin",
+        "password": "dev",
         "dateJoined": "4/20",
         "flakes": "1",
         "userPosts": {
