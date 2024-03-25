@@ -2,9 +2,16 @@
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.4rem;
   background-color: #0C0705;
+}
+
+.login-wrapper a {
+  text-decoration: none;
+  color: #F2F7FF;
 }
 
 .login-box {
@@ -13,22 +20,32 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  width: 30rem;
-  height: 20rem;
+  width: 25rem;
+  height: auto;
   background-color: #F2F7FF;
   border-radius: 2rem;
   box-shadow: 5px 5px 10px gray,
     -5px -5px 10px gray;
-  transition: all 0.9s ease-in-out;
+  transition: all 0.5s ease-in-out;
   box-sizing: border-box;
-  padding: 2rem;
+  padding: 1rem;
 }
 
-.login-box:hover {
-  width: 25rem;
-  height: 15rem;
+/* .login-box:hover {
+  width: 24rem;
+  height: 17rem;
   box-shadow: 3px 3px 10px gray,
     -3px -3px 10px gray;
+} */
+
+.login-switcher {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .login-box-header {
@@ -38,6 +55,11 @@
 
 .login-box-header h1 {
   font-size: 3rem;
+  background-color: black;
+  border-radius: 2rem;
+  color: white;
+  width: 19rem;
+  text-align: center;
 }
 
 .login-box-form {
@@ -45,30 +67,42 @@
   width: 100%;
 }
 
-.login-box-buttons {
+.login-box-buttons,
+.register-box-buttons {
   flex: 0.5;
   width: 100%;
 }
 
 .login-box-header,
-.login-box-buttons {
+.login-box-buttons,
+.register-box-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.login-form {
+
+.login-form,
+.register-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 0.3rem;
   height: 100%;
 }
 
+.login-form label,
+.register-form label {
+  display: block;
+  box-sizing: border-box;
+  padding-left: 0.5rem;
+}
+
 #usernameInput,
-#passwordInput {
-  width: 18rem;
+#passwordInput,
+#emailInput {
+  width: 15rem;
   height: 2rem;
   border-radius: 1rem;
   box-sizing: border-box;
@@ -76,6 +110,55 @@
   border: none;
   background-color: #F2F7FF;
   outline: none;
-  box-shadow: 2px 2px black;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px black;
   transition: all 0.9s ease-in-out;
 }
+
+.login-button,
+.register-button {
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: none;
+  border-radius: 1.5rem;
+  background-image: url("/public/images/loginUnlocked.svg");
+  background-position: center;
+  padding: 0;
+  text-align: center;
+  transition: box-shadow 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.register-button {
+  background-image: none;
+  width: 5rem;
+  height: 1.5rem;
+  box-shadow: 1.5px 1.5px 1.5px 1.5px black;
+
+}
+
+#usernameInput:hover,
+#passwordInput:hover,
+#emailInput:hover {
+  box-shadow: 3px 3px black;
+}
+
+.register-button-section {
+  width: 25rem;
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.register-button-section button {
+  text-align: center;
+  background-color: transparent;
+  border: none;
+  color: #F2F7FF;
+  cursor: pointer;
+}
+
+/* <---------------------------Register Box---------------------------> */

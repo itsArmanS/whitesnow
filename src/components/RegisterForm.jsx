@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import "../styles/login.css"
 
-function LoginForm() {
+function RegisterForm() {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -14,7 +19,17 @@ function LoginForm() {
   };
 
   return (
-    <form className="login-form" action="">
+    <form className="register-form" action="">
+      <div >
+        <label htmlFor="emailInput">Email</label>
+        <input type="email"
+          id="emailInput"
+          onChange={handleEmailChange}
+          value={email}
+          placeholder="email"
+          required
+        />
+      </div>
       <div >
         <label htmlFor="usernameInput">Username</label>
         <input type="text"
@@ -22,6 +37,7 @@ function LoginForm() {
           onChange={handleUsernameChange}
           value={username}
           placeholder="username"
+          required
         />
       </div>
       <div>
@@ -31,10 +47,11 @@ function LoginForm() {
           onChange={handlePasswordChange}
           value={password}
           placeholder="password"
+          required
         />
       </div>
     </form>
   )
 }
 
-export default LoginForm
+export default RegisterForm

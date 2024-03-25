@@ -1,22 +1,23 @@
 {
   "users": [
     {
-      "username": "admin",
-      "password": "admin",
-      "dateJoined": "4/20",
-      "flakes": "1",
-      "userPosts": {
-        "posts": [
-          {
-            "id": "ie5V2jhaY",
-            "user": "sadasd",
-            "profileImage": "/images/default-user-image.png",
-            "body": "asdasd",
-            "date": "3-22"
-          }
-        ]
-      },
-      "userFollowers": {}
+      "admin": {
+        "password": "admin",
+        "dateJoined": "4/20",
+        "flakes": "1",
+        "userPosts": {
+          "posts": [
+            {
+              "id": "ie5V2jhaY",
+              "user": "sadasd",
+              "profileImage": "/images/default-user-image.png",
+              "body": "asdasd",
+              "date": "3-22"
+            }
+          ]
+        },
+        "userFollowers": {}
+      }
     }
   ]
 }
