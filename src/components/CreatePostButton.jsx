@@ -16,7 +16,7 @@ function CreatePostButton({ handleRefreshPosts }) {
 
   return (
     <>
-      <button className="open-create-post-dialog" onClick={openNewPostDialog}>Create Flake +</button>
+      <button className="open-create-post-dialog" onClick={openNewPostDialog}>CREATE FLAKE +</button>
       {isOpen && (
         <dialog className="new-post-dialog" open>
           <NewPostForm closeNewPostDialog={closeNewPostDialog} handleRefreshPosts={handleRefreshPosts} />

@@ -1,12 +1,15 @@
-import React, { useState, useEffect } from "react";
-import LeftPanel from "./LeftPanel";
-import RightPanel from "./RightPanel";
-import MainFeed from "./MainFeed";
+import React, { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/homeLayout.css";
 import SiteToolbar from "./SiteToolbar";
+import AuthContext from "./AuthContext";
+import LoginPage from "./LoginPage";
 
 function HomeLayout() {
   const [refreshPosts, setRefreshPosts] = useState(false);
+  const { auth, setAuth } = useContext(AuthContext);
+  const navigate = useNavigate();
+
 
   const handleRefreshPosts = () => {
     setRefreshPosts(prevState => !prevState);
@@ -14,9 +17,17 @@ function HomeLayout() {
   }
 
   return (
-    <div className="app">
-      <SiteToolbar />
-    </div>
+    <>
+      {auth ? (
+        <div className="app">
+          <SiteToolbar />
+        </div>
+      ) : (
+        navigate("/")
+      )}
+    </>
+
+
   )
 }
 
