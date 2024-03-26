@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../styles/login.css"
-import { Link } from "react-router-dom";
 import Register from "./Register";
 import Login from "./Login";
 import LoginErrorMessage from "./LoginErrorMessage";
@@ -17,9 +16,6 @@ function LoginPage() {
     setLoginState(!loginState);
   }
 
-  useEffect(() => {
-  }, [loginState, errorMessage])
-
   return (
     <div className="login-wrapper">
       <div className="login-box">
@@ -28,12 +24,8 @@ function LoginPage() {
         </div>
         <LoginErrorMessage message={errorMessage} />
         <div className="login-switcher">
-          {loginState ? <Login getErrorMessage={getErrorMessage} /> : <Register />}
+          {loginState ? <Login getErrorMessage={getErrorMessage} handleLoginSwitch={handleLoginSwitch} /> : <Register handleLoginSwitch={handleLoginSwitch} />}
         </div>
-      </div>
-      <div className="register-button-section">
-        <button onClick={handleLoginSwitch}>Don't have an account?</button>
-        <Link to="/forgotpassword">Forgot Password?</Link>
       </div>
     </div>
   )

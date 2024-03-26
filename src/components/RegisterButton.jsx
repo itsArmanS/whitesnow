@@ -8,7 +8,7 @@ function RegisterButton() {
   }
 
   return (
-    <button className="register-button" onClick={handleRegisterClick}>Register</button>
+    <button className="register-button" onClick={handleRegisterClick}>REGISTER</button>
   )
 }
 

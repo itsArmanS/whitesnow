@@ -11,7 +11,7 @@
 
 .login-wrapper a {
   text-decoration: none;
-  color: #F2F7FF;
+  color: black;
 }
 
 .login-box {
@@ -20,8 +20,8 @@
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
-  width: 25rem;
-  height: auto;
+  width: 28rem;
+  height: 30rem;
   background-color: #F2F7FF;
   border-radius: 2rem;
   box-shadow: 5px 5px 10px gray,
@@ -31,36 +31,29 @@
   padding: 1rem;
 }
 
-/* .login-box:hover {
-  width: 24rem;
-  height: 17rem;
-  box-shadow: 3px 3px 10px gray,
-    -3px -3px 10px gray;
-} */
-
 .login-switcher {
-  flex: 1;
+  flex: 0.3;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.8rem;
-  transition: height 0.5s ease-in-out;
 }
 
 .login-box-header {
-  flex: 0.5;
-  width: 100%;
+  flex: 0.3;
+  width: 23rem;
 }
 
 .login-box-header h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   background-color: black;
   border-radius: 2rem;
   color: white;
-  width: 19rem;
+  width: 100%;
   text-align: center;
+  box-sizing: border-box;
+  padding: 0.5rem;
 }
 
 .login-box-form {
@@ -72,6 +65,10 @@
 .register-box-buttons {
   flex: 0.5;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
 .login-box-header,
@@ -89,15 +86,19 @@
   color: red;
 }
 
-
 .login-form,
 .register-form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  gap: 1rem;
-  height: 100%;
+  gap: 1.5rem;
+  height: auto;
+  padding-bottom: 1.5rem;
+}
+
+.register-form {
+  gap: 0.8rem;
 }
 
 .login-form label,
@@ -110,16 +111,16 @@
 #usernameInput,
 #passwordInput,
 #emailInput {
-  width: 15rem;
-  height: 2rem;
-  border-radius: 1rem;
+  width: 20rem;
+  height: 3.5rem;
+  border-radius: 0.5rem;
   box-sizing: border-box;
   padding: 1rem;
   border: none;
   background-color: #F2F7FF;
   outline: none;
-  box-shadow: 1.5px 1.5px 1.5px 1.5px black;
-  transition: all 0.9s ease-in-out;
+  box-shadow: 4px 4px 4px 4px gray;
+  transition: all 0.3s ease-in-out;
 }
 
 .login-button,
@@ -127,22 +128,27 @@
   width: 2rem;
   height: 2rem;
   background-color: transparent;
-  border: none;
-  border-radius: 1.5rem;
+  border-radius: 0.5rem;
   background-image: url("/public/images/loginUnlocked.svg");
   background-position: center;
   padding: 0;
+  border: none;
   text-align: center;
-  transition: box-shadow 0.5s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out;
   cursor: pointer;
+}
+
+.login-button:hover,
+.register-button:hover {
+  box-shadow: 2px 2px 2px 2px black;
 }
 
 .register-button {
   background-image: none;
-  width: 5rem;
-  height: 1.5rem;
-  box-shadow: 1.5px 1.5px 1.5px 1.5px black;
-
+  width: 6rem;
+  height: 2rem;
+  color: black;
+  box-shadow: 3px 3px 3px 3px gray;
 }
 
 #usernameInput:hover,
@@ -152,7 +158,7 @@
 }
 
 .register-button-section {
-  width: 25rem;
+  width: 100%;
   height: 3rem;
   display: flex;
   flex-direction: column;
@@ -165,8 +171,23 @@
   text-align: center;
   background-color: transparent;
   border: none;
-  color: #F2F7FF;
+  color: black;
   cursor: pointer;
+}
+
+.back-to-login-button {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  border: none;
+  background-image: url("/public/images/backToLogin.svg");
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 3px 3px 3px 3px gray;
+}
+
+.back-to-login-button:hover {
+  box-shadow: 2px 2px 2px 2px black;
 }
 
 /* <---------------------------Register Box---------------------------> */

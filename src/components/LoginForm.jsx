@@ -7,10 +7,21 @@ function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
   const [data, setData] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [loginSuccess, setLoginSuccess] = useState(false);
   const { auth, setAuth } = useContext(AuthContext);
 
   useEffect(() => {
-  }, [data, auth, username, password])
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3005/users");
+        const returnedData = await response.json();
+        setData(returnedData);
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    fetchData();
+  }, [auth]);
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -22,41 +33,32 @@ function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
 
   sendLoginDataToParent(username, password);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch("http://localhost:3005/users");
-      const returnedData = await response.json();
-      setData(returnedData);
-    } catch (error) {
-      console.log(error)
-    }
-  }
-  fetchData();
-
   const handleLogin = async () => {
     if (data !== null) {
-      data.forEach(item => {
-        if (item.username === username && item.password === password) {
-          setAuth(true);
-          console.log(auth)
-        } else {
-          getErrorMessage("Incorrect Data")
-        }
-
-      });
+      const foundUser = data.find(item => item.username === username && item.password === password);
+      if (foundUser) {
+        setAuth(true);
+        setLoginSuccess(true);
+      } else {
+        setLoginSuccess(false);
+      }
     } else {
-      console.log("stopped")
+      console.log("null")
     }
   }
 
-  const preventDefault = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
+    const loginSuccess = handleLogin();
+    if (!loginSuccess) {
+      getErrorMessage("Wrong username or password");
+    }
   }
 
   return (
-    <form className="login-form" action="" onSubmit={preventDefault}>
+    <form className="login-form" action="" onSubmit={handleSubmit}>
       <div >
-        <label htmlFor="usernameInput">Username</label>
+        <label htmlFor="usernameInput" id="usernameLabel">Username</label>
         <input type="text"
           id="usernameInput"
           onChange={handleUsernameChange}
@@ -65,7 +67,7 @@ function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
         />
       </div>
       <div>
-        <label htmlFor="passwordInput">Password</label>
+        <label htmlFor="passwordInput" id="passwordLabel">Password</label>
         <input type="password"
           id="passwordInput"
           onChange={handlePasswordChange}
@@ -73,7 +75,7 @@ function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
           placeholder="password"
         />
       </div>
-      <LoginButton onLogin={handleLogin} />
+      <LoginButton loginSuccess={loginSuccess} auth getErrorMessage={getErrorMessage} />
     </form>
   )
 }
