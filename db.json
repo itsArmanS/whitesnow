@@ -1,16 +1,13 @@
 {
   "users": [
     {
-      "username": "admin",
-      "password": "dev"
-    },
-    {
-      "username": "snoop",
-      "password": "dogg"
-    },
-    {
-      "username": "test",
-      "password": "test"
+      "id": "58b7a433-a9a0-4d0d-aa5f-c7091e4c7e8b",
+      "username": "a",
+      "password": "a",
+      "email": "test@test.com"
     }
+  ],
+  "posts": [
+    {}
   ]
 }

@@ -2,6 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import "../styles/login.css"
 import LoginButton from "./LoginButton";
 import AuthContext from "./AuthContext";
+import UsernameInput from "./UsernameInput";
+import PasswordInput from "./PasswordInput";
 
 function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
   const [data, setData] = useState(null);
@@ -57,24 +59,8 @@ function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
 
   return (
     <form className="login-form" action="" onSubmit={handleSubmit}>
-      <div >
-        <label htmlFor="usernameInput" id="usernameLabel">Username</label>
-        <input type="text"
-          id="usernameInput"
-          onChange={handleUsernameChange}
-          value={username}
-          placeholder="username"
-        />
-      </div>
-      <div>
-        <label htmlFor="passwordInput" id="passwordLabel">Password</label>
-        <input type="password"
-          id="passwordInput"
-          onChange={handlePasswordChange}
-          value={password}
-          placeholder="password"
-        />
-      </div>
+      <UsernameInput handleUsernameChange={handleUsernameChange} username={username} />
+      <PasswordInput handlePasswordChange={handlePasswordChange} password={password} />
       <LoginButton loginSuccess={loginSuccess} auth getErrorMessage={getErrorMessage} />
     </form>
   )

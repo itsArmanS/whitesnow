@@ -1,14 +1,10 @@
 import React from "react";
 import "../styles/login.css";
 
-function RegisterButton() {
-
-  const handleRegisterClick = () => {
-
-  }
+function RegisterButton({ handleUserRegister }) {
 
   return (
-    <button className="register-button" onClick={handleRegisterClick}>REGISTER</button>
+    <button className="register-button" onClick={handleUserRegister}>REGISTER</button>
   )
 }
 

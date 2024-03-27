@@ -9,7 +9,7 @@ function LoginButton({ loginSuccess, getErrorMessage }) {
   const { auth } = useContext(AuthContext);
 
   useEffect(() => {
-    if (auth) {
+    if (loginSuccess) {
       navigate("/home");
     }
   }, [auth, navigate])
