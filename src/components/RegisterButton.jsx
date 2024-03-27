@@ -1,10 +1,15 @@
 import React from "react";
 import "../styles/login.css";
 
-function RegisterButton({ handleUserRegister }) {
+function RegisterButton({ checkExistingUsername, handleUserRegister }) {
+
+  const handleClick = async () => {
+    await checkExistingUsername();
+    handleUserRegister();
+  };
 
   return (
-    <button className="register-button" onClick={handleUserRegister}>REGISTER</button>
+    <button className="register-button" onClick={handleClick}>REGISTER</button>
   )
 }
 

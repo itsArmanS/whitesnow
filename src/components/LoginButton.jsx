@@ -8,6 +8,12 @@ function LoginButton({ loginSuccess, getErrorMessage }) {
   const navigate = useNavigate();
   const { auth } = useContext(AuthContext);
 
+  const handleClick = () => {
+    if (!loginSuccess) {
+      getErrorMessage("Incorrect Data")
+    }
+  }
+
   useEffect(() => {
     if (loginSuccess) {
       navigate("/home");
@@ -15,7 +21,7 @@ function LoginButton({ loginSuccess, getErrorMessage }) {
   }, [auth, navigate])
 
   return (
-    <button className="login-button"></button>
+    <button className="login-button" onClick={handleClick}></button>
   )
 }
 

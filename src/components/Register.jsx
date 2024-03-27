@@ -3,11 +3,11 @@ import "../styles/login.css"
 import RegisterForm from "./RegisterForm";
 import BackToLogin from "./BackToLogin";
 
-function Register({ handleLoginSwitch }) {
+function Register({ handleLoginSwitch, getErrorMessage }) {
   return (
     <>
       <div className="register-box-form">
-        <RegisterForm />
+        <RegisterForm getErrorMessage={getErrorMessage} />
       </div>
       <div className="register-box-buttons">
         <BackToLogin handleLoginSwitch={handleLoginSwitch} />

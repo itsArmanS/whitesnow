@@ -11,6 +11,8 @@ function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
   const [password, setPassword] = useState("");
   const [loginSuccess, setLoginSuccess] = useState(false);
   const { auth, setAuth } = useContext(AuthContext);
+  const { currentUser, setCurrentUser } = useContext(AuthContext);
+  const { currentUserID, setCurrentUserID } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchData = async () => {

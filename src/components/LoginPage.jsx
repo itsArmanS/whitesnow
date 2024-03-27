@@ -24,7 +24,9 @@ function LoginPage() {
         </div>
         <LoginErrorMessage message={errorMessage} />
         <div className="login-switcher">
-          {loginState ? <Login getErrorMessage={getErrorMessage} handleLoginSwitch={handleLoginSwitch} /> : <Register handleLoginSwitch={handleLoginSwitch} />}
+          {loginState ? <Login handleLoginSwitch={handleLoginSwitch} getErrorMessage={getErrorMessage} />
+            :
+            <Register handleLoginSwitch={handleLoginSwitch} getErrorMessage={getErrorMessage} />}
         </div>
       </div>
     </div>
