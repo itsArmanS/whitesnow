@@ -10,7 +10,6 @@ function RegisterForm({ getErrorMessage }) {
   const [username, setUsername] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userExists, setUserExists] = useState(null);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -27,7 +26,6 @@ function RegisterForm({ getErrorMessage }) {
       const response = await fetch("http://localhost:3005/users");
       const returnData = await response.json();
       const foundUser = returnData.find(item => item.username === username || item.email === email);
-      setUserExists(!!foundUser);
 
       return !!foundUser;
     } catch (error) {
@@ -61,6 +59,9 @@ function RegisterForm({ getErrorMessage }) {
       }
     } else {
       getErrorMessage("User already exists");
+      setTimeout(() => {
+        getErrorMessage("")
+      }, 2000)
     }
 
   }

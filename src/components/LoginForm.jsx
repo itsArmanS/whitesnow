@@ -4,6 +4,7 @@ import LoginButton from "./LoginButton";
 import AuthContext from "./AuthContext";
 import UsernameInput from "./UsernameInput";
 import PasswordInput from "./PasswordInput";
+import useGetUserID from "../customHooks/useGetUserID"
 
 function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
   const [data, setData] = useState(null);
@@ -51,19 +52,25 @@ function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
     }
   }
 
+  const userID = useGetUserID(username);
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const loginSuccess = handleLogin();
-    if (!loginSuccess) {
-      getErrorMessage("Wrong username or password");
+    if (loginSuccess) {
+      setCurrentUser(username);
+      setCurrentUserID(userID);
     }
   }
+
+
 
   return (
     <form className="login-form" action="" onSubmit={handleSubmit}>
       <UsernameInput handleUsernameChange={handleUsernameChange} username={username} />
       <PasswordInput handlePasswordChange={handlePasswordChange} password={password} />
-      <LoginButton loginSuccess={loginSuccess} auth getErrorMessage={getErrorMessage} />
+      <LoginButton loginSuccess={loginSuccess} auth getErrorMessage={getErrorMessage} currentUser={currentUser} currentUserID={currentUserID} />
     </form>
   )
 }

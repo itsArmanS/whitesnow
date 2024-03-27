@@ -54,6 +54,12 @@
   text-align: center;
   box-sizing: border-box;
   padding: 0.5rem;
+  box-shadow: 3px 3px 3px 3px black;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.login-box-header h1:hover {
+  box-shadow: 2px 2px 2px 2px black;
 }
 
 .login-box-form {
@@ -94,11 +100,12 @@
   align-items: center;
   gap: 1.5rem;
   height: auto;
-  padding-bottom: 1.5rem;
+  padding-bottom: 2rem;
 }
 
 .register-form {
   gap: 0.8rem;
+  padding-bottom: 1rem;
 }
 
 .login-form label,
@@ -125,30 +132,24 @@
 
 .login-button,
 .register-button {
-  width: 2rem;
+  width: 6rem;
   height: 2rem;
   background-color: transparent;
   border-radius: 0.5rem;
-  background-image: url("/public/images/loginUnlocked.svg");
   background-position: center;
   padding: 0;
   border: none;
   text-align: center;
   transition: box-shadow 0.3s ease-in-out;
   cursor: pointer;
+  margin-top: 1rem;
+  box-shadow: 3px 3px 3px 3px gray;
+  color: black;
 }
 
 .login-button:hover,
 .register-button:hover {
   box-shadow: 2px 2px 2px 2px black;
-}
-
-.register-button {
-  background-image: none;
-  width: 6rem;
-  height: 2rem;
-  color: black;
-  box-shadow: 3px 3px 3px 3px gray;
 }
 
 #usernameInput:hover,
@@ -183,7 +184,7 @@
   border: none;
   background-image: url("/public/images/backToLogin.svg");
   transition: box-shadow 0.3s ease-in-out;
-  box-shadow: 3px 3px 3px 3px gray;
+  cursor: pointer;
 }
 
 .back-to-login-button:hover {
