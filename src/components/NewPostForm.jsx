@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../styles/homeLayout.css";
-import shortid from "shortid";
+import { v4 as uuid } from 'uuid';
+import AuthContext from "./AuthContext";
 
-function NewPostForm({ closeNewPostDialog, handleRefreshPosts }) {
-  const [newPost, setNewPost] = useState([]);
+function NewPostForm({ toggleNewPostDialog, handleRefreshPosts }) {
   const [postBody, setPostBody] = useState("");
-  const [signedAs, setSignedAs] = useState("");
+  const { currentUserID } = useContext(AuthContext)
+
+  function generatePostID() {
+    const id = uuid();
+    return id.slice(0, 10);
+  }
+  let postID = generatePostID();
 
   let todaysDate = new Date(),
     fullDate = (todaysDate.getMonth() + 1) + '-' + todaysDate.getDate();
@@ -13,18 +19,16 @@ function NewPostForm({ closeNewPostDialog, handleRefreshPosts }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (postBody.length <= 10 && signedAs <= 5) {
+    if (postBody.length <= 10) {
       alert("Signed as has to be over 5 characters / Post has to have over 10 characters")
     } else {
       const newPostData = {
-        user: signedAs,
         profileImage: "/images/default-user-image.png",
         body: postBody,
         date: fullDate,
-        id: shortid.generate(),
+        postID: postID,
+        userID: currentUserID
       }
-
-      setNewPost(newPostData);
 
       const response = await fetch("http://localhost:3005/posts", {
         method: "POST",
@@ -35,8 +39,8 @@ function NewPostForm({ closeNewPostDialog, handleRefreshPosts }) {
       })
       if (response.ok) {
         console.log("New post added successfully");
-        handleRefreshPosts();
-        closeNewPostDialog();
+        // handleRefreshPosts();
+        toggleNewPostDialog();
       } else {
         console.error("Failed to add new post");
       }
@@ -48,20 +52,9 @@ function NewPostForm({ closeNewPostDialog, handleRefreshPosts }) {
     setPostBody(e.target.value);
   };
 
-  const handleSignedAsChange = (e) => {
-    setSignedAs(e.target.value);
-  }
-
   return (
     <>
       <form className="new-post-form" action="POST" onSubmit={handleSubmit}>
-        <label htmlFor="sign-as-input">Sign as?</label>
-        <input type="text"
-          className="sign-as-input"
-          id="sign-as-input"
-          value={signedAs}
-          onChange={handleSignedAsChange}
-        />
         <label htmlFor="newPostBody">Enter your thoughts below</label>
         <textarea
           type="text"
@@ -71,7 +64,7 @@ function NewPostForm({ closeNewPostDialog, handleRefreshPosts }) {
         />
         <div className="form-button-wrapper">
           <button type="submit">Create</button>
-          <button onClick={closeNewPostDialog}>Close</button>
+          <button onClick={toggleNewPostDialog}>Close</button>
         </div>
       </form>
     </>

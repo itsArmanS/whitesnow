@@ -20,7 +20,7 @@ function HomeLayout() {
     <>
       {auth ? (
         <div className="app">
-          <SiteToolbar />
+          <SiteToolbar handleRefreshPosts={handleRefreshPosts} />
         </div>
       ) : (
         navigate("/")

@@ -43,7 +43,7 @@
     width: 15rem;
     height: 15rem;
     position: absolute;
-    top: -7.5rem;
+    top: -8.5rem;
     border-radius: 3rem;
     border: 3px solid black;
   }
@@ -60,18 +60,18 @@
     height: 10rem;
     position: absolute;
     top: 11.5rem;
-    left: 6.5rem;
+    left: 5rem;
   }
 
   ul>li {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
-
-
 
   .user-profile-name {
     font-size: 1.8rem;
     position: absolute;
     top: 7.8rem;
-    left: 4.7rem;
+    left: 4rem;
+    width: 70%;
+    border-bottom: 1px solid white;
   }

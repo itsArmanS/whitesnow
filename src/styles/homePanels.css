@@ -29,6 +29,7 @@
   border-radius: 2rem;
   box-sizing: border-box;
   padding: 0.8rem;
+  border: 3px solid gray;
 }
 
 .new-post-form input {
@@ -53,6 +54,7 @@
   left: 33%;
   width: 35rem;
   height: 25rem;
+  color: black;
 }
 
 .form-button-wrapper {
@@ -66,7 +68,8 @@
   width: 5rem;
   border-radius: 1rem;
   box-shadow: 1.5px 1.5px black;
-  transition: box-shadow 0.5s ease-in-out
+  transition: box-shadow 0.5s ease-in-out;
+  color: black;
 }
 
 .form-button-wrapper button:hover {

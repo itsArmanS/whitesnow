@@ -13,10 +13,21 @@
         "emoji": "❄️",
         "userSince": "2024-03-28"
       }
+    },
+    {
+      "id": "233a3563-ed31-4518-aa4e-475312575b11",
+      "username": "1",
+      "password": "1",
+      "email": "test@test.com",
+      "profile": {
+        "followers": 0,
+        "flakes": 0,
+        "country": "N/A",
+        "hobby": "N/A",
+        "emoji": "❄️",
+        "userSince": "2024-03-28"
+      }
     }
   ],
-  "posts": [
-    {}
-  ],
-  "profiles": []
+  "posts": []
 }

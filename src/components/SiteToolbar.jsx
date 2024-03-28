@@ -5,12 +5,12 @@ import ProfileButton from "./ProfileButton";
 import HomeButton from "./HomeButton";
 import LogoutButton from "./LogoutButton";
 
-function SiteToolbar() {
+function SiteToolbar({ handleRefreshPosts }) {
   return (
     <>
       <div className="site-toolbar">
         <HomeButton />
-        <CreatePostButton />
+        <CreatePostButton handleRefreshPosts={handleRefreshPosts} />
         <ProfileButton />
         <LogoutButton />
       </div>

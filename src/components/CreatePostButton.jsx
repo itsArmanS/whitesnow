@@ -5,21 +5,16 @@ import NewPostForm from "./NewPostForm";
 function CreatePostButton({ handleRefreshPosts }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const openNewPostDialog = () => {
-    setIsOpen(true);
+  const toggleNewPostDialog = () => {
+    setIsOpen(!isOpen);
   };
-
-  const closeNewPostDialog = () => {
-    setIsOpen(false);
-  };
-
 
   return (
     <>
-      <button className="open-create-post-dialog" onClick={openNewPostDialog}>CREATE FLAKE +</button>
+      <button className="open-create-post-dialog" onClick={toggleNewPostDialog}>CREATE FLAKE +</button>
       {isOpen && (
         <dialog className="new-post-dialog" open>
-          <NewPostForm closeNewPostDialog={closeNewPostDialog} handleRefreshPosts={handleRefreshPosts} />
+          <NewPostForm toggleNewPostDialog={toggleNewPostDialog} handleRefreshPosts={handleRefreshPosts} />
         </dialog>
       )}
     </>

@@ -5,7 +5,8 @@ import AuthContext from "./AuthContext";
 
 function UserProfile() {
   const { currentUserID } = useContext(AuthContext);
-  const [profileData, setProfileData] = useState(null);
+  const [profileData, setProfileData] = useState([]);
+  const [username, setUsername] = useState(null)
 
   useEffect(() => {
     const getUserProfile = async () => {
@@ -17,6 +18,8 @@ function UserProfile() {
           const user = data[0];
           if (user) {
             setProfileData(user.profile);
+            const usernameAt = `@${user.username}`
+            setUsername(usernameAt);
           }
           console.log(profileData)
 
@@ -38,7 +41,7 @@ function UserProfile() {
             <img src="/images/gabenpfp.jpg" alt="gaben" />
           </div>
           <div className="user-profile-name">
-            @gaben
+            {username}
           </div>
           <ul>
             {profileData && (
@@ -53,7 +56,7 @@ function UserProfile() {
           </ul>
         </div>
         <div className="user-profile-posts">
-          <MainFeed />
+          {/* <MainFeed /> */}
         </div>
       </div>
     </>
