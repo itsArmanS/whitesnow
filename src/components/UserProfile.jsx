@@ -1,18 +1,35 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import "../styles/profileLayout.css"
 import MainFeed from "./MainFeed";
 import AuthContext from "./AuthContext";
-import useGetUserProfile from "../customHooks/useGetUserProfile";
 
 function UserProfile() {
-  const { currentUserID } = useContext(AuthContext)
-
-  const x = useGetUserProfile(currentUserID)
-
+  const { currentUserID } = useContext(AuthContext);
+  const [profileData, setProfileData] = useState(null);
 
   useEffect(() => {
-    console.log(x)
-  })
+    const getUserProfile = async () => {
+      console.log(currentUserID)
+      fetch(`http://localhost:3005/users?id=${currentUserID}`)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data)
+          const user = data[0];
+          if (user) {
+            setProfileData(user.profile);
+          }
+          console.log(profileData)
+
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
+    getUserProfile()
+  }, []);
+
+  console.log(profileData)
+
   return (
     <>
       <div className="user-profile-wrapper">
@@ -24,11 +41,15 @@ function UserProfile() {
             @gaben
           </div>
           <ul>
-            <li>Country: </li>
-            <li>Hobby: </li>
-            <li>Flake Count: </li>
-            <li>Emoji: </li>
-            <li>User Since: </li>
+            {profileData && (
+              <>
+                <li>Country: {profileData.country}</li>
+                <li>Hobby: {profileData.hobby}</li>
+                <li>Flakes: {profileData.flakes}</li>
+                <li>Emoji: {profileData.emoji}</li>
+                <li>User Since: {profileData.userSince}</li>
+              </>
+            )}
           </ul>
         </div>
         <div className="user-profile-posts">

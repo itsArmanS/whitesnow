@@ -45,9 +45,9 @@ function RegisterForm({ getErrorMessage }) {
         profile: {
           followers: 0,
           flakes: 0,
-          Country: "N/A",
-          Hobby: "N/A",
-          Emoji: "❄️",
+          country: "N/A",
+          hobby: "N/A",
+          emoji: "❄️",
           userSince: new Date().toISOString().split('T')[0]
         }
       };
