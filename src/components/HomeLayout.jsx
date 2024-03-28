@@ -6,21 +6,14 @@ import AuthContext from "./AuthContext";
 import LoginPage from "./LoginPage";
 
 function HomeLayout() {
-  const [refreshPosts, setRefreshPosts] = useState(false);
   const { auth, setAuth } = useContext(AuthContext);
   const navigate = useNavigate();
-
-
-  const handleRefreshPosts = () => {
-    setRefreshPosts(prevState => !prevState);
-    console.log(refreshPosts, "REFRESH")
-  }
 
   return (
     <>
       {auth ? (
         <div className="app">
-          <SiteToolbar handleRefreshPosts={handleRefreshPosts} />
+          <SiteToolbar />
         </div>
       ) : (
         navigate("/")

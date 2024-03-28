@@ -1,7 +1,7 @@
 import React, { useEffect, useContext, useState } from "react";
 import "../styles/profileLayout.css"
-import MainFeed from "./MainFeed";
 import AuthContext from "./AuthContext";
+import UserProfilePostsFeed from "./UserProfilePostsFeed"
 
 function UserProfile() {
   const { currentUserID } = useContext(AuthContext);
@@ -56,7 +56,7 @@ function UserProfile() {
           </ul>
         </div>
         <div className="user-profile-posts">
-          {/* <MainFeed /> */}
+          <UserProfilePostsFeed />
         </div>
       </div>
     </>

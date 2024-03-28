@@ -3,7 +3,7 @@ import "../styles/homeLayout.css";
 import { v4 as uuid } from 'uuid';
 import AuthContext from "./AuthContext";
 
-function NewPostForm({ toggleNewPostDialog, handleRefreshPosts }) {
+function NewPostForm({ toggleNewPostDialog }) {
   const [postBody, setPostBody] = useState("");
   const { currentUserID } = useContext(AuthContext)
 
@@ -39,7 +39,6 @@ function NewPostForm({ toggleNewPostDialog, handleRefreshPosts }) {
       })
       if (response.ok) {
         console.log("New post added successfully");
-        // handleRefreshPosts();
         toggleNewPostDialog();
       } else {
         console.error("Failed to add new post");

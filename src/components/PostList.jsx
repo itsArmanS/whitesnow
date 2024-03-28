@@ -2,8 +2,12 @@ import React, { useState, useEffect } from "react";
 import "../styles/homePanels.css";
 import "../styles/mainFeed.css";
 import SnowflakeButton from "./SnowflakeButton";
+import { useContext } from "react";
+import AuthContext from "./AuthContext";
 
 function PostList({ posts }) {
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <>
       {posts.map((post) => (
@@ -17,7 +21,7 @@ function PostList({ posts }) {
                 <img src={post.profileImage} alt="" />
               </div>
               <div className="user-username">
-                {`@${post.user} • `}
+                {`@${currentUser} • `}
               </div>
               <div className="post-date">
                 {post.date}

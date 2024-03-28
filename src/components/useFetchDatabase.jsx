@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function useFetchDatabase({ refreshPosts }) {
+function useFetchDatabasePosts() {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     const fetchPosts = async () => {
@@ -13,9 +13,9 @@ function useFetchDatabase({ refreshPosts }) {
       }
     };
     fetchPosts();
-  }, [refreshPosts])
+  }, [])
 
   return posts;
 }
 
-export default useFetchDatabase
+export default useFetchDatabasePosts

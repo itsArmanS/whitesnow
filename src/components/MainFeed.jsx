@@ -4,27 +4,24 @@ import "../styles/homeLayout.css";
 import PostList from "./PostList";
 
 async function MainFeed() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState([])
+
+  const allPosts = () => {
+    const response = fetch("http://localhost:3005/posts");
+    const returnedData = response.json();
+    console.log(returnedData, "returned")
+
+    setPosts(returnedData);
+    console.log(returnedData, "returned")
+  }
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await fetch("http://localhost:3005/posts");
-        if (!response.ok) {
-          throw new Error("Failed to fetch posts");
-        }
-        const data = await response.json();
-        setPosts(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    allPosts()
+  }, [])
 
-    fetchPosts();
-  }, []);
-
-  console.log(posts)
-
+  if (!Array.isArray(posts)) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="main-feed">
@@ -34,7 +31,11 @@ async function MainFeed() {
         <button>FOLLOWERS</button>
       </div>
       <div className="profile-posts">
-        <PostList />
+        {posts.length > 0 ? (
+          <PostList posts={posts} />
+        ) : (
+          <div>Loading...</div>
+        )}
       </div>
     </div>
   )
