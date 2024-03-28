@@ -1,19 +1,22 @@
 {
   "users": [
     {
-      "id": "58b7a433-a9a0-4d0d-aa5f-c7091e4c7e8b",
+      "id": "4b0900d9-b755-499b-9644-b84827d32092",
       "username": "a",
       "password": "a",
-      "email": "test@test.com"
-    },
-    {
-      "id": "9cabcb5e-bfc9-4958-b967-000ca0ae6555",
-      "username": "1",
-      "password": "1",
-      "email": "a@a.com"
+      "email": "a@a.com",
+      "profile": {
+        "followers": 0,
+        "flakes": 0,
+        "Country": "N/A",
+        "Hobby": "N/A",
+        "Emoji": "❄️",
+        "userSince": "2024-03-28"
+      }
     }
   ],
   "posts": [
     {}
-  ]
+  ],
+  "profiles": []
 }

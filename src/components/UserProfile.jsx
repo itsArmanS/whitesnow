@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import "../styles/profileLayout.css"
 import MainFeed from "./MainFeed";
+import AuthContext from "./AuthContext";
+import useGetUserProfile from "../customHooks/useGetUserProfile";
 
 function UserProfile() {
+  const { currentUserID } = useContext(AuthContext)
+
+  const x = useGetUserProfile(currentUserID)
+
+
+  useEffect(() => {
+    console.log(x)
+  })
   return (
     <>
       <div className="user-profile-wrapper">
@@ -18,7 +28,6 @@ function UserProfile() {
             <li>Hobby: </li>
             <li>Flake Count: </li>
             <li>Emoji: </li>
-            <li>Mood: </li>
             <li>User Since: </li>
           </ul>
         </div>

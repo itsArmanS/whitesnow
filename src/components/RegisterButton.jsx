@@ -2,10 +2,12 @@ import React from "react";
 import "../styles/login.css";
 
 function RegisterButton({ checkExistingUsername, handleUserRegister }) {
+  const backToLogin = document.querySelector(".back-to-login-button")
 
   const handleClick = async () => {
     await checkExistingUsername();
-    handleUserRegister();
+    await handleUserRegister();
+    backToLogin.click()
   };
 
   return (

@@ -41,7 +41,15 @@ function RegisterForm({ getErrorMessage }) {
         id: uuid(),
         username: username,
         password: password,
-        email: email
+        email: email,
+        profile: {
+          followers: 0,
+          flakes: 0,
+          Country: "N/A",
+          Hobby: "N/A",
+          Emoji: "❄️",
+          userSince: new Date().toISOString().split('T')[0]
+        }
       };
 
       try {
