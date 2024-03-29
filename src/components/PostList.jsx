@@ -13,7 +13,7 @@ function PostList({ posts }) {
       {posts.map((post) => (
         <div className="post-body" key={post.id}>
           <div className="post-user-buttons">
-            <SnowflakeButton />
+            <SnowflakeButton postID={post.id} />
           </div>
           <div className="post-user-data">
             <div className="post-user">

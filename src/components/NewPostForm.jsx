@@ -25,11 +25,12 @@ function NewPostForm({ toggleNewPostDialog }) {
       alert("Signed as has to be over 5 characters / Post has to have over 10 characters")
     } else {
       const newPostData = {
+        id: postID,
         profileImage: "/images/default-user-image.png",
         body: postBody,
         date: fullDate,
-        postID: postID,
-        userID: currentUserID
+        userID: currentUserID,
+        flakes: 0
       }
 
       const response = await fetch("http://localhost:3005/posts", {

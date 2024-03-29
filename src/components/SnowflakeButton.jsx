@@ -1,21 +1,60 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/mainFeed.css"
 
-function SnowflakeButton() {
-  const [snowflakeCount, setSnowflakeCount] = useState(0);
-  const [snowflakeClicked, setSnowflakeClicked] = useState(false);
+function SnowflakeButton({ postID }) {
+  const [snowflakeCount, setSnowflakeCount] = useState(null);
+  const [snowflakeClicked, setSnowflakeClicked] = useState(true);
+  const [postData, setPostData] = useState([]);
 
-  const handleSnowflakeClick = () => {
-    setSnowflakeCount(snowflakeCount + 1);
+  useEffect(() => {
+    const getCurrentPost = async () => {
+      try {
+        const response = await fetch(`http://localhost:3005/posts?id=${postID}`);
+        const data = await response.json();
+        console.log(data, "mydata");
+        const post = data[0];
+        console.log(post, "post");
+        if (post) {
+          setPostData(post);
+          setSnowflakeCount(post.flakes);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    getCurrentPost();
+  }, [postID]);
+
+  const updateCurrentPost = async (updatedCount) => {
+    let updatedFlakeCount = { ...postData, flakes: updatedCount }
+    try {
+      const response = await fetch(`http://localhost:3005/posts/${postID}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(updatedFlakeCount)
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  const handleSnowflakeClick = async () => {
+    const updatedCount = snowflakeCount + 1;
     setSnowflakeClicked(true);
+    setSnowflakeCount(prevCount => prevCount += 1)
+    updateCurrentPost(updatedCount);
+
   }
 
   const handleSnowflakeUnclick = () => {
-    setSnowflakeCount(snowflakeCount - 1);
-    if (snowflakeCount <= 0) {
-      setSnowflakeCount(0);
-    }
+    const updatedCount = snowflakeCount - 1;
+    setSnowflakeCount(prevCount => prevCount -= 1);
     setSnowflakeClicked(false);
+    updateCurrentPost(updatedCount);
+
   }
 
   return (

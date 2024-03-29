@@ -31,60 +31,28 @@
   ],
   "posts": [
     {
-      "id": "5eb4",
+      "id": "2d34ad72-5",
       "profileImage": "/images/default-user-image.png",
-      "body": "sdadbajsnd,nsdmads",
-      "date": "3-28",
-      "postID": "950e49bb-2",
-      "userID": "4b0900d9-b755-499b-9644-b84827d32092"
-    },
-    {
-      "id": "b473",
-      "profileImage": "/images/default-user-image.png",
-      "body": "sdasjhdjkahskdhasd",
-      "date": "3-28",
-      "postID": "65a1c96e-2",
-      "userID": "4b0900d9-b755-499b-9644-b84827d32092"
-    },
-    {
-      "id": "276f",
-      "profileImage": "/images/default-user-image.png",
-      "body": "qsqwdqdqdwqdw",
-      "date": "3-28",
-      "postID": "2fbb43a5-6",
-      "userID": "4b0900d9-b755-499b-9644-b84827d32092"
-    },
-    {
-      "id": "3587",
-      "profileImage": "/images/default-user-image.png",
-      "body": "sxjksdjqsnxkqx",
-      "date": "3-28",
-      "postID": "73c09f2f-e",
-      "userID": "4b0900d9-b755-499b-9644-b84827d32092"
-    },
-    {
-      "id": "6203",
-      "profileImage": "/images/default-user-image.png",
-      "body": "AAAAAAAAAAAAAAAAA",
+      "body": "qhggsfchjagcagscjhackahsc",
       "date": "3-29",
-      "postID": "f42db739-d",
-      "userID": "4b0900d9-b755-499b-9644-b84827d32092"
+      "userID": "4b0900d9-b755-499b-9644-b84827d32092",
+      "flakes": 2
     },
     {
-      "id": "4124",
+      "id": "27422568-d",
       "profileImage": "/images/default-user-image.png",
-      "body": "djbwjkbcwkejbckejhc",
+      "body": "sdvsadvsadv",
       "date": "3-29",
-      "postID": "f7cc17d3-e",
-      "userID": "4b0900d9-b755-499b-9644-b84827d32092"
+      "userID": "4b0900d9-b755-499b-9644-b84827d32092",
+      "flakes": 1
     },
     {
-      "id": "b658",
+      "id": "67e494fc-b",
       "profileImage": "/images/default-user-image.png",
-      "body": "wedwkjeclwhbclwjhbc",
+      "body": "dsvdsvsdfvsdvf",
       "date": "3-29",
-      "postID": "e0409f9b-b",
-      "userID": "4b0900d9-b755-499b-9644-b84827d32092"
+      "userID": "4b0900d9-b755-499b-9644-b84827d32092",
+      "flakes": 1
     }
   ]
 }

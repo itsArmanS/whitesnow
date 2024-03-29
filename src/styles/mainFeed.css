@@ -24,6 +24,7 @@
   box-sizing: border-box;
   padding-left: 0.6rem;
   padding-right: 0.6rem;
+  border-bottom: 1.5px solid gray;
 }
 
 .profile-header-buttons button {
