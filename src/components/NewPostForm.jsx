@@ -2,10 +2,12 @@ import React, { useState, useContext } from "react";
 import "../styles/homeLayout.css";
 import { v4 as uuid } from 'uuid';
 import AuthContext from "./AuthContext";
+import RefreshContext from "./RefreshContext";
 
 function NewPostForm({ toggleNewPostDialog }) {
   const [postBody, setPostBody] = useState("");
-  const { currentUserID } = useContext(AuthContext)
+  const { currentUserID } = useContext(AuthContext);
+  const { refresh, setRefresh } = useContext(RefreshContext);
 
   function generatePostID() {
     const id = uuid();
@@ -40,6 +42,7 @@ function NewPostForm({ toggleNewPostDialog }) {
       if (response.ok) {
         console.log("New post added successfully");
         toggleNewPostDialog();
+        setRefresh(prevRefresh => !prevRefresh);
       } else {
         console.error("Failed to add new post");
       }

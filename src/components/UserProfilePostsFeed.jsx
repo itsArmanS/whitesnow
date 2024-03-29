@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import PostList from "./PostList"
 import "../styles/profileLayout.css"
 import "../styles/mainFeed.css"
+import RefreshContext from "./RefreshContext";
 
 function UserProfilePostsLayout() {
   const [posts, setPosts] = useState([])
+  const { refresh, setRefresh } = useContext(RefreshContext)
 
   useEffect(() => {
     const allPosts = async () => {
@@ -16,7 +18,7 @@ function UserProfilePostsLayout() {
       console.log(returnedData, "returned")
     }
     allPosts();
-  }, [])
+  }, [refresh])
 
   return (
     <div className="profile-feed">
