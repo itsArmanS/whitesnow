@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles/mainFeed.css"
+import "../styles/profileFeed.css"
 
 function SnowflakeButton({ postID }) {
   const [snowflakeCount, setSnowflakeCount] = useState(null);
@@ -11,9 +11,7 @@ function SnowflakeButton({ postID }) {
       try {
         const response = await fetch(`http://localhost:3005/posts?id=${postID}`);
         const data = await response.json();
-        console.log(data, "mydata");
         const post = data[0];
-        console.log(post, "post");
         if (post) {
           setPostData(post);
           setSnowflakeCount(post.flakes);

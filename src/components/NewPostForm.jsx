@@ -30,7 +30,7 @@ function NewPostForm({ toggleNewPostDialog }) {
         body: postBody,
         date: fullDate,
         userID: currentUserID,
-        flakes: 0
+        flakes: 1
       }
 
       const response = await fetch("http://localhost:3005/posts", {
