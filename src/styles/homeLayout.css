@@ -6,13 +6,3 @@
   padding-left: 10rem;
   padding-right: 10rem;
 }
-
-.app-header {
-  border: 1px solid black;
-  flex: 0.3;
-}
-
-.app-panel-wrapper {
-  display: flex;
-  flex: 1;
-}

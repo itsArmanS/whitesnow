@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/homeLayout.css";
 import SiteToolbar from "./SiteToolbar";
 import AuthContext from "./AuthContext";
-import LoginPage from "./LoginPage";
+import PostWheels from "./PostWheels";
 
 function HomeLayout() {
   const { auth, setAuth } = useContext(AuthContext);
@@ -12,8 +12,9 @@ function HomeLayout() {
   return (
     <>
       {auth ? (
-        <div className="app">
+        <div className="home-wrapper">
           <SiteToolbar />
+          <PostWheels />
         </div>
       ) : (
         navigate("/")

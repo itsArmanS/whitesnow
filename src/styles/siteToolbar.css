@@ -7,6 +7,7 @@
   background-color: black;
   display: flex;
   gap: 1rem;
+  z-index: 3;
 }
 
 .site-toolbar button {

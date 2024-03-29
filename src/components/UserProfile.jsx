@@ -10,18 +10,15 @@ function UserProfile() {
 
   useEffect(() => {
     const getUserProfile = async () => {
-      console.log(currentUserID)
       fetch(`http://localhost:3005/users?id=${currentUserID}`)
         .then(response => response.json())
         .then(data => {
-          console.log(data)
           const user = data[0];
           if (user) {
             setProfileData(user.profile);
             const usernameAt = `@${user.username}`
             setUsername(usernameAt);
           }
-          console.log(profileData)
 
         })
         .catch(error => {
@@ -30,8 +27,6 @@ function UserProfile() {
     }
     getUserProfile()
   }, []);
-
-  console.log(profileData)
 
   return (
     <>
