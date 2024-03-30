@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/postWheels.css"
-import SnowflakeButton from "./SnowflakeButton";
+import HomeSnowflakeButton from "./HomeSnowflakeButton";
 
 function Wheel() {
   const [posts, setPosts] = useState(null);
+  const wheelRef = useRef(null)
 
   useEffect(() => {
     const fetchDummyPosts = async () => {
@@ -14,13 +15,21 @@ function Wheel() {
     fetchDummyPosts();
   }, [])
 
+  const handleMouseEnter = () => {
+    wheelRef.current.style.animationPlayState = "paused";
+  };
+
+  const handleMouseLeave = () => {
+    wheelRef.current.style.animationPlayState = "running";
+  };
+
   return (
     <>
       {
         posts ?
-          <div className="wheel">
+          <div className="wheel" ref={wheelRef}  >
             {posts.map((post) => (
-              <div className="post-body" key={post.id}>
+              <div className="wheel-post-body" key={post.id} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                 <div className="post-user-data">
                   <div className="post-user">
                     <div className="profile-image">
@@ -38,7 +47,7 @@ function Wheel() {
                   </div>
                 </div>
                 <div className="post-user-buttons">
-                  <SnowflakeButton postID={post.id} />
+                  <HomeSnowflakeButton postID={post.id} flakes={post.flakes} />
                 </div>
               </div>
             ))}
