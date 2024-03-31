@@ -3,7 +3,7 @@ import "../styles/profileFeed.css"
 
 function HomeSnowflakeButton({ postID }) {
   const [snowflakeCount, setSnowflakeCount] = useState(null);
-  const [snowflakeClicked, setSnowflakeClicked] = useState(true);
+  const [snowflakeClicked, setSnowflakeClicked] = useState(false);
   const [postData, setPostData] = useState([]);
 
   useEffect(() => {
@@ -58,7 +58,7 @@ function HomeSnowflakeButton({ postID }) {
   return (
     <>
       {snowflakeClicked ?
-        <button className="snowflakeButton" onClick={handleSnowflakeUnclick}></button>
+        <button className="snowflakeButtonClicked" onClick={handleSnowflakeUnclick}></button>
         : < button className="snowflakeButton" onClick={handleSnowflakeClick}></button >}
       <span>{snowflakeCount}</span>
     </>

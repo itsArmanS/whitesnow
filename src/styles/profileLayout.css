@@ -21,6 +21,7 @@
     flex: 1;
     background-color: #8d8d8d;
     display: flex;
+    gap: 1rem;
   }
 
   .user-profile-information {
@@ -37,6 +38,7 @@
     flex: 1.5;
     height: 100%;
     background-color: black;
+    display: flex;
   }
 
   .user-profile-image {

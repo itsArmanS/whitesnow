@@ -21,7 +21,7 @@
       "email": "test@test.com",
       "profile": {
         "followers": 0,
-        "flakes": 0,
+        "flakes": 443,
         "country": "N/A",
         "hobby": "N/A",
         "emoji": "❄️",
@@ -35,11 +35,25 @@
       "email": "q@11.com",
       "profile": {
         "followers": 0,
-        "flakes": 0,
+        "flakes": 15,
         "country": "N/A",
         "hobby": "N/A",
         "emoji": "❄️",
         "userSince": "2024-03-29"
+      }
+    },
+    {
+      "id": "7ae4e585-d5e5-4ac5-b77d-d23b957c7661",
+      "username": "username",
+      "password": "password",
+      "email": "testetet@gmail.com",
+      "profile": {
+        "followers": 0,
+        "flakes": 222,
+        "country": "N/A",
+        "hobby": "N/A",
+        "emoji": "❄️",
+        "userSince": "2024-03-30"
       }
     }
   ],
@@ -50,14 +64,46 @@
       "body": "jkashdkjashfkjasfh",
       "date": "3-30",
       "userID": "e158e107-80c7-418f-9598-27fb07b96f3c",
+      "flakes": 0
+    },
+    {
+      "id": "3ecd1aab-8",
+      "profileImage": "/images/default-user-image.png",
+      "body": "jdbwebfkjwehfjkehf",
+      "date": "3-30",
+      "userID": "7ae4e585-d5e5-4ac5-b77d-d23b957c7661",
       "flakes": 1
+    },
+    {
+      "id": "80a032d1-9",
+      "profileImage": "/images/default-user-image.png",
+      "body": "ejkbfjhwbefjkwhefk.jwehfwe",
+      "date": "3-30",
+      "userID": "7ae4e585-d5e5-4ac5-b77d-d23b957c7661",
+      "flakes": 1
+    },
+    {
+      "id": "2c7a2c5b-f",
+      "profileImage": "/images/default-user-image.png",
+      "body": "sdajkshashkjnfaf",
+      "date": "3-31",
+      "userID": "e158e107-80c7-418f-9598-27fb07b96f3c",
+      "flakes": 1
+    },
+    {
+      "id": "e9553f29-5",
+      "profileImage": "/images/default-user-image.png",
+      "body": "sabdahjsdjasd",
+      "date": "3-31",
+      "userID": "e158e107-80c7-418f-9598-27fb07b96f3c",
+      "flakes": 0
     }
   ],
   "dummies": [
     {
       "id": "d70b3756-0",
       "profileImage": "/images/default-user-image.png",
-      "body": "The only true wisdom is in knowing you know nothing.",
+      "body": "The only true wisdom is in knowing you know nothing. As we gaze into the cosmos, we realize the vastness of the unknown, echoing the profundity of our ignorance.",
       "date": "3-30",
       "username": "eloin",
       "flakes": 9
@@ -65,7 +111,7 @@
     {
       "id": "a1c8e46b-1",
       "profileImage": "/images/default-user-image.png",
-      "body": "Life is what happens when you're busy making other plans.",
+      "body": "Life is what happens when you're busy making other plans. In the grand dance of existence, our plans are but fleeting steps amidst the cosmic rhythm.",
       "date": "4-1",
       "username": "fredys",
       "flakes": 12
@@ -73,7 +119,7 @@
     {
       "id": "fcbfe91f-2",
       "profileImage": "/images/default-user-image.png",
-      "body": "In the middle of difficulty lies opportunity.",
+      "body": "In the middle of difficulty lies opportunity. Just as stars forge elements in the crucible of their cores, adversity births opportunities for growth and transformation.",
       "date": "4-2",
       "username": "might-mcknight",
       "flakes": 5
@@ -81,7 +127,7 @@
     {
       "id": "6bf3ff92-3",
       "profileImage": "/images/default-user-image.png",
-      "body": "You must be the change you wish to see in the world.",
+      "body": "You must be the change you wish to see in the world. Like celestial bodies shaping the fabric of space-time, our actions mold the reality we inhabit.",
       "date": "4-3",
       "username": "smalls-big",
       "flakes": 8
@@ -89,15 +135,15 @@
     {
       "id": "0ed53c9a-4",
       "profileImage": "/images/default-user-image.png",
-      "body": "The journey of a thousand miles begins with one step.",
+      "body": "The journey of a thousand miles begins with one step. In the cosmic voyage of existence, every step we take unravels the mysteries of the universe.",
       "date": "4-4",
       "username": "yaboy",
-      "flakes": 11
+      "flakes": 12
     },
     {
       "id": "c4b832bb-5",
       "profileImage": "/images/default-user-image.png",
-      "body": "Darkness cannot drive out darkness; only light can do that.",
+      "body": "Darkness cannot drive out darkness; only light can do that. In the vast expanse of the cosmos, light is the beacon that guides us through the darkest of voids.",
       "date": "4-5",
       "username": "thatneighbor",
       "flakes": 3
@@ -105,7 +151,7 @@
     {
       "id": "e9b8233c-6",
       "profileImage": "/images/default-user-image.png",
-      "body": "The only way to do great work is to love what you do.",
+      "body": "The only way to do great work is to love what you do. Just as celestial bodies effortlessly glide through space, passion propels us towards greatness.",
       "date": "4-6",
       "username": "reddotsi",
       "flakes": 14
@@ -113,7 +159,7 @@
     {
       "id": "e85c1e75-7",
       "profileImage": "/images/default-user-image.png",
-      "body": "Believe you can and you're halfway there.",
+      "body": "Believe you can and you're halfway there. In the cosmic tapestry of possibilities, belief stitches the fabric of reality, weaving dreams into existence.",
       "date": "4-7",
       "username": "nihyui",
       "flakes": 6
@@ -121,7 +167,7 @@
     {
       "id": "bf1b4c79-8",
       "profileImage": "/images/default-user-image.png",
-      "body": "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+      "body": "Success is not final, failure is not fatal: It is the courage to continue that counts. Like stars persevering through the night, courage fuels our journey through the unknown.",
       "date": "4-8",
       "username": "tryingtotree",
       "flakes": 4
@@ -129,7 +175,7 @@
     {
       "id": "4c00a38b-9",
       "profileImage": "/images/default-user-image.png",
-      "body": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+      "body": "The greatest glory in living lies not in never falling, but in rising every time we fall. Just as cosmic phenomena rise from the ashes of destruction, our resilience defines our true glory.",
       "date": "4-9",
       "username": "snoopdogg",
       "flakes": 15
@@ -137,31 +183,31 @@
     {
       "id": "4f4a286b-10",
       "profileImage": "/images/default-user-image.png",
-      "body": "It does not matter how slowly you go as long as you do not stop.",
+      "body": "It does not matter how slowly you go as long as you do not stop. In the celestial ballet of time, perseverance dances hand in hand with progress, regardless of pace.",
       "date": "4-10",
       "username": "dog",
-      "flakes": 2
+      "flakes": 3
     },
     {
       "id": "2d4d2927-11",
       "profileImage": "/images/default-user-image.png",
-      "body": "Life is 10% what happens to us and 90% how we react to it.",
+      "body": "Life is 10% what happens to us and 90% how we react to it. Like cosmic particles interacting in the vast expanse, our reactions shape the trajectory of our existence.",
       "date": "4-11",
       "username": "cat",
-      "flakes": 10
+      "flakes": 11
     },
     {
       "id": "db447a36-12",
       "profileImage": "/images/default-user-image.png",
-      "body": "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.",
+      "body": "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time. In the cosmic saga of perseverance, each attempt etches a chapter of triumph in the annals of time.",
       "date": "4-12",
       "username": "harry-jk",
-      "flakes": 8
+      "flakes": 9
     },
     {
       "id": "dca9e7ab-13",
       "profileImage": "/images/default-user-image.png",
-      "body": "The only limit to our realization of tomorrow will be our doubts of today.",
+      "body": "The only limit to our realization of tomorrow will be our doubts of today. Like cosmic voyagers charting unexplored realms, we navigate the unknown, fueled by the certainty of our aspirations.",
       "date": "4-13",
       "username": "DoubtlessDreamer",
       "flakes": 7
@@ -169,7 +215,7 @@
     {
       "id": "3b09cc71-14",
       "profileImage": "/images/default-user-image.png",
-      "body": "Everything you’ve ever wanted is on the other side of fear.",
+      "body": "Everything you’ve ever wanted is on the other side of fear. In the cosmic theater of dreams, fear is the veil that obscures the treasures awaiting our courageous pursuit.",
       "date": "4-14",
       "username": "FearlessExplorer",
       "flakes": 11
@@ -177,7 +223,7 @@
     {
       "id": "921f7171-15",
       "profileImage": "/images/default-user-image.png",
-      "body": "We may encounter many defeats but we must not be defeated.",
+      "body": "We may encounter many defeats but we must not be defeated. Like celestial warriors battling cosmic forces, resilience fortifies our spirit amidst the turbulence of existence.",
       "date": "4-15",
       "username": "IndomitableSpirit",
       "flakes": 3
@@ -185,7 +231,7 @@
     {
       "id": "8aeb60a8-16",
       "profileImage": "/images/default-user-image.png",
-      "body": "The only way to achieve the impossible is to believe it is possible.",
+      "body": "The only way to achieve the impossible is to believe it is possible. In the cosmic symphony of achievements, belief orchestrates the impossible into the realm of the attainable.",
       "date": "4-16",
       "username": "DreamsToReality",
       "flakes": 13
@@ -193,7 +239,7 @@
     {
       "id": "af6b58f2-17",
       "profileImage": "/images/default-user-image.png",
-      "body": "You are never too old to set another goal or to dream a new dream.",
+      "body": "You are never too old to set another goal or to dream a new dream. Like cosmic architects designing galaxies, age is but a brushstroke in the masterpiece of possibility.",
       "date": "4-17",
       "username": "EternalDreamer",
       "flakes": 6
@@ -201,23 +247,23 @@
     {
       "id": "04ff06da-18",
       "profileImage": "/images/default-user-image.png",
-      "body": "What you get by achieving your goals is not as important as what you become by achieving your goals.",
+      "body": "What you get by achieving your goals is not as important as what you become by achieving your goals. In the cosmic alchemy of self-transformation, achievements are but catalysts for the evolution of the soul.",
       "date": "4-18",
       "username": "GoalArchitect",
-      "flakes": 4
+      "flakes": 5
     },
     {
       "id": "e6eb7b39-19",
       "profileImage": "/images/default-user-image.png",
-      "body": "Strive not to be a success, but rather to be of value.",
+      "body": "Strive not to be a success, but rather to be of value. In the cosmic ledger of significance, value transcends success, enriching the fabric of existence with purposeful contributions.",
       "date": "4-19",
       "username": "ValueVisionary",
-      "flakes": 15
+      "flakes": 16
     },
     {
       "id": "b8c59a85-1",
       "profileImage": "/images/default-user-image.png",
-      "body": "The only true wisdom is in knowing you know nothing.",
+      "body": "The only true wisdom is in knowing you know nothing. As we navigate the vast expanse of the cosmos, humility becomes our guiding star amidst the darkness of ignorance.",
       "date": "3-30",
       "username": "WisdomSeeker",
       "flakes": 3
@@ -225,15 +271,15 @@
     {
       "id": "c9a77b73-2",
       "profileImage": "/images/default-user-image.png",
-      "body": "Life is what happens when you're busy making other plans.",
+      "body": "Life is what happens when you're busy making other plans. Amidst the cosmic dance of fate, our plans are but fleeting echoes in the vastness of existence.",
       "date": "3-31",
       "username": "PlanWeaver",
-      "flakes": 8
+      "flakes": 9
     },
     {
       "id": "c9a77b73-3",
       "profileImage": "/images/default-user-image.png",
-      "body": "Strive not to be a success, but rather to be of value.",
+      "body": "Strive not to be a success, but rather to be of value. Like cosmic artisans sculpting the essence of existence, value imbues our endeavors with timeless significance.",
       "date": "4-1",
       "username": "ValuePioneer",
       "flakes": 5
@@ -241,7 +287,7 @@
     {
       "id": "c9a77b73-4",
       "profileImage": "/images/default-user-image.png",
-      "body": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+      "body": "The greatest glory in living lies not in never falling, but in rising every time we fall. In the cosmic theater of resilience, every fall heralds the dawn of a triumphant ascent.",
       "date": "4-2",
       "username": "RisingGlory",
       "flakes": 11
@@ -249,7 +295,7 @@
     {
       "id": "c9a77b73-5",
       "profileImage": "/images/default-user-image.png",
-      "body": "The only way to do great work is to love what you do.",
+      "body": "The only way to do great work is to love what you do. Like cosmic artisans crafting galaxies, passion infuses our endeavors with the brilliance of creation.",
       "date": "4-3",
       "username": "PassionateWorker",
       "flakes": 2
@@ -257,23 +303,23 @@
     {
       "id": "c9a77b73-6",
       "profileImage": "/images/default-user-image.png",
-      "body": "If you can't explain it simply, you don't understand it well enough.",
+      "body": "If you can't explain it simply, you don't understand it well enough. In the cosmic symphony of comprehension, simplicity is the melody that resonates with the truths of the universe.",
       "date": "4-4",
       "username": "SimplicitySage",
-      "flakes": 9
+      "flakes": 10
     },
     {
       "id": "c9a77b73-7",
       "profileImage": "/images/default-user-image.png",
-      "body": "Your time is limited, so don't waste it living someone else's life.",
+      "body": "Your time is limited, so don't waste it living someone else's life. In the cosmic hourglass of existence, every grain of time is a precious jewel awaiting our mindful embrace.",
       "date": "4-5",
       "username": "TimeTreasurer",
-      "flakes": 14
+      "flakes": 15
     },
     {
       "id": "c9a77b73-8",
       "profileImage": "/images/default-user-image.png",
-      "body": "The two most important days in your life are the day you are born and the day you find out why.",
+      "body": "The two most important days in your life are the day you are born and the day you find out why. In the cosmic voyage of self-discovery, purpose illuminates the path amidst the darkness of uncertainty.",
       "date": "4-6",
       "username": "PurposePilgrim",
       "flakes": 10
@@ -281,7 +327,7 @@
     {
       "id": "c9a77b73-9",
       "profileImage": "/images/default-user-image.png",
-      "body": "Whatever you are, be a good one.",
+      "body": "Whatever you are, be a good one. Like cosmic harmonies resonating through the universe, goodness reverberates across the fabric of existence, enriching the soul of the cosmos.",
       "date": "4-7",
       "username": "ExcellenceEmbodiment",
       "flakes": 3
@@ -289,7 +335,7 @@
     {
       "id": "c9a77b73-10",
       "profileImage": "/images/default-user-image.png",
-      "body": "In the end, it's not the years in your life that count. It's the life in your years.",
+      "body": "In the end, it's not the years in your life that count. It's the life in your years. In the cosmic ledger of existence, every heartbeat echoes the rhythm of eternity, measuring the richness of our journey.",
       "date": "4-8",
       "username": "LifeEnthusiast",
       "flakes": 7
@@ -297,7 +343,7 @@
     {
       "id": "c9a77b73-11",
       "profileImage": "/images/default-user-image.png",
-      "body": "Life is really simple, but we insist on making it complicated.",
+      "body": "Life is really simple, but we insist on making it complicated. Amidst the cosmic symphony of simplicity, our minds weave intricate patterns of complexity, obscuring the elegance of existence.",
       "date": "4-9",
       "username": "SimplicitySeeker",
       "flakes": 13
@@ -305,7 +351,7 @@
     {
       "id": "c9a77b73-12",
       "profileImage": "/images/default-user-image.png",
-      "body": "The only limit to our realization of tomorrow will be our doubts of today.",
+      "body": "The only limit to our realization of tomorrow will be our doubts of today. Like cosmic voyagers charting unexplored realms, we navigate the unknown, fueled by the certainty of our aspirations.",
       "date": "4-10",
       "username": "FearlessFuturist",
       "flakes": 6
@@ -313,7 +359,7 @@
     {
       "id": "c9a77b73-13",
       "profileImage": "/images/default-user-image.png",
-      "body": "Every moment is a fresh beginning.",
+      "body": "Every moment is a fresh beginning. In the cosmic tapestry of time, each moment is a brushstroke painting the canvas of eternity with the hues of possibility.",
       "date": "4-11",
       "username": "EternalOptimist",
       "flakes": 1
@@ -321,7 +367,7 @@
     {
       "id": "c9a77b73-14",
       "profileImage": "/images/default-user-image.png",
-      "body": "Simplicity is the ultimate sophistication.",
+      "body": "Simplicity is the ultimate sophistication. In the cosmic dance of elegance, simplicity emerges as the prima ballerina, captivating the audience with grace and refinement.",
       "date": "4-12",
       "username": "SophisticatedSimplicity",
       "flakes": 12
@@ -329,7 +375,7 @@
     {
       "id": "c9a77b73-15",
       "profileImage": "/images/default-user-image.png",
-      "body": "Life is a journey, not a destination.",
+      "body": "Life is a journey, not a destination. In the cosmic odyssey of existence, every step is a sacred pilgrimage, and every experience a treasured gem along the path.",
       "date": "4-13",
       "username": "JourneyJunkie",
       "flakes": 5
@@ -337,7 +383,7 @@
     {
       "id": "c9a77b73-16",
       "profileImage": "/images/default-user-image.png",
-      "body": "The power of imagination makes us infinite.",
+      "body": "The power of imagination makes us infinite. In the cosmic symphony of creativity, imagination is the conductor orchestrating infinite possibilities across the expanse of existence.",
       "date": "4-14",
       "username": "ImaginationMaestro",
       "flakes": 4
@@ -345,7 +391,7 @@
     {
       "id": "c9a77b73-17",
       "profileImage": "/images/default-user-image.png",
-      "body": "Life isn't about finding yourself. Life is about creating yourself.",
+      "body": "Life isn't about finding yourself. Life is about creating yourself. In the cosmic forge of self-discovery, we are both the sculptor and the sculpture, shaping our destinies amidst the cosmic tapestry.",
       "date": "4-15",
       "username": "SelfCreationArtist",
       "flakes": 9
@@ -353,7 +399,7 @@
     {
       "id": "c9a77b73-18",
       "profileImage": "/images/default-user-image.png",
-      "body": "The only way to predict the future is to create it.",
+      "body": "The only way to predict the future is to create it. In the cosmic symphony of time, we are the composers, crafting melodies of destiny that resonate throughout the ages.",
       "date": "4-16",
       "username": "FutureArchitect",
       "flakes": 8
@@ -361,7 +407,7 @@
     {
       "id": "c9a77b73-19",
       "profileImage": "/images/default-user-image.png",
-      "body": "Life is short, and it's up to you to make it sweet.",
+      "body": "Life is short, and it's up to you to make it sweet. Amidst the cosmic confectionery of existence, every moment is a delectable treat waiting to be savored.",
       "date": "4-17",
       "username": "SweetLifeStylist",
       "flakes": 14
@@ -369,7 +415,7 @@
     {
       "id": "c9a77b73-20",
       "profileImage": "/images/default-user-image.png",
-      "body": "The best time to plant a tree was 20 years ago. The second best time is now.",
+      "body": "The best time to plant a tree was 20 years ago. The second best time is now. In the cosmic arboretum of existence, every sapling is a promise of tomorrow, rooted in the fertile soil of possibility.",
       "date": "4-18",
       "username": "SeedSower",
       "flakes": 3
@@ -377,7 +423,7 @@
     {
       "id": "c9a77b73-21",
       "profileImage": "/images/default-user-image.png",
-      "body": "You become what you believe.",
+      "body": "You become what you believe. In the cosmic crucible of identity, belief is the alchemist's stone, transforming dreams into realities and aspirations into destinies.",
       "date": "4-19",
       "username": "BeliefBuilder",
       "flakes": 11
@@ -385,7 +431,7 @@
     {
       "id": "c9a77b73-22",
       "profileImage": "/images/default-user-image.png",
-      "body": "Believe you can and you're halfway there.",
+      "body": "Believe you can and you're halfway there. In the cosmic journey of self-discovery, belief is the compass guiding us through the uncharted territories of potential.",
       "date": "4-20",
       "username": "BeliefBearer",
       "flakes": 10
@@ -393,7 +439,7 @@
     {
       "id": "c9a77b73-23",
       "profileImage": "/images/default-user-image.png",
-      "body": "I hated every minute of training, but I said, 'Don't quit. Suffer now and live the rest of your life as a champion.'",
+      "body": "I hated every minute of training, but I said, 'Don't quit. Suffer now and live the rest of your life as a champion.' In the cosmic arena of perseverance, adversity is the forge that tempers the spirit of champions, shaping destinies amidst the crucible of struggle.",
       "date": "4-21",
       "username": "ChampionSage",
       "flakes": 12
@@ -401,7 +447,7 @@
     {
       "id": "c9a77b73-24",
       "profileImage": "/images/default-user-image.png",
-      "body": "The future belongs to those who believe in the beauty of their dreams.",
+      "body": "The future belongs to those who believe in the beauty of their dreams. In the cosmic tapestry of destiny, dreams are the threads weaving the fabric of tomorrow's reality, spun from the ethereal loom of imagination.",
       "date": "4-22",
       "username": "DreamBeautyBeliever",
       "flakes": 9
@@ -409,7 +455,7 @@
     {
       "id": "c9a77b73-25",
       "profileImage": "/images/default-user-image.png",
-      "body": "The only thing worse than being blind is having sight but no vision.",
+      "body": "The only thing worse than being blind is having sight but no vision. In the cosmic panorama of perception, vision is the compass guiding us through the uncharted territories of existence, illuminating the path with the light of understanding.",
       "date": "4-23",
       "username": "VisionaryBlindness",
       "flakes": 5
@@ -417,7 +463,7 @@
     {
       "id": "c9a77b73-26",
       "profileImage": "/images/default-user-image.png",
-      "body": "We can easily forgive a child who is afraid of the dark; the real tragedy of life is when men are afraid of the light.",
+      "body": "We can easily forgive a child who is afraid of the dark; the real tragedy of life is when men are afraid of the light. In the cosmic tapestry of enlightenment, fear is the shadow that retreats in the presence of illumination, revealing the boundless vistas of truth.",
       "date": "4-24",
       "username": "LightAfraid",
       "flakes": 1
@@ -425,7 +471,7 @@
     {
       "id": "c9a77b73-27",
       "profileImage": "/images/default-user-image.png",
-      "body": "The only person you are destined to become is the person you decide to be.",
+      "body": "The only person you are destined to become is the person you decide to be. In the cosmic saga of self-realization, destiny is the blank canvas awaiting the strokes of our volition, painting the portrait of our becoming.",
       "date": "4-25",
       "username": "DestinyDecider",
       "flakes": 10
@@ -433,105 +479,25 @@
     {
       "id": "c9a77b73-28",
       "profileImage": "/images/default-user-image.png",
-      "body": "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+      "body": "Success is not final, failure is not fatal: It is the courage to continue that counts. In the cosmic crucible of endeavor, courage is the furnace that tempers the spirit, forging destinies amidst the flames of adversity.",
       "date": "4-26",
-      "username": "CourageousContinuer",
+      "username": "CourageConqueror",
       "flakes": 6
     },
     {
       "id": "c9a77b73-29",
       "profileImage": "/images/default-user-image.png",
-      "body": "It does not matter how slowly you go as long as you do not stop.",
+      "body": "The only way to achieve the impossible is to believe it is possible. In the cosmic symphony of potentiality, belief is the conductor guiding us through the harmonic resonance of existence, orchestrating miracles amidst the cacophony of doubt.",
       "date": "4-27",
-      "username": "SlowlySteady",
-      "flakes": 2
+      "username": "ImpossibleBeliever",
+      "flakes": 3
     },
     {
       "id": "c9a77b73-30",
       "profileImage": "/images/default-user-image.png",
-      "body": "You miss 100% of the shots you don't take.",
+      "body": "The two most important days in your life are the day you are born and the day you find out why. In the cosmic odyssey of self-discovery, purpose is the lodestar guiding us through the uncharted seas of existence, illuminating the path with the radiance of meaning.",
       "date": "4-28",
-      "username": "ShotTaker",
-      "flakes": 14
-    },
-    {
-      "id": "c9a77b73-31",
-      "profileImage": "/images/default-user-image.png",
-      "body": "I have not failed. I've just found 10,000 ways that won't work.",
-      "date": "4-29",
-      "username": "PerseverancePioneer",
-      "flakes": 8
-    },
-    {
-      "id": "c9a77b73-32",
-      "profileImage": "/images/default-user-image.png",
-      "body": "Life is what happens when you're busy making other plans.",
-      "date": "4-30",
-      "username": "PlanMaker",
-      "flakes": 12
-    },
-    {
-      "id": "c9a77b73-33",
-      "profileImage": "/images/default-user-image.png",
-      "body": "When you reach the end of your rope, tie a knot in it and hang on.",
-      "date": "5-1",
-      "username": "KnotHanger",
-      "flakes": 4
-    },
-    {
-      "id": "c9a77b73-34",
-      "profileImage": "/images/default-user-image.png",
-      "body": "You can't blame gravity for falling in love.",
-      "date": "5-2",
-      "username": "GravityLover",
-      "flakes": 11
-    },
-    {
-      "id": "c9a77b73-35",
-      "profileImage": "/images/default-user-image.png",
-      "body": "Nothing will work unless you do.",
-      "date": "5-3",
-      "username": "EffortInvestor",
-      "flakes": 7
-    },
-    {
-      "id": "c9a77b73-36",
-      "profileImage": "/images/default-user-image.png",
-      "body": "Life is 10% what happens to us and 90% how we react to it.",
-      "date": "5-4",
-      "username": "ReactionMaster",
-      "flakes": 3
-    },
-    {
-      "id": "c9a77b73-37",
-      "profileImage": "/images/default-user-image.png",
-      "body": "The secret of getting ahead is getting started.",
-      "date": "5-5",
-      "username": "StartSecret",
-      "flakes": 9
-    },
-    {
-      "id": "c9a77b73-38",
-      "profileImage": "/images/default-user-image.png",
-      "body": "We may encounter many defeats but we must not be defeated.",
-      "date": "5-6",
-      "username": "DefeatDefier",
-      "flakes": 14
-    },
-    {
-      "id": "c9a77b73-39",
-      "profileImage": "/images/default-user-image.png",
-      "body": "Life is short, and it is up to you to make it sweet.",
-      "date": "5-7",
-      "username": "SweetLifeStylist",
-      "flakes": 5
-    },
-    {
-      "id": "c9a77b73-40",
-      "profileImage": "/images/default-user-image.png",
-      "body": "The only limit to our realization of tomorrow is our doubts of today.",
-      "date": "5-8",
-      "username": "DoubtOvercomer",
+      "username": "PurposePioneer",
       "flakes": 8
     }
   ]

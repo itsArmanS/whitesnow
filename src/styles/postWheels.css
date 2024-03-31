@@ -45,7 +45,7 @@
   border-right: 1px solid gray;
   box-sizing: border-box;
   padding: 3rem;
-  animation: loopUp 300s linear infinite;
+  animation: loopUp 500s linear infinite;
 }
 
 .middle-wheel {
