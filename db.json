@@ -12,7 +12,9 @@
         "country": "N/A",
         "hobby": "N/A",
         "emoji": "❄️",
-        "userSince": "2024-03-28"
+        "userSince": "2024-03-28",
+        "followerID": "e158e107-80c7-418f-9598-27fb07b96f3c",
+        "followerUsername": "q"
       }
     },
     {
@@ -37,16 +39,7 @@
       "email": "q@11.com",
       "profile": {
         "followers": [],
-        "following": [
-          {
-            "followingID": "233a3563-ed31-4518-aa4e-475312575b11",
-            "followingUsername": "1"
-          },
-          {
-            "followingID": "e158e107-80c7-418f-9598-27fb07b96f3c",
-            "followingUsername": "q"
-          }
-        ],
+        "following": [],
         "flakes": 15,
         "country": "N/A",
         "hobby": "N/A",

@@ -38,7 +38,7 @@ function GetTopUsers() {
             </div>
           </div>
           <div className="follow-button-wrapper">
-            <FollowButton topUser={user} />
+            <FollowButton user={user} />
           </div>
         </div >
 
