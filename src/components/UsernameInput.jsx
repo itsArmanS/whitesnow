@@ -1,18 +1,28 @@
 import React from "react";
 import "../styles/login.css"
 
-function UsernameInput({ handleUsernameChange, username }) {
+function UsernameInput({ register, errors }) {
+
   return (
-    <div >
+    <>
       <label htmlFor="usernameInput">Username</label>
       <input type="text"
         id="usernameInput"
-        onChange={handleUsernameChange}
-        value={username}
-        placeholder="username"
-        required
+        {...register("username", {
+          required: "Username is required!",
+          minLength: {
+            value: 3,
+            message: "Username must be at least 3 characters long."
+          },
+          maxLength: {
+            value: 20,
+            message: "Username cannot exceed 20 characters."
+          }
+        })}
       />
-    </div>
+      {errors.username && <p className="error">{errors.username.message}</p>}
+    </>
   )
 }
 export default UsernameInput
+

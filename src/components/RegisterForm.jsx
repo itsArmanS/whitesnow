@@ -4,6 +4,8 @@ import UsernameInput from "./UsernameInput";
 import EmailInput from "./EmailInput";
 import PasswordInput from "./PasswordInput";
 import RegisterButton from "./RegisterButton";
+import { useForm } from 'react-hook-form';
+import { DevTool } from "@hookform/devtools";
 import { v4 as uuid } from 'uuid';
 
 function RegisterForm({ getErrorMessage }) {
@@ -11,15 +13,8 @@ function RegisterForm({ getErrorMessage }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-  const handleUsernameChange = (e) => {
-    setUsername(e.target.value);
-  };
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
+  const { register, handleSubmit, control, formState: { errors }, watch } = useForm();
+  const watchFields = watch([username, password, email])
 
   async function checkExistingUsername() {
     try {
@@ -75,19 +70,28 @@ function RegisterForm({ getErrorMessage }) {
 
   }
 
-  const preventDefault = (e) => {
-    e.preventDefault()
+  const onSubmit = async (data) => {
+    setUsername(data.username);
+    setPassword(data.password);
+    setEmail(data.email)
+    if (username && password && email) {
+      await checkExistingUsername();
+      await handleUserRegister();
+      console.log("Form submitted", data)
+    }
+
   }
 
-
-
   return (
-    <form className="register-form" action="" onSubmit={preventDefault}>
-      <EmailInput handleEmailChange={handleEmailChange} email={email} />
-      <UsernameInput handleUsernameChange={handleUsernameChange} username={username} />
-      <PasswordInput handlePasswordChange={handlePasswordChange} password={password} />
-      <RegisterButton checkExistingUsername={checkExistingUsername} handleUserRegister={handleUserRegister} />
-    </form>
+    <>
+      <form className="register-form" action="" onSubmit={handleSubmit(onSubmit)} noValidate>
+        <EmailInput register={register} errors={errors} />
+        <UsernameInput register={register} errors={errors} />
+        <PasswordInput register={register} errors={errors} />
+        <RegisterButton checkExistingUsername={checkExistingUsername} handleUserRegister={handleUserRegister} />
+      </form>
+      <DevTool control={control} />
+    </>
   )
 }
 

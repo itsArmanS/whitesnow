@@ -1,18 +1,29 @@
 import React from "react";
 import "../styles/login.css"
 
-function PasswordInput({ handlePasswordChange, password }) {
+function PasswordInput({ register, errors }) {
+
   return (
-    <div>
+    <>
       <label htmlFor="passwordInput">Password</label>
       <input type="password"
         id="passwordInput"
-        onChange={handlePasswordChange}
-        value={password}
-        placeholder="password"
-        required
+        {...register("password", {
+          required: "Enter a valid password!",
+          message: "Enter a valid password",
+          minLength: {
+            value: 8,
+            message: "Password must be at least 8 characters long."
+          },
+          maxLength: {
+            value: 20,
+            message: "Password cannot exceed 20 characters."
+          }
+        })}
+
       />
-    </div>
+      {errors.password && <p className="error">{errors.password.message}</p>}
+    </ >
   )
 }
 export default PasswordInput

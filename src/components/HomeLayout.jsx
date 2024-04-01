@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/homeLayout.css";
 import SiteToolbar from "./SiteToolbar";
@@ -6,7 +6,7 @@ import AuthContext from "./AuthContext";
 import PostWheels from "./PostWheels";
 
 function HomeLayout() {
-  const { auth, setAuth } = useContext(AuthContext);
+  const { auth } = useContext(AuthContext);
   const navigate = useNavigate();
 
   return (

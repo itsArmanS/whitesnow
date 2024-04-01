@@ -1,18 +1,22 @@
 import React from "react";
 import "../styles/login.css"
 
-function EmailInput({ handleEmailChange, email }) {
+function EmailInput({ register, errors }) {
+
   return (
-    <div >
+    < >
       <label htmlFor="emailInput">Email</label>
       <input type="email"
         id="emailInput"
-        onChange={handleEmailChange}
-        value={email}
-        placeholder="email"
-        required
+        {...register("email", {
+          pattern: {
+            value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+            message: "Provide a valid email!!"
+          }
+        })}
       />
-    </div>
+      <p>{errors.email?.message}</p>
+    </>
   )
 }
 export default EmailInput

@@ -7,7 +7,7 @@ import RefreshContext from "./RefreshContext";
 function NewPostForm({ toggleNewPostDialog }) {
   const [postBody, setPostBody] = useState("");
   const { currentUserID } = useContext(AuthContext);
-  const { refresh, setRefresh } = useContext(RefreshContext);
+  const { setRefresh } = useContext(RefreshContext);
 
   function generatePostID() {
     const id = uuid();
