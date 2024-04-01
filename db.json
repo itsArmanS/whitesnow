@@ -6,7 +6,8 @@
       "password": "a",
       "email": "a@a.com",
       "profile": {
-        "followers": 5,
+        "followers": [],
+        "following": [],
         "flakes": 8238,
         "country": "N/A",
         "hobby": "N/A",
@@ -20,7 +21,8 @@
       "password": "1",
       "email": "test@test.com",
       "profile": {
-        "followers": 0,
+        "followers": [],
+        "following": [],
         "flakes": 443,
         "country": "N/A",
         "hobby": "N/A",
@@ -34,7 +36,17 @@
       "password": "q",
       "email": "q@11.com",
       "profile": {
-        "followers": 0,
+        "followers": [],
+        "following": [
+          {
+            "followingID": "233a3563-ed31-4518-aa4e-475312575b11",
+            "followingUsername": "1"
+          },
+          {
+            "followingID": "e158e107-80c7-418f-9598-27fb07b96f3c",
+            "followingUsername": "q"
+          }
+        ],
         "flakes": 15,
         "country": "N/A",
         "hobby": "N/A",
@@ -48,7 +60,8 @@
       "password": "password",
       "email": "testetet@gmail.com",
       "profile": {
-        "followers": 0,
+        "followers": [],
+        "following": [],
         "flakes": 222,
         "country": "N/A",
         "hobby": "N/A",

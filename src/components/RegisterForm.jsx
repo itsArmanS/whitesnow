@@ -43,7 +43,8 @@ function RegisterForm({ getErrorMessage }) {
         password: password,
         email: email,
         profile: {
-          followers: 0,
+          followers: [],
+          following: [],
           flakes: 0,
           country: "N/A",
           hobby: "N/A",

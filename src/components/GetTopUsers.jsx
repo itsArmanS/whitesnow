@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/profileTopUsers.css"
 import FollowButton from "./FollowButton";
+import { v4 as uuid } from "uuid";
 
 function GetTopUsers() {
   const [users, setUsers] = useState([])
@@ -10,7 +11,7 @@ function GetTopUsers() {
       const response = await fetch("http://localhost:3005/users");
       const returnedData = await response.json();
 
-      const sortedUsers = returnedData.sort((a, b) => b.flakes - a.flakes);
+      const sortedUsers = returnedData.sort((a, b) => b.profile.flakes - a.profile.flakes);
 
       const topUsers = sortedUsers.slice(0, 10)
       setUsers(topUsers)
@@ -19,15 +20,11 @@ function GetTopUsers() {
     userData();
   }, [])
 
-  if (users) {
-    console.log(users, "top10")
-  }
-
   return (
     <>
       {users.map((user, index) => (
 
-        <div className="top-user-scorecard">
+        <div className="top-user-scorecard" key={uuid()}>
           <div className="leaderboard-number">
             <span>#{index + 1}</span>
           </div>
@@ -41,11 +38,12 @@ function GetTopUsers() {
             </div>
           </div>
           <div className="follow-button-wrapper">
-            <FollowButton />
+            <FollowButton topUser={user} />
           </div>
-        </div>
+        </div >
 
-      ))}
+      ))
+      }
     </>
   )
 }
