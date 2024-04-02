@@ -7,6 +7,10 @@ import PasswordInput from "./PasswordInput";
 import useGetUserID from "../customHooks/useGetUserID"
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
+import LoginPasswordInput from "./LoginPassword";
+import LoginUsernameInput from "./LoginUsername";
+import { useNavigate } from "react-router-dom";
+
 
 function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
   const [data, setData] = useState(null);
@@ -16,8 +20,10 @@ function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
   const { auth, setAuth } = useContext(AuthContext);
   const { currentUser, setCurrentUser } = useContext(AuthContext);
   const { currentUserID, setCurrentUserID } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-  const { register, handleSubmit, control, formState: { errors } } = useForm();
+
+  const { register, handleSubmit, control, formState: { errors }, watch, setValue } = useForm();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,6 +37,11 @@ function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
     }
     fetchData();
   }, [auth]);
+
+  useEffect(() => {
+    console.log(username, "username")
+    console.log(password, "password")
+  }, [username, password])
 
   sendLoginDataToParent(username, password);
 
@@ -47,6 +58,18 @@ function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
       console.log("null")
     }
   }
+
+  const onChangeUsername = (e) => {
+    const value = e.target.value;
+    setValue("username", value);
+    setUsername(value);
+  }
+
+  const onChangePassword = (e) => {
+    const value = e.target.value;
+    setValue("password", value);
+    setPassword(value);
+  }
   const userID = useGetUserID(username);
 
   const onSubmit = () => {
@@ -54,14 +77,20 @@ function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
     if (loginSuccess) {
       setCurrentUser(username);
       setCurrentUserID(userID);
+      console.log(currentUser, currentUserID)
+      navigate("/home");
     }
   }
 
   return (
     <>
-      <form className="login-form" action="" onSubmit={handleSubmit(onSubmit)}>
-        <UsernameInput register={register} errors={errors} />
-        <PasswordInput register={register} errors={errors} />
+      <form className="login-form" action="" onSubmit={handleSubmit(onSubmit)} >
+        <div>
+          <LoginUsernameInput register={register} errors={errors} watch={watch} onChangeUsername={onChangeUsername} />
+        </div>
+        <div>
+          <LoginPasswordInput register={register} errors={errors} onChangePassword={onChangePassword} />
+        </div>
         <LoginButton currentUser={currentUser} currentUserID={currentUserID} />
       </form>
       <DevTool control={control} />

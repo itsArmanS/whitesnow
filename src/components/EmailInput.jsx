@@ -9,6 +9,7 @@ function EmailInput({ register, errors }) {
       <input type="email"
         id="emailInput"
         {...register("email", {
+          required: "Email is required!",
           pattern: {
             value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
             message: "Provide a valid email!!"
@@ -16,6 +17,7 @@ function EmailInput({ register, errors }) {
         })}
       />
       <p>{errors.email?.message}</p>
+
     </>
   )
 }

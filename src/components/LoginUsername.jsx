@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "../styles/login.css"
 
-function UsernameInput({ register, errors }) {
+function LoginUsernameInput({ register, errors, onChangeUsername }) {
   register("username");
   return (
     <>
@@ -10,20 +10,13 @@ function UsernameInput({ register, errors }) {
         id="usernameInput"
         {...register("username", {
           required: "Username is required!",
-          minLength: {
-            value: 3,
-            message: "Username must be at least 3 characters long."
-          },
-          maxLength: {
-            value: 20,
-            message: "Username cannot exceed 20 characters."
-          }
         })}
+        onChange={onChangeUsername}
       />
       {errors.username && <p className="error">{errors.username.message}</p>}
 
     </>
   )
 }
-export default UsernameInput
+export default LoginUsernameInput
 

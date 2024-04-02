@@ -98,9 +98,15 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   height: auto;
   padding-bottom: 2rem;
+}
+
+.login-form>div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .register-form {
@@ -189,6 +195,12 @@
 
 .back-to-login-button:hover {
   box-shadow: 2px 2px 2px 2px black;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+
 }
 
 /* <---------------------------Register Box---------------------------> */

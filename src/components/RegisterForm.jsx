@@ -8,13 +8,14 @@ import { useForm } from 'react-hook-form';
 import { DevTool } from "@hookform/devtools";
 import { v4 as uuid } from 'uuid';
 
-function RegisterForm({ getErrorMessage }) {
+function RegisterForm() {
+  const backToLogin = document.querySelector(".back-to-login-button")
+
   const [username, setUsername] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const { register, handleSubmit, control, formState: { errors }, watch } = useForm();
-  const watchFields = watch([username, password, email])
 
   async function checkExistingUsername() {
     try {
@@ -61,11 +62,6 @@ function RegisterForm({ getErrorMessage }) {
       } catch (error) {
         console.error("Error registering user:", error);
       }
-    } else {
-      getErrorMessage("User already exists");
-      setTimeout(() => {
-        getErrorMessage("")
-      }, 2000)
     }
 
   }
@@ -77,6 +73,7 @@ function RegisterForm({ getErrorMessage }) {
     if (username && password && email) {
       await checkExistingUsername();
       await handleUserRegister();
+      backToLogin.click();
       console.log("Form submitted", data)
     }
 
@@ -85,9 +82,9 @@ function RegisterForm({ getErrorMessage }) {
   return (
     <>
       <form className="register-form" action="" onSubmit={handleSubmit(onSubmit)} noValidate>
-        <EmailInput register={register} errors={errors} />
+        <EmailInput register={register} errors={errors} watch={watch} />
         <UsernameInput register={register} errors={errors} />
-        <PasswordInput register={register} errors={errors} />
+        <PasswordInput register={register} errors={errors} watch={watch} />
         <RegisterButton checkExistingUsername={checkExistingUsername} handleUserRegister={handleUserRegister} />
       </form>
       <DevTool control={control} />

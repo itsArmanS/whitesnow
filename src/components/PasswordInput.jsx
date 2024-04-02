@@ -20,7 +20,6 @@ function PasswordInput({ register, errors }) {
             message: "Password cannot exceed 20 characters."
           }
         })}
-
       />
       {errors.password && <p className="error">{errors.password.message}</p>}
     </ >
