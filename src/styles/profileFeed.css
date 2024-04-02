@@ -45,7 +45,7 @@
   transition: box-shadow 0.5s ease-in;
 }
 
-.profile-header-buttons button:hover {
+.search-button .profile-header-buttons button:hover {
   box-shadow: 2.5px 2.5px black;
 }
 

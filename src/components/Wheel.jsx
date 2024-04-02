@@ -36,7 +36,7 @@ function Wheel() {
                       <img src={post.profileImage} alt="" />
                     </div>
                     <div className="user-username">
-                      {`@${post.username} • `}
+                      {` • @${post.username} • `}
                     </div>
                     <div className="post-date">
                       {post.date}

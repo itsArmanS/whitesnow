@@ -1,22 +1,30 @@
 .site-toolbar {
   position: fixed;
   width: 100%;
-  height: rem;
+  max-height: 5rem;
   box-sizing: border-box;
   padding: 1rem;
   background-color: black;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 1rem;
   z-index: 3;
 }
 
-.site-toolbar>div {
+.main-toolbar-buttons {
   display: flex;
+  flex: 0.5;
+  justify-content: flex-start;
 }
 
-.site-toolbar button {
+.home-search-wrapper {
+  display: flex;
+  flex: 2;
+}
+
+.home-button-wrapper,
+.profile-button,
+.logout-button {
   width: 13rem;
   height: 3rem;
   border-radius: 5rem;

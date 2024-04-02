@@ -1,21 +1,20 @@
 import React from "react";
 import "../styles/siteToolbar.css"
-import CreatePostButton from "./CreatePostButton";
 import ProfileButton from "./ProfileButton";
 import HomeButton from "./HomeButton";
 import LogoutButton from "./LogoutButton";
-import SearchButton from "./SearchButton";
+import SearchInput from "./SearchInput";
 
 function SiteToolbar() {
   return (
     <>
       <div className="site-toolbar">
-        <div>
+        <div className="main-toolbar-buttons">
           <HomeButton />
           <ProfileButton />
-          <SearchButton />
         </div>
-        <div>
+        <SearchInput />
+        <div className="logout-toolbar-buttons">
           <LogoutButton />
         </div>
       </div>
