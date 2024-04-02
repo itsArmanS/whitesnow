@@ -4,6 +4,7 @@ import "../styles/profileLayout.css"
 import "../styles/profileFeed.css"
 import RefreshContext from "./RefreshContext";
 import AuthContext from "./AuthContext";
+import CreatePostButton from "./CreatePostButton";
 
 function UserProfilePostsLayout() {
   const [posts, setPosts] = useState([])
@@ -17,22 +18,25 @@ function UserProfilePostsLayout() {
 
       const userPosts = returnedData.filter(posts => posts.userID === currentUserID);
       setPosts(userPosts);
-
     }
     allPosts();
-
 
   }, [refresh])
 
   return (
     <div className="profile-feed">
       <div className="profile-header-buttons">
-        <button>FLAKES</button>
-        <button>STARS</button>
-        <button>FOLLOWERS</button>
+        <div>
+          <button>FLAKES</button>
+          <button>STARS</button>
+          <button>FOLLOWERS</button>
+        </div>
+        <div>
+          <CreatePostButton />
+        </div>
       </div>
       <div className="profile-posts">
-        <PostList posts={posts} />
+        <PostList posts={posts} setRefresh={setRefresh} />
       </div>
     </div>
   )

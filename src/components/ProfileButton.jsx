@@ -3,7 +3,7 @@ import AuthContext from "./AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function ProfileButton() {
-  const { auth, setAuth } = useContext(AuthContext);
+  const { auth } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleProfileButtonClick = () => {

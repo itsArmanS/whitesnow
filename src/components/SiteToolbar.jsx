@@ -4,15 +4,20 @@ import CreatePostButton from "./CreatePostButton";
 import ProfileButton from "./ProfileButton";
 import HomeButton from "./HomeButton";
 import LogoutButton from "./LogoutButton";
+import SearchButton from "./SearchButton";
 
-function SiteToolbar({ refreshPosts }) {
+function SiteToolbar() {
   return (
     <>
       <div className="site-toolbar">
-        <HomeButton />
-        <CreatePostButton refreshPosts={refreshPosts} />
-        <ProfileButton />
-        <LogoutButton />
+        <div>
+          <HomeButton />
+          <ProfileButton />
+          <SearchButton />
+        </div>
+        <div>
+          <LogoutButton />
+        </div>
       </div>
     </>
   )

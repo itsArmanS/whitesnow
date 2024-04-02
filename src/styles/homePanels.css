@@ -11,8 +11,6 @@
   padding: 2rem;
 }
 
-
-
 .new-post-form {
   flex: 1;
   display: flex;
@@ -40,8 +38,6 @@
   box-sizing: border-box;
   padding: 0.5rem;
 }
-
-
 
 .new-post-dialog {
   position: absolute;

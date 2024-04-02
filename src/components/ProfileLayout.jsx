@@ -11,7 +11,7 @@ function ProfileLayout() {
       <div className="profile-layout">
         <SiteToolbar />
         <div className="profile-banner">
-          {/* <img src="/images/banner.jpg" alt="banner" /> */}
+
         </div>
         <UserProfile />
       </div>

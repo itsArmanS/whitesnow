@@ -44,7 +44,6 @@ function SnowflakeButton({ postID }) {
     setSnowflakeClicked(true);
     setSnowflakeCount(prevCount => prevCount += 1)
     updateCurrentPost(updatedCount);
-
   }
 
   const handleSnowflakeUnclick = () => {

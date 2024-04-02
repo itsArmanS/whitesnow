@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "../styles/siteToolbar.css"
 import AuthContext from "./AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -9,9 +9,7 @@ function LogoutButton() {
 
   const logoutClick = () => {
     setAuth(false);
-    if (!auth) {
-      navigate("/");
-    }
+    navigate("/login")
   }
 
   return (

@@ -1,13 +1,10 @@
-import React, { useEffect, useContext } from "react";
+import React from "react";
 import "../styles/login.css";
 
-function LoginButton({ currentUser, currentUserID }) {
-  const handle = () => {
-    console.log(currentUser, currentUserID)
-  }
+function LoginButton() {
 
   return (
-    <button className="login-button" onClick={handle}>LOGIN</button>
+    <button className="login-button">LOGIN</button>
   )
 }
 

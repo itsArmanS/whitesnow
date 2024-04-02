@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "../styles/homeLayout.css"
+import "../styles/profileFeed.css"
 import NewPostForm from "./NewPostForm";
 
-function CreatePostButton({ refreshPosts }) {
+function CreatePostButton() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleNewPostDialog = () => {
@@ -11,10 +11,10 @@ function CreatePostButton({ refreshPosts }) {
 
   return (
     <>
-      <button className="open-create-post-dialog" onClick={toggleNewPostDialog}>CREATE FLAKE +</button>
+      <button className="open-create-post-dialog" onClick={toggleNewPostDialog}>NEW FLAKE+</button>
       {isOpen && (
         <dialog className="new-post-dialog" open>
-          <NewPostForm toggleNewPostDialog={toggleNewPostDialog} refreshPosts={refreshPosts} />
+          <NewPostForm toggleNewPostDialog={toggleNewPostDialog} />
         </dialog>
       )}
     </>

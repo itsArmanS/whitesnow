@@ -6,8 +6,14 @@
   padding: 1rem;
   background-color: black;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 1rem;
   z-index: 3;
+}
+
+.site-toolbar>div {
+  display: flex;
 }
 
 .site-toolbar button {

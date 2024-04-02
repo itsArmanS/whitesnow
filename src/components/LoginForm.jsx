@@ -12,11 +12,11 @@ import LoginUsernameInput from "./LoginUsername";
 import { useNavigate } from "react-router-dom";
 
 
-function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
+function LoginForm({ getErrorMessage }) {
   const [data, setData] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [loginSuccess, setLoginSuccess] = useState(false);
+  const [loginSuccessful, setLoginSuccesful] = useState(false);
   const { auth, setAuth } = useContext(AuthContext);
   const { currentUser, setCurrentUser } = useContext(AuthContext);
   const { currentUserID, setCurrentUserID } = useContext(AuthContext);
@@ -38,21 +38,15 @@ function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
     fetchData();
   }, [auth]);
 
-  useEffect(() => {
-    console.log(username, "username")
-    console.log(password, "password")
-  }, [username, password])
-
-  sendLoginDataToParent(username, password);
 
   const handleLogin = async () => {
     if (data !== null) {
       const foundUser = data.find(item => item.username === username && item.password === password);
       if (foundUser) {
         setAuth(true);
-        setLoginSuccess(true);
+        return true;
       } else {
-        setLoginSuccess(false);
+        return false;
       }
     } else {
       console.log("null")
@@ -73,14 +67,24 @@ function LoginForm({ sendLoginDataToParent, getErrorMessage }) {
   const userID = useGetUserID(username);
 
   const onSubmit = () => {
-    const loginSuccess = handleLogin();
-    if (loginSuccess) {
-      setCurrentUser(username);
-      setCurrentUserID(userID);
-      console.log(currentUser, currentUserID)
-      navigate("/home");
-    }
+    setCurrentUser(username);
+    setCurrentUserID(userID);
   }
+
+
+  useEffect(() => {
+    const loginSuccessful = handleLogin()
+    if (auth) {
+      if (loginSuccessful && currentUser && currentUserID) {
+        navigate("/home");
+      } else {
+        alert("test")
+      }
+    } else {
+      navigate("/login");
+    }
+  }, [currentUser, currentUserID, navigate, auth]);
+
 
   return (
     <>

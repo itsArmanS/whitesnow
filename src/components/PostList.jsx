@@ -4,8 +4,9 @@ import "../styles/profileFeed.css"
 import SnowflakeButton from "./SnowflakeButton";
 import { useContext } from "react";
 import AuthContext from "./AuthContext";
+import DeletePostButton from "./DeletePostButton";
 
-function PostList({ posts }) {
+function PostList({ posts, setRefresh }) {
   const { currentUser } = useContext(AuthContext);
 
   return (
@@ -14,14 +15,19 @@ function PostList({ posts }) {
         <div className="post-body" key={post.id}>
           <div className="post-user-data">
             <div className="post-user">
-              <div className="profile-image">
-                <img src={post.profileImage} alt="" />
+              <div>
+                <div className="profile-image">
+                  <img src={post.profileImage} alt="" />
+                </div>
+                <div className="user-username">
+                  {`• @${currentUser} • `}
+                </div>
+                <div className="post-date">
+                  {post.date}
+                </div>
               </div>
-              <div className="user-username">
-                {`@${currentUser} • `}
-              </div>
-              <div className="post-date">
-                {post.date}
+              <div>
+                <DeletePostButton postID={post.id} setRefresh={setRefresh} />
               </div>
             </div>
             <div className="post-text">

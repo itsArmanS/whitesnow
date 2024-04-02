@@ -12,9 +12,7 @@
         "country": "N/A",
         "hobby": "N/A",
         "emoji": "❄️",
-        "userSince": "2024-03-28",
-        "followerID": "e158e107-80c7-418f-9598-27fb07b96f3c",
-        "followerUsername": "q"
+        "userSince": "2024-03-28"
       }
     },
     {
@@ -65,14 +63,6 @@
   ],
   "posts": [
     {
-      "id": "1a89fbcb-3",
-      "profileImage": "/images/default-user-image.png",
-      "body": "jkashdkjashfkjasfh",
-      "date": "3-30",
-      "userID": "e158e107-80c7-418f-9598-27fb07b96f3c",
-      "flakes": 1
-    },
-    {
       "id": "3ecd1aab-8",
       "profileImage": "/images/default-user-image.png",
       "body": "jdbwebfkjwehfjkehf",
@@ -86,22 +76,6 @@
       "body": "ejkbfjhwbefjkwhefk.jwehfwe",
       "date": "3-30",
       "userID": "7ae4e585-d5e5-4ac5-b77d-d23b957c7661",
-      "flakes": 1
-    },
-    {
-      "id": "2c7a2c5b-f",
-      "profileImage": "/images/default-user-image.png",
-      "body": "sdajkshashkjnfaf",
-      "date": "3-31",
-      "userID": "e158e107-80c7-418f-9598-27fb07b96f3c",
-      "flakes": 2
-    },
-    {
-      "id": "e9553f29-5",
-      "profileImage": "/images/default-user-image.png",
-      "body": "sabdahjsdjasd",
-      "date": "3-31",
-      "userID": "e158e107-80c7-418f-9598-27fb07b96f3c",
       "flakes": 1
     }
   ],

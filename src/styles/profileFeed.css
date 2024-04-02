@@ -10,7 +10,7 @@
 
 .profile-header-buttons {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
   color: white;
@@ -26,8 +26,14 @@
   border-bottom: 1.5px solid gray;
 }
 
+.profile-header-buttons div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .profile-header-buttons button {
-  width: 6rem;
+  width: 6.5rem;
   height: 2.5rem;
   background-color: transparent;
   border: none;
@@ -94,11 +100,18 @@
 .post-user {
   display: flex;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   gap: 0.3rem;
   text-align: center;
   border-radius: 1rem;
+}
+
+.post-user>div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .post-user img,
@@ -140,4 +153,13 @@
   border: none;
   background-color: transparent;
   background-image: url("/public/images/snowflake-vote-white.svg");
+}
+
+.delete-post-button {
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: none;
+  background-image: url("/public/images/deletePost.svg");
+  cursor: pointer;
 }
