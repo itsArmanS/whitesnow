@@ -14,7 +14,7 @@ function SiteToolbar({ page }) {
           <HomeButton />
           <ProfileButton />
         </div>
-        {currentPage === "home" ? <SearchInput page={currentPage} /> : <h1 className="search-page-header">SEARCH</h1>}
+        {currentPage === "home" ? <SearchInput page={currentPage} /> : <h1 className="search-page-space"></h1>}
         <div className="logout-toolbar-buttons">
           <LogoutButton />
         </div>

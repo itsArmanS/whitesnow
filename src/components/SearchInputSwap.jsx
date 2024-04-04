@@ -37,7 +37,7 @@ function SearchInputSwap({ page, searchedTerm, searchedTermTransfer, currentSear
             value={searchedTerm}
             onChange={searchPageSearch}
           />
-          {showResults && <SearchPageResults posts={posts} dummyPosts={dummyPosts} />}
+          {showResults && <SearchPageResults searchedTerm={searchedTerm} posts={posts} dummyPosts={dummyPosts} />}
         </div>
       }
     </div>
