@@ -22,7 +22,7 @@ function FollowButton({ user }) {
       }
     };
     fetchUserData();
-  }, [currentUserID, user.id, following]);
+  }, []);
 
 
   const handleClick = async () => {

@@ -3,12 +3,8 @@ import "../styles/siteToolbar.css"
 import SearchButton from "./SearchButton";
 import SearchPageResults from "./SearchPageResults";
 import SearchResults from "./SearchResults";
-import { get } from "react-hook-form";
 
 function SearchInputSwap({ page, searchedTerm, searchedTermTransfer, currentSearch, posts, dummyPosts, showResults, getUpdatesFromChild }) {
-
-  const [search, setSearch] = useState("");
-  const [showSearch, setShowSearch] = useState(false)
 
   useEffect(() => {
     getUpdatesFromChild(searchedTermTransfer)
@@ -18,7 +14,6 @@ function SearchInputSwap({ page, searchedTerm, searchedTermTransfer, currentSear
     const term = e.target.value;
     getUpdatesFromChild(term)
   }
-
 
   return (
     <div>
