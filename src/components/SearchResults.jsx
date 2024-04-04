@@ -8,11 +8,19 @@ function SearchResults({ posts, dummyPosts }) {
     setAllPosts([...posts, ...dummyPosts])
   }, [posts, dummyPosts])
 
+  const handleClick = (postId) => {
+    console.log(postId, "postID");
+  };
+
   return (
     <div className="search-results">
-      {allPosts
+      {allPosts.length
         ? allPosts.map((postResult) => (
-          <button className="post-result-wrapper">
+          <button
+            key={postResult.id}
+            className="post-result-wrapper"
+            onClick={() => handleClick(postResult.id)}
+          >
             {postResult.body}
           </button>
         ))

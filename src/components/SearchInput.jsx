@@ -1,18 +1,28 @@
 import React, { useEffect, useState } from "react";
 import "../styles/siteToolbar.css"
 import SearchButton from "./SearchButton";
-import SearchResults from "./SearchResults";
+import SearchInputSwap from "./SearchInputSwap";
 
-function SearchInput() {
+function SearchInput({ page, searchedTermTransfer }) {
   const [searchedTerm, setSearchedTerm] = useState("");
   const [posts, setPosts] = useState([]);
   const [dummyPosts, setDummyPosts] = useState([]);
   const [showResults, setShowResults] = useState(false);
 
-  const currentSearch = (e) => {
-    const term = e.target.value
+  const getUpdatesFromChild = (term) => {
     setSearchedTerm(term)
     setShowResults(!!term)
+  }
+
+  const currentSearch = (e) => {
+    if (page === "home") {
+      const term = e.target.value
+      setSearchedTerm(term)
+      setShowResults(!!term)
+    } else {
+
+    }
+
   }
 
   const searchPosts = async (postType, searchedTerm) => {
@@ -64,16 +74,16 @@ function SearchInput() {
 
   return (
     <div className="home-search-wrapper">
-      <div className="search-bar-wrapper">
-        <input className="search-input"
-          type="text"
-          placeholder="Search..."
-          value={searchedTerm}
-          onChange={currentSearch}
-        />
-        <SearchButton />
-      </div>
-      {showResults && <SearchResults posts={posts} dummyPosts={dummyPosts} />}
+      <SearchInputSwap
+        searchedTerm={searchedTerm}
+        searchedTermTransfer={searchedTermTransfer}
+        currentSearch={currentSearch}
+        page={page}
+        posts={posts}
+        dummyPosts={dummyPosts}
+        showResults={showResults}
+        getUpdatesFromChild={getUpdatesFromChild}
+      />
     </div>
 
 

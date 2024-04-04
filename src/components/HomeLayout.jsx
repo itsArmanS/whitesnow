@@ -13,7 +13,7 @@ function HomeLayout() {
     <>
       {auth ? (
         <div className="home-wrapper">
-          <SiteToolbar />
+          <SiteToolbar page={"home"} />
           <PostWheels />
         </div>
       ) : (

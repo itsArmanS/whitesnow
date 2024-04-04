@@ -9,7 +9,7 @@ function ProfileLayout() {
   return (
     <RefreshContextProvider>
       <div className="profile-layout">
-        <SiteToolbar />
+        <SiteToolbar page={"home"} />
         <div className="profile-banner">
 
         </div>

@@ -7,6 +7,7 @@ import LoginPage from './components/LoginPage';
 import ForgotPassword from './components/ForgotPassword';
 import { AuthContextProvider } from './components/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
+import SearchPage from './components/SearchPage';
 import "./App.css"
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: '/profile',
     element: <PrivateRoute component={ProfileLayout} />
+  },
+  {
+    path: '/search',
+    element: <PrivateRoute component={SearchPage} />
   }
 ])
 

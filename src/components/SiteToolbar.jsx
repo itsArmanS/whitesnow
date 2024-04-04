@@ -5,7 +5,8 @@ import HomeButton from "./HomeButton";
 import LogoutButton from "./LogoutButton";
 import SearchInput from "./SearchInput";
 
-function SiteToolbar() {
+function SiteToolbar({ page }) {
+  const currentPage = page
   return (
     <>
       <div className="site-toolbar">
@@ -13,7 +14,7 @@ function SiteToolbar() {
           <HomeButton />
           <ProfileButton />
         </div>
-        <SearchInput />
+        {currentPage === "home" ? <SearchInput page={currentPage} /> : <h1 className="search-page-header">SEARCH</h1>}
         <div className="logout-toolbar-buttons">
           <LogoutButton />
         </div>
