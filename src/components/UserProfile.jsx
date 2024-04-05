@@ -1,17 +1,15 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/profileLayout.css"
-import AuthContext from "./AuthContext";
 import UserProfilePostsFeed from "./UserProfilePostsFeed"
 import UserProfileTopUsers from "./UserProfileTopUsers";
 
-function UserProfile() {
-  const { currentUserID } = useContext(AuthContext);
+function UserProfile({ userID }) {
   const [profileData, setProfileData] = useState([]);
   const [username, setUsername] = useState(null)
 
   useEffect(() => {
     const getUserProfile = async () => {
-      fetch(`http://localhost:3005/users?id=${currentUserID}`)
+      fetch(`http://localhost:3005/users?id=${userID}`)
         .then(response => response.json())
         .then(data => {
           const user = data[0];
@@ -34,7 +32,7 @@ function UserProfile() {
       <div className="user-profile-wrapper">
         <div className="user-profile-information">
           <div className="user-profile-image">
-            <img src="/images/gabenpfp.jpg" alt="gaben" />
+            <img src={profileData.profileImage} alt="gaben" />
           </div>
           <div className="user-profile-name">
             {username}
@@ -52,7 +50,7 @@ function UserProfile() {
           </ul>
         </div>
         <div className="user-profile-posts">
-          <UserProfilePostsFeed />
+          <UserProfilePostsFeed userID={userID} />
           <UserProfileTopUsers />
         </div>
       </div>

@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../styles/profileLayout.css"
 import SiteToolbar from "./SiteToolbar";
 import UserProfile from "./UserProfile";
+import AuthContext from "./AuthContext";
+import { useParams } from "react-router-dom";
 import { RefreshContextProvider } from "./RefreshContext";
 
 function ProfileLayout() {
+  const { userID } = useParams();
+  const { currentUserID } = useContext(AuthContext)
+  const [changeUserID, setChangeUserID] = useState("")
+
+  // useEffect(() => {
+  //   if (!userID) {
+  //     setChangeUserID(currentUserID)
+  //   } else {
+  //     setChangeUserID(userID)
+  //   }
+  // }, [])
+
+  useEffect(() => {
+    setChangeUserID(userID);
+  }, [userID]);
 
   return (
     <RefreshContextProvider>
@@ -13,7 +30,7 @@ function ProfileLayout() {
         <div className="profile-banner">
 
         </div>
-        <UserProfile />
+        {changeUserID ? <UserProfile userID={changeUserID} /> : "test"}
       </div>
     </RefreshContextProvider>
 

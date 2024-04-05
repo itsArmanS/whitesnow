@@ -3,12 +3,12 @@ import AuthContext from "./AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function ProfileButton() {
-  const { auth } = useContext(AuthContext);
+  const { auth, currentUserID } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleProfileButtonClick = () => {
     auth ? (
-      navigate("/profile")
+      navigate(`/profile/${currentUserID}`)
     ) : (
       navigate("/")
     )

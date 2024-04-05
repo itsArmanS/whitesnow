@@ -6,9 +6,8 @@ import RefreshContext from "./RefreshContext";
 import AuthContext from "./AuthContext";
 import CreatePostButton from "./CreatePostButton";
 
-function UserProfilePostsLayout() {
+function UserProfilePostsLayout({ userID }) {
   const [posts, setPosts] = useState([])
-  const { currentUserID } = useContext(AuthContext)
   const { refresh, setRefresh } = useContext(RefreshContext)
 
   useEffect(() => {
@@ -16,7 +15,7 @@ function UserProfilePostsLayout() {
       const response = await fetch("http://localhost:3005/posts");
       const returnedData = await response.json();
 
-      const userPosts = returnedData.filter(posts => posts.userID === currentUserID);
+      const userPosts = returnedData.filter(posts => posts.userID === userID);
       setPosts(userPosts);
     }
     allPosts();

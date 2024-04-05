@@ -28,7 +28,7 @@ const router = createBrowserRouter([
     element: <HomeLayout />
   },
   {
-    path: '/profile',
+    path: '/profile/:userID',
     element: <PrivateRoute component={ProfileLayout} />
   },
   {
