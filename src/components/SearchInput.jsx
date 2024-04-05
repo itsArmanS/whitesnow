@@ -19,10 +19,7 @@ function SearchInput({ page, searchedTermTransfer }) {
       const term = e.target.value
       setSearchedTerm(term)
       setShowResults(!!term)
-    } else {
-
     }
-
   }
 
   const searchPosts = async (postType, searchedTerm) => {

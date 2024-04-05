@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../styles/searchPage.css"
+import SearchPageUserList from "./SearchPageUserList";
 
 function SearchPageResults({ posts, dummyPosts, searchedTerm }) {
   const [allPosts, setAllPosts] = useState([]);
@@ -11,8 +12,8 @@ function SearchPageResults({ posts, dummyPosts, searchedTerm }) {
     }
   }, [posts, dummyPosts]);
 
-  const handleClick = (postId) => {
-    console.log(postId, "postID");
+  const handleClick = (postId, postUser) => {
+    console.log(postId, postUser, "postID");
   };
 
 
@@ -48,10 +49,16 @@ function SearchPageResults({ posts, dummyPosts, searchedTerm }) {
                 className="search-post-result-wrapper"
                 onClick={() => handleClick(post.id)}
               >
-                {post.body}
+                <div className="search-post-body">
+                  {post.body}
+                </div>
+                <div className="search-post-author">
+                  -@{post.username}
+                </div>
               </div>
             ))
-            : null
+            :
+            <div>Loading...</div>
           }
         </div>
       </div>
@@ -60,18 +67,7 @@ function SearchPageResults({ posts, dummyPosts, searchedTerm }) {
         <div className="search-page-user-tag">
           <div>USERS</div>
         </div>
-        <div className="search-page-user-results">
-          {
-            users.length ?
-              users.map((user) => (
-                <div className="search-user-result-wrapper">
-                  {user.username}
-                </div>
-              ))
-              :
-              null
-          }
-        </div>
+        <SearchPageUserList users={users} />
       </div>
 
     </div>

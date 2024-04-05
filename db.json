@@ -12,7 +12,8 @@
         "country": "N/A",
         "hobby": "N/A",
         "emoji": "❄️",
-        "userSince": "2024-03-28"
+        "userSince": "2024-03-28",
+        "profileImage": "/images/default-user-image.png"
       }
     },
     {
@@ -27,7 +28,8 @@
         "country": "N/A",
         "hobby": "N/A",
         "emoji": "❄️",
-        "userSince": "2024-03-28"
+        "userSince": "2024-03-28",
+        "profileImage": "/images/default-user-image.png"
       }
     },
     {
@@ -42,7 +44,8 @@
         "country": "N/A",
         "hobby": "N/A",
         "emoji": "❄️",
-        "userSince": "2024-03-29"
+        "userSince": "2024-03-29",
+        "profileImage": "/images/default-user-image.png"
       }
     },
     {
@@ -57,7 +60,8 @@
         "country": "N/A",
         "hobby": "N/A",
         "emoji": "❄️",
-        "userSince": "2024-03-30"
+        "userSince": "2024-03-30",
+        "profileImage": "/images/default-user-image.png"
       }
     }
   ],
