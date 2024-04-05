@@ -63,12 +63,6 @@ function SearchInput({ page, searchedTermTransfer }) {
     }
   }, [searchedTerm]);
 
-
-  if (posts) {
-    console.log(posts, "user")
-    console.log(dummyPosts, "dummy")
-  }
-
   return (
     <div className="home-search-wrapper">
       <SearchInputSwap

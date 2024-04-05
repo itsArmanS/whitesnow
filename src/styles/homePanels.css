@@ -51,6 +51,7 @@
   width: 35rem;
   height: 25rem;
   color: black;
+  z-index: 3;
 }
 
 .form-button-wrapper {

@@ -10,12 +10,11 @@ function GetTopUsers() {
     const userData = async () => {
       const response = await fetch("http://localhost:3005/users");
       const returnedData = await response.json();
-      console.log(returnedData, "returner")
 
       const validUsers = returnedData.filter(user => user.profile);
-      console.log(validUsers, "valid")
       const sortedUsers = validUsers.sort((a, b) => b.profile.flakes - a.profile.flakes);
       const topUsers = sortedUsers.slice(0, 10);
+
       setUsers(topUsers);
     }
     userData();

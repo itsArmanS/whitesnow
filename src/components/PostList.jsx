@@ -7,12 +7,12 @@ import AuthContext from "./AuthContext";
 import DeletePostButton from "./DeletePostButton";
 
 function PostList({ posts, setRefresh }) {
-  const { currentUser } = useContext(AuthContext);
+  const { currentUser, currentUserID } = useContext(AuthContext);
 
   return (
     <>
       {posts.map((post) => (
-        <div className="post-body" key={post.id}>
+        <div className="post-body" key={post.id} onClick={() => console.log(post)}>
           <div className="post-user-data">
             <div className="post-user">
               <div>
@@ -27,7 +27,11 @@ function PostList({ posts, setRefresh }) {
                 </div>
               </div>
               <div>
-                <DeletePostButton postID={post.id} setRefresh={setRefresh} />
+                {post.userID === currentUserID ?
+                  <DeletePostButton postID={post.id} setRefresh={setRefresh} />
+                  :
+                  null
+                }
               </div>
             </div>
             <div className="post-text">
