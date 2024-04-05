@@ -11,14 +11,6 @@ function ProfileLayout() {
   const { currentUserID } = useContext(AuthContext)
   const [changeUserID, setChangeUserID] = useState("")
 
-  // useEffect(() => {
-  //   if (!userID) {
-  //     setChangeUserID(currentUserID)
-  //   } else {
-  //     setChangeUserID(userID)
-  //   }
-  // }, [])
-
   useEffect(() => {
     setChangeUserID(userID);
   }, [userID]);

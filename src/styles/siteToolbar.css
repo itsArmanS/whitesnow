@@ -58,3 +58,8 @@
   width: 2rem;
   height: 2rem;
 }
+
+.logout-toolbar-buttons {
+  display: flex;
+  align-items: center;
+}

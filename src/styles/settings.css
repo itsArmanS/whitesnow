@@ -1,0 +1,14 @@
+.settings-dialog {
+  width: 40rem;
+  height: auto;
+  top: 300%;
+  left: 41%;
+}
+
+.settings-open-button {
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: none;
+  background-image: url("/public/images/settings-svgrepo-com.svg");
+}

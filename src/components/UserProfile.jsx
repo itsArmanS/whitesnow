@@ -50,7 +50,7 @@ function UserProfile({ userID }) {
           </ul>
         </div>
         <div className="user-profile-posts">
-          <UserProfilePostsFeed userID={userID} />
+          <UserProfilePostsFeed userID={userID} profileData={profileData} />
           <UserProfileTopUsers />
         </div>
       </div>

@@ -4,11 +4,12 @@ import "../styles/profileLayout.css"
 import "../styles/profileFeed.css"
 import RefreshContext from "./RefreshContext";
 import AuthContext from "./AuthContext";
-import CreatePostButton from "./CreatePostButton";
+import ProfilePostHeaderButtons from "./ProfilePostHeaderButtons";
 
-function UserProfilePostsLayout({ userID }) {
+function UserProfilePostsLayout({ userID, profileData }) {
   const [posts, setPosts] = useState([])
   const { refresh, setRefresh } = useContext(RefreshContext)
+  const { currentUserID } = useContext(AuthContext);
 
   useEffect(() => {
     const allPosts = async () => {
@@ -24,16 +25,7 @@ function UserProfilePostsLayout({ userID }) {
 
   return (
     <div className="profile-feed">
-      <div className="profile-header-buttons">
-        <div>
-          <button>FLAKES</button>
-          <button>STARS</button>
-          <button>FOLLOWERS</button>
-        </div>
-        <div>
-          <CreatePostButton />
-        </div>
-      </div>
+      <ProfilePostHeaderButtons currentUserID={currentUserID} userID={userID} profileData={profileData} />
       <div className="profile-posts">
         <PostList posts={posts} setRefresh={setRefresh} />
       </div>
