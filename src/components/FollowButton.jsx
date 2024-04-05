@@ -25,7 +25,8 @@ function FollowButton({ user }) {
   }, []);
 
 
-  const handleClick = async () => {
+  const handleClick = async (e) => {
+    e.stopPropagation()
     try {
       const updatedFollowing = isFollowing
         ? following.filter(f => f.followingID !== user.id)

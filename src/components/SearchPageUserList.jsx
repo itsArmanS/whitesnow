@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/searchPage.css";
 import { useNavigate } from 'react-router-dom';
+import FollowButton from "./FollowButton";
 
 function SearchPageUserList({ users }) {
 
@@ -24,6 +25,9 @@ function SearchPageUserList({ users }) {
                   <li>@{user.username}</li>
                   <li>Flakes • {user.profile.flakes} <img src="/images/snowflake-vote-white.svg" alt="snowflake" /></li>
                 </ul>
+              </div>
+              <div className="search-card-follow-button">
+                <FollowButton user={user} />
               </div>
             </div>
           ))

@@ -63,6 +63,166 @@
         "userSince": "2024-03-30",
         "profileImage": "/images/profilepic/hdphonepfp.jpeg"
       }
+    },
+    {
+      "id": "7ae4e585-d5e5-4ac5-b77d-d23b957c7662",
+      "username": "Alice",
+      "password": "password1",
+      "email": "alice@example.com",
+      "profile": {
+        "followers": [],
+        "following": [],
+        "flakes": 100,
+        "country": "USA",
+        "hobby": "Reading",
+        "emoji": "📘",
+        "userSince": "2024-04-06",
+        "profileImage": "/images/profilepic/user1.jpg"
+      }
+    },
+    {
+      "id": "7ae4e585-d5e5-4ac5-b77d-d23b957c7663",
+      "username": "Bob",
+      "password": "password2",
+      "email": "bob@example.com",
+      "profile": {
+        "followers": [],
+        "following": [],
+        "flakes": 150,
+        "country": "UK",
+        "hobby": "Cooking",
+        "emoji": "🍳",
+        "userSince": "2024-04-06",
+        "profileImage": "/images/profilepic/user2.jpg"
+      }
+    },
+    {
+      "id": "7ae4e585-d5e5-4ac5-b77d-d23b957c7664",
+      "username": "Charlie",
+      "password": "password3",
+      "email": "charlie@example.com",
+      "profile": {
+        "followers": [],
+        "following": [],
+        "flakes": 200,
+        "country": "Canada",
+        "hobby": "Gardening",
+        "emoji": "🌻",
+        "userSince": "2024-04-06",
+        "profileImage": "/images/profilepic/user3.jpg"
+      }
+    },
+    {
+      "id": "7ae4e585-d5e5-4ac5-b77d-d23b957c7665",
+      "username": "David",
+      "password": "password4",
+      "email": "david@example.com",
+      "profile": {
+        "followers": [],
+        "following": [],
+        "flakes": 120,
+        "country": "Australia",
+        "hobby": "Photography",
+        "emoji": "📷",
+        "userSince": "2024-04-06",
+        "profileImage": "/images/profilepic/user4.jpg"
+      }
+    },
+    {
+      "id": "7ae4e585-d5e5-4ac5-b77d-d23b957c7666",
+      "username": "Emily",
+      "password": "password5",
+      "email": "emily@example.com",
+      "profile": {
+        "followers": [],
+        "following": [],
+        "flakes": 80,
+        "country": "Germany",
+        "hobby": "Painting",
+        "emoji": "🎨",
+        "userSince": "2024-04-06",
+        "profileImage": "/images/profilepic/user5.jpg"
+      }
+    },
+    {
+      "id": "7ae4e585-d5e5-4ac5-b77d-d23b957c7667",
+      "username": "Frank",
+      "password": "password6",
+      "email": "frank@example.com",
+      "profile": {
+        "followers": [],
+        "following": [],
+        "flakes": 110,
+        "country": "France",
+        "hobby": "Hiking",
+        "emoji": "🥾",
+        "userSince": "2024-04-06",
+        "profileImage": "/images/profilepic/user6.jpg"
+      }
+    },
+    {
+      "id": "7ae4e585-d5e5-4ac5-b77d-d23b957c7668",
+      "username": "Grace",
+      "password": "password7",
+      "email": "grace@example.com",
+      "profile": {
+        "followers": [],
+        "following": [],
+        "flakes": 130,
+        "country": "Italy",
+        "hobby": "Traveling",
+        "emoji": "✈️",
+        "userSince": "2024-04-06",
+        "profileImage": "/images/profilepic/user7.jpg"
+      }
+    },
+    {
+      "id": "7ae4e585-d5e5-4ac5-b77d-d23b957c7669",
+      "username": "Henry",
+      "password": "password8",
+      "email": "henry@example.com",
+      "profile": {
+        "followers": [],
+        "following": [],
+        "flakes": 90,
+        "country": "Spain",
+        "hobby": "Swimming",
+        "emoji": "🏊‍♂️",
+        "userSince": "2024-04-06",
+        "profileImage": "/images/profilepic/user8.jpg"
+      }
+    },
+    {
+      "id": "7ae4e585-d5e5-4ac5-b77d-d23b957c7699",
+      "username": "Isabel",
+      "password": "password9",
+      "email": "isabel@example.com",
+      "profile": {
+        "followers": [],
+        "following": [],
+        "flakes": 170,
+        "country": "Japan",
+        "hobby": "Singing",
+        "emoji": "🎤",
+        "userSince": "2024-04-06",
+        "profileImage": "/images/profilepic/user9.jpg"
+      }
+    },
+    {
+      "id": "7ae4e585-d5e5-4ac5-b77d-d23b957c7698",
+      "username": "Jack",
+      "password": "password10",
+      "email": "jack@example.com",
+      "profile": {
+        "followers": [],
+        "following": [],
+        "flakes": 140,
+        "country": "Brazil",
+        "hobby": "Dancing",
+        "emoji": "💃",
+        "userSince": "2024-04-06",
+        "profileImage": "/images/profilepic/user10.jpg"
+      }
     }
   ],
   "posts": [

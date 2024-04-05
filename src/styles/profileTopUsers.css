@@ -40,6 +40,7 @@
   padding: 1.5rem;
   background-color: #e8e8e8;
   border-radius: 0rem 0rem 2rem 2rem;
+  overflow-y: scroll;
 }
 
 .top-user-scorecard {
@@ -101,13 +102,15 @@
 
 .follow-button,
 .following-button {
-  width: 70%;
+  width: 95%;
   height: 2rem;
   border: 1px solid silver;
   background-color: hsla(0, 0%, 100%, 0.329);
   border-radius: 1rem;
   cursor: pointer;
   transition: background-color 0.5s ease-in-out;
+  box-sizing: border-box;
+  padding: 1rem;
 }
 
 .follow-button:hover,
