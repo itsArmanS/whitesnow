@@ -22,8 +22,8 @@
   border-radius: 2rem 2rem 0rem 0rem;
   border: 5px solid white;
   box-sizing: border-box;
-  padding-left: 0.6rem;
-  padding-right: 0.6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   border-bottom: 1.5px solid gray;
 }
 
@@ -31,6 +31,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .profile-header-buttons button {

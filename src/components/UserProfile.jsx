@@ -5,6 +5,7 @@ import UserProfileTopUsers from "./UserProfileTopUsers";
 
 function UserProfile({ userID }) {
   const [profileData, setProfileData] = useState([]);
+  const [userData, setUserData] = useState([])
   const [username, setUsername] = useState(null)
 
   useEffect(() => {
@@ -14,6 +15,7 @@ function UserProfile({ userID }) {
         .then(data => {
           const user = data[0];
           if (user) {
+            setUserData(user)
             setProfileData(user.profile);
             const usernameAt = `@${user.username}`
             setUsername(usernameAt);
@@ -50,7 +52,7 @@ function UserProfile({ userID }) {
           </ul>
         </div>
         <div className="user-profile-posts">
-          <UserProfilePostsFeed userID={userID} profileData={profileData} />
+          <UserProfilePostsFeed userID={userID} userData={userData} />
           <UserProfileTopUsers />
         </div>
       </div>

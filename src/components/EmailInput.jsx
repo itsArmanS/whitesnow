@@ -17,7 +17,6 @@ function EmailInput({ register, errors }) {
         })}
       />
       <p>{errors.email?.message}</p>
-
     </>
   )
 }

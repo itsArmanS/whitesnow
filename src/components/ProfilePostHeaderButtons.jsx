@@ -2,9 +2,9 @@ import React from "react";
 import "../styles/profileLayout.css"
 import "../styles/profileFeed.css"
 import CreatePostButton from "./CreatePostButton";
+import SettingsButton from "./SettingsButton";
 
-
-function ProfilePostHeaderButtons({ currentUserID, userID, profileData }) {
+function ProfilePostHeaderButtons({ currentUserID, userID, userData }) {
 
   return (
     <div className="profile-header-buttons">
@@ -15,7 +15,10 @@ function ProfilePostHeaderButtons({ currentUserID, userID, profileData }) {
       </div>
       <div>
         {userID === currentUserID ?
-          <CreatePostButton />
+          <>
+            <CreatePostButton />
+            <SettingsButton userData={userData} />
+          </>
           :
           null
         }

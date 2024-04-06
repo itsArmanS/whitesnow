@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "../styles/profileLayout.css"
 import "../styles/profileFeed.css"
 import "../styles/settings.css"
+import SettingsProfileInputs from "./SettingsProfileInputs";
 
-function SettingsButton() {
+function SettingsButton({ userData }) {
   const [isOpen, setIsOpen] = useState(false)
 
   const toggleSettingsDialog = () => {
@@ -16,7 +17,12 @@ function SettingsButton() {
       {
         isOpen && (
           <dialog className="settings-dialog" open>
-            test
+            <div className="settings-panel">
+
+            </div>
+            <div className="settings-window">
+              <SettingsProfileInputs userData={userData} />
+            </div>
           </dialog>
         )
       }

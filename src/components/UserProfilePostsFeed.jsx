@@ -6,7 +6,7 @@ import RefreshContext from "./RefreshContext";
 import AuthContext from "./AuthContext";
 import ProfilePostHeaderButtons from "./ProfilePostHeaderButtons";
 
-function UserProfilePostsLayout({ userID, profileData }) {
+function UserProfilePostsLayout({ userID, userData }) {
   const [posts, setPosts] = useState([])
   const { refresh, setRefresh } = useContext(RefreshContext)
   const { currentUserID } = useContext(AuthContext);
@@ -25,7 +25,7 @@ function UserProfilePostsLayout({ userID, profileData }) {
 
   return (
     <div className="profile-feed">
-      <ProfilePostHeaderButtons currentUserID={currentUserID} userID={userID} profileData={profileData} />
+      <ProfilePostHeaderButtons currentUserID={currentUserID} userID={userID} userData={userData} />
       <div className="profile-posts">
         <PostList posts={posts} setRefresh={setRefresh} />
       </div>
