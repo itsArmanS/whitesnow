@@ -13,7 +13,7 @@ function SettingsButton({ userData }) {
 
   return (
     <>
-      <button className="settings-open-button" onClick={toggleSettingsDialog}></button>
+      <button className="open-settings-button" onClick={toggleSettingsDialog}></button>
       {
         isOpen && (
           <dialog className="settings-dialog" open>

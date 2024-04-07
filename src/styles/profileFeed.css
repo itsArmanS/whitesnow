@@ -27,14 +27,11 @@
   border-bottom: 1.5px solid gray;
 }
 
-.profile-header-buttons div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.profile-header-buttons button {
+.profile-flakes,
+.profile-stars,
+.profile-followers,
+.open-create-post-dialog,
+.open-settings-button {
   width: 6.5rem;
   height: 2.5rem;
   background-color: transparent;
@@ -46,6 +43,8 @@
   text-align: center;
   transition: box-shadow 0.5s ease-in;
 }
+
+.profile-header-buttons button {}
 
 .search-button .profile-header-buttons button:hover {
   box-shadow: 2.5px 2.5px white;
