@@ -16,16 +16,16 @@ function SettingsPanel({ getIndicatorLocation }) {
     <div className="settings-panel">
       <div className="settings-panel-buttons">
         <button className="profile-data-section" onClick={() => { changeIndicator(0) }}>
-          <p>EDIT PROFILE</p>
+          EDIT PROFILE
         </button>
         <button className="account-security-section" onClick={() => { changeIndicator(1) }}>
-          <p>ACCOUNT SECURITY</p>
+          ACCOUNT SECURITY
         </button>
         <button className="account-security-section" onClick={() => { changeIndicator(2) }}>
-          <p>TEST</p>
+          AAASSS
         </button>
         <button className="account-security-section" onClick={() => { changeIndicator(3) }}>
-          <p>HAPY</p>
+          AAA
         </button>
       </div>
       <div className="settings-panel-indication">
