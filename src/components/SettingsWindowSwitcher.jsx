@@ -3,7 +3,7 @@ import "../styles/settings.css"
 import SettingsProfileInputs from "./SettingsProfileInputs";
 import SettingsPasswordWindow from "./SettingsPasswordWindow";
 
-function SettingsWindowSwitcher({ switcher, userData, toggleSettingsDialog }) {
+function SettingsWindowSwitcher({ switcher, userData, toggleSettingsDialog, setRefreshProfile }) {
   let content;
 
   switch (switcher) {
@@ -11,7 +11,7 @@ function SettingsWindowSwitcher({ switcher, userData, toggleSettingsDialog }) {
       content = <SettingsProfileInputs userData={userData} toggleSettingsDialog={toggleSettingsDialog} />
       break;
     case 1:
-      content = <SettingsPasswordWindow userData={userData} toggleSettingsDialog={toggleSettingsDialog} />
+      content = <SettingsPasswordWindow userData={userData} toggleSettingsDialog={toggleSettingsDialog} setRefreshProfile={setRefreshProfile} />
       break;
     case 2:
       content = <div>3</div>

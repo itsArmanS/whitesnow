@@ -12,16 +12,21 @@ function SettingsButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [indicatorLocation, setIndicatorLocation] = useState(0)
   const [userData, setUserData] = useState(null)
-  const { refreshProfile } = useContext(RefreshProfileContext)
+  const { refreshProfile, setRefreshProfile } = useContext(RefreshProfileContext)
 
   useEffect(() => {
     fetchUserData()
-  }, [])
+  }, [refreshProfile])
 
   const fetchUserData = async () => {
     fetch(`http://localhost:3005/users/${currentUserID}`)
       .then(response => response.json())
       .then(data => setUserData(data))
+      .catch(error => console.log)
+  }
+
+  if (userData) {
+    console.log(userData)
   }
 
   const toggleSettingsDialog = () => {
@@ -36,11 +41,11 @@ function SettingsButton() {
     <>
       <button className="open-settings-button" onClick={toggleSettingsDialog}></button>
       {
-        isOpen && (
+        isOpen && userData && (
           <dialog className="settings-dialog" open>
             <SettingsPanel getIndicatorLocation={getIndicatorLocation} userData={userData} />
             <div className="settings-window">
-              <SettingsWindowSwitcher switcher={indicatorLocation} userData={userData} toggleSettingsDialog={toggleSettingsDialog} />
+              <SettingsWindowSwitcher switcher={indicatorLocation} userData={userData} toggleSettingsDialog={toggleSettingsDialog} setRefreshProfile={setRefreshProfile} />
             </div>
           </dialog>
         )
