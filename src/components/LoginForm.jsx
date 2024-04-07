@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import "../styles/login.css"
 import LoginButton from "./LoginButton";
-import AuthContext from "./AuthContext";
+import AuthContext from "./contexts/AuthContext";
 import UsernameInput from "./UsernameInput";
 import PasswordInput from "./PasswordInput";
 import useGetUserID from "../customHooks/useGetUserID"

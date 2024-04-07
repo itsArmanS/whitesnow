@@ -5,10 +5,12 @@ import { DevTool } from "@hookform/devtools";
 import SettingsUsernameInput from "./SettingsUsernameInput";
 import SettingsCountryInput from "./SettingsCountryInput";
 import SettingsHobbyInput from "./SettingsHobbyInput"
-import AuthContext from "./AuthContext";
+import AuthContext from "./contexts/AuthContext";
+import RefreshProfileContext from "./contexts/RefreshProfileContext";
 
-function SettingsProfileInputs({ userData }) {
+function SettingsProfileInputs({ userData, toggleSettingsDialog }) {
   const { currentUserID } = useContext(AuthContext);
+  const { setRefreshProfile } = useContext(RefreshProfileContext)
   const [settingsUsername, setSettingsUsername] = useState('');
   const [settingsCountry, setSettingsCountry] = useState('');
   const [settingsHobby, setSettingsHobby] = useState('');
@@ -59,7 +61,9 @@ function SettingsProfileInputs({ userData }) {
 
     if (data.usernameSettings && data.country.label && data.hobbySettings) {
       console.log("success")
-      await changeUserProfileData()
+      await changeUserProfileData();
+      toggleSettingsDialog();
+      setRefreshProfile(prevState => !prevState);
     }
   }
 

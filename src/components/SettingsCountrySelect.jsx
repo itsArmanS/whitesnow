@@ -13,7 +13,8 @@ const SettingsCountrySelect = ({ control, name }) => {
       .then((response) => response.json())
       .then((data) => {
         setCountries(data.countries);
-        setSelectedCountry(data.userSelectValue);
+        const lastSelectedCountry = localStorage.getItem("lastSelectedCountry");
+        setSelectedCountry(lastSelectedCountry ? JSON.parse(lastSelectedCountry) : null);
       });
   }, []);
 
@@ -21,13 +22,13 @@ const SettingsCountrySelect = ({ control, name }) => {
     <Controller
       name={name}
       control={control}
-      defaultValue={selectedCountry}
       render={({ field: { onChange, value } }) => (
         <Select
           options={countries}
           onChange={(selectedOption) => {
             onChange(selectedOption);
-            setSelectedCountry(selectedOption.value);
+            setSelectedCountry(selectedOption);
+            localStorage.setItem("lastSelectedCountry", JSON.stringify(selectedOption));
           }}
           value={value}
         />

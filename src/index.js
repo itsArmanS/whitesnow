@@ -5,7 +5,7 @@ import HomeLayout from './components/HomeLayout';
 import ProfileLayout from './components/ProfileLayout';
 import LoginPage from './components/LoginPage';
 import ForgotPassword from './components/ForgotPassword';
-import { AuthContextProvider } from './components/AuthContext';
+import { AuthContextProvider } from './components/contexts/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
 import SearchPage from './components/SearchPage';
 import "./App.css"

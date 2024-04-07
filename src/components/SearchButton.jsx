@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "../styles/siteToolbar.css"
 import { useNavigate } from "react-router-dom";
-import AuthContext from "./AuthContext";
+import AuthContext from "./contexts/AuthContext";
 
 function SearchButton({ searchedTerm }) {
   const { auth } = useContext(AuthContext)

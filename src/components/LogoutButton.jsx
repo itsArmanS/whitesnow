@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import "../styles/siteToolbar.css"
-import AuthContext from "./AuthContext";
+import AuthContext from "./contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function LogoutButton() {

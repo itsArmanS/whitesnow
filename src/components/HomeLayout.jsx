@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/homeLayout.css";
 import SiteToolbar from "./SiteToolbar";
-import AuthContext from "./AuthContext";
+import AuthContext from "./contexts/AuthContext";
 import PostWheels from "./PostWheels";
 
 function HomeLayout() {

@@ -21,7 +21,7 @@ function SettingsButton({ userData }) {
 
             </div>
             <div className="settings-window">
-              <SettingsProfileInputs userData={userData} />
+              <SettingsProfileInputs userData={userData} toggleSettingsDialog={toggleSettingsDialog} />
             </div>
           </dialog>
         )

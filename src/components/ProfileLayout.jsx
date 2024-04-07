@@ -2,9 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import "../styles/profileLayout.css"
 import SiteToolbar from "./SiteToolbar";
 import UserProfile from "./UserProfile";
-import AuthContext from "./AuthContext";
+import AuthContext from "./contexts/AuthContext";
 import { useParams } from "react-router-dom";
-import { RefreshContextProvider } from "./RefreshContext";
+import { RefreshContextProvider } from "./contexts/RefreshContext";
+import { RefreshProfileContextProvider } from "./contexts/RefreshProfileContext";
 
 function ProfileLayout() {
   const { userID } = useParams();
@@ -17,13 +18,15 @@ function ProfileLayout() {
 
   return (
     <RefreshContextProvider>
-      <div className="profile-layout">
-        <SiteToolbar page={"home"} />
-        <div className="profile-banner">
+      <RefreshProfileContextProvider>
+        <div className="profile-layout">
+          <SiteToolbar page={"home"} />
+          <div className="profile-banner">
 
+          </div>
+          {changeUserID ? <UserProfile userID={changeUserID} /> : "test"}
         </div>
-        {changeUserID ? <UserProfile userID={changeUserID} /> : "test"}
-      </div>
+      </RefreshProfileContextProvider>
     </RefreshContextProvider>
 
   )

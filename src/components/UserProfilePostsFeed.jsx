@@ -2,8 +2,8 @@ import React, { useEffect, useState, useContext } from "react";
 import PostList from "./PostList"
 import "../styles/profileLayout.css"
 import "../styles/profileFeed.css"
-import RefreshContext from "./RefreshContext";
-import AuthContext from "./AuthContext";
+import RefreshContext from "./contexts/RefreshContext";
+import AuthContext from "./contexts/AuthContext";
 import ProfilePostHeaderButtons from "./ProfilePostHeaderButtons";
 
 function UserProfilePostsLayout({ userID, userData }) {

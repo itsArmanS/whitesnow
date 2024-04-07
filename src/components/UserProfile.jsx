@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../styles/profileLayout.css"
 import UserProfilePostsFeed from "./UserProfilePostsFeed"
 import UserProfileTopUsers from "./UserProfileTopUsers";
+import RefreshProfileContext from "./contexts/RefreshProfileContext"
 
 function UserProfile({ userID }) {
+  const { refreshProfile } = useContext(RefreshProfileContext)
   const [profileData, setProfileData] = useState([]);
   const [userData, setUserData] = useState([])
   const [username, setUsername] = useState(null)
@@ -27,7 +29,7 @@ function UserProfile({ userID }) {
         })
     }
     getUserProfile()
-  }, []);
+  }, [refreshProfile]);
 
   return (
     <>

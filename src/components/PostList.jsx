@@ -3,7 +3,7 @@ import "../styles/homePanels.css";
 import "../styles/profileFeed.css"
 import SnowflakeButton from "./SnowflakeButton";
 import { useContext } from "react";
-import AuthContext from "./AuthContext";
+import AuthContext from "./contexts/AuthContext";
 import DeletePostButton from "./DeletePostButton";
 
 function PostList({ posts, setRefresh }) {

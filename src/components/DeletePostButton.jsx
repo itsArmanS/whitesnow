@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from "react";
-import RefreshContext from "./RefreshContext";
 import "../styles/profileFeed.css"
 
 function DeletePostButton({ postID, setRefresh }) {

@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import "../styles/homeLayout.css";
 import { v4 as uuid } from 'uuid';
-import AuthContext from "./AuthContext";
-import RefreshContext from "./RefreshContext";
+import AuthContext from "./contexts/AuthContext";
+import RefreshContext from "./contexts/RefreshContext";
 
 function NewPostForm({ toggleNewPostDialog }) {
   const [postBody, setPostBody] = useState("");
