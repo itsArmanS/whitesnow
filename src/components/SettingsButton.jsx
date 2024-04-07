@@ -2,14 +2,20 @@ import React, { useState } from "react";
 import "../styles/profileLayout.css"
 import "../styles/profileFeed.css"
 import "../styles/settings.css"
-import SettingsProfileInputs from "./SettingsProfileInputs";
+import SettingsWindowSwitcher from "./SettingsWindowSwitcher";
+import SettingsPanel from "./SettingsPanel";
 
 function SettingsButton({ userData }) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [indicatorLocation, setIndicatorLocation] = useState(0)
 
   const toggleSettingsDialog = () => {
     setIsOpen(!isOpen);
   };
+
+  const getIndicatorLocation = (loc) => {
+    setIndicatorLocation(loc)
+  }
 
   return (
     <>
@@ -17,11 +23,9 @@ function SettingsButton({ userData }) {
       {
         isOpen && (
           <dialog className="settings-dialog" open>
-            <div className="settings-panel">
-
-            </div>
+            <SettingsPanel getIndicatorLocation={getIndicatorLocation} />
             <div className="settings-window">
-              <SettingsProfileInputs userData={userData} toggleSettingsDialog={toggleSettingsDialog} />
+              <SettingsWindowSwitcher switcher={indicatorLocation} userData={userData} toggleSettingsDialog={toggleSettingsDialog} />
             </div>
           </dialog>
         )

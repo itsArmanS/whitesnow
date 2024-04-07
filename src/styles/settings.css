@@ -1,10 +1,13 @@
 .settings-dialog {
   width: 40rem;
   height: auto;
-  top: 10%;
-  left: 41%;
+  top: 30%;
+  left: 29%;
   z-index: 5;
   display: flex;
+  border-radius: 2rem;
+  background-color: black;
+  border: 5px solid white;
 }
 
 .open-settings-button {
@@ -26,19 +29,85 @@
   gap: 1rem;
 }
 
+.settings-input-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-input-wrapper>input {
+  height: 2.15rem;
+  border-radius: 0.2rem;
+  border: none;
+  outline-color: #2684FF;
+}
+
+
+.settings-input-wrapper>label {
+  color: black;
+  border-radius: 0.3rem;
+  box-sizing: border-box;
+}
+
 .settings-panel {
   flex: 0.5;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: black;
 }
 
 .settings-window {
   flex: 1;
+  background-color: #659CEF;
+}
+
+.settings-button-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.save-profile-settings,
+.close-settings-dialog {
+  width: 100%;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border-radius: 1rem;
 }
 
 .save-profile-settings {
-  background-color: black;
-  color: white;
+  background-color: #2684FF;
 }
 
-.css-b62m3t-container {
+.settings-panel-buttons {
   flex: 1;
+}
+
+.settings-panel-indication {
+  flex: 0.2;
+  background-color: #659CEF;
+  position: relative;
+}
+
+.settings-indicator {
+  position: absolute;
+  top: 5.7px;
+  left: -30%;
+  width: 2rem;
+  height: 2rem;
+  background-color: #659CEF;
+  transform: rotate(45deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.settings-panel-buttons>button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 100%;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: none;
 }

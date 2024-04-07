@@ -7,6 +7,7 @@ import SettingsCountryInput from "./SettingsCountryInput";
 import SettingsHobbyInput from "./SettingsHobbyInput"
 import AuthContext from "./contexts/AuthContext";
 import RefreshProfileContext from "./contexts/RefreshProfileContext";
+import SettingsEmojiInput from "./SettingsEmojiInput";
 
 function SettingsProfileInputs({ userData, toggleSettingsDialog }) {
   const { currentUserID } = useContext(AuthContext);
@@ -14,6 +15,7 @@ function SettingsProfileInputs({ userData, toggleSettingsDialog }) {
   const [settingsUsername, setSettingsUsername] = useState('');
   const [settingsCountry, setSettingsCountry] = useState('');
   const [settingsHobby, setSettingsHobby] = useState('');
+  const [settingsEmoji, setSettingsEmoji] = useState('');
 
   const { register, handleSubmit, control, formState: { errors } } = useForm();
 
@@ -31,7 +33,8 @@ function SettingsProfileInputs({ userData, toggleSettingsDialog }) {
     const updatedUserProfile = {
       ...userData.profile,
       country: settingsCountry,
-      hobby: settingsHobby
+      hobby: settingsHobby,
+      emoji: settingsEmoji
     }
 
     const updatedUserData = {
@@ -55,11 +58,13 @@ function SettingsProfileInputs({ userData, toggleSettingsDialog }) {
   }
 
   const onSubmit = async (data) => {
+    console.log(data)
     setSettingsUsername(data.usernameSettings);
     setSettingsCountry(data.country.label);
     setSettingsHobby(data.hobbySettings);
+    setSettingsEmoji(data.emojiSettings)
 
-    if (data.usernameSettings && data.country.label && data.hobbySettings) {
+    if (data.usernameSettings && data.country.label && data.hobbySettings && data.emojiSettings) {
       console.log("success")
       await changeUserProfileData();
       toggleSettingsDialog();
@@ -73,7 +78,11 @@ function SettingsProfileInputs({ userData, toggleSettingsDialog }) {
         <SettingsUsernameInput register={register} errors={errors} userData={userData} />
         <SettingsCountryInput name="country" control={control} />
         <SettingsHobbyInput register={register} errors={errors} userData={userData} />
-        <button className="save-profile-settings">Save</button>
+        <SettingsEmojiInput register={register} errors={errors} userData={userData} />
+        <div className="settings-button-wrapper">
+          <button className="close-settings-dialog" onClick={toggleSettingsDialog}>Cancel</button>
+          <button className="save-profile-settings">Save</button>
+        </div>
       </form>
       <DevTool control={control} />
     </>
