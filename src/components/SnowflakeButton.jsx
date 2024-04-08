@@ -5,7 +5,7 @@ import AuthContext from "./contexts/AuthContext";
 
 function SnowflakeButton({ postID }) {
   const [snowflakeCount, setSnowflakeCount] = useState(null);
-  const [snowflakeClicked, setSnowflakeClicked] = useState(false);
+  const [snowflakeClicked, setSnowflakeClicked] = useState(null);
   const [postData, setPostData] = useState([]);
   const [likedBy, setLikedBy] = useState([]);
   const { setRefreshProfile } = useContext(RefreshProfileContext)
@@ -18,9 +18,10 @@ function SnowflakeButton({ postID }) {
         const data = await response.json();
         const post = data[0];
         if (post) {
-          setLikedBy(post.likedBy)
           setPostData(post);
           setSnowflakeCount(post.flakes);
+          setSnowflakeClicked(post.likedBy && post.likedBy.includes(currentUserID));
+          setLikedBy(post.likedBy)
         }
       } catch (error) {
         console.log(error);
@@ -28,34 +29,13 @@ function SnowflakeButton({ postID }) {
     };
 
     getCurrentPost();
-  }, [postID]);
-
-  useEffect(() => {
-    const updateLikedBy = async () => {
-      let updatedLikedBy = {
-        ...postData,
-        likedBy: likedBy
-      }
-
-      await fetch(`http://localhost:3005/posts/${postID}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(updatedLikedBy)
-      })
-    }
-    updateLikedBy();
-
-  }, [snowflakeClicked])
-
+  }, [postID, currentUserID]);
 
   const updateCurrentPost = async (updatedCount) => {
     let updatedFlakeCount = {
       ...postData,
       flakes: updatedCount,
     }
-
     try {
       const response = await fetch(`http://localhost:3005/posts/${postID}`, {
         method: "PATCH",
@@ -69,27 +49,42 @@ function SnowflakeButton({ postID }) {
     }
   }
 
-
+  const updateLikedBy = async (updatedLikedBy) => {
+    let updatedPostLikedBy = {
+      ...postData,
+      likedBy: updatedLikedBy
+    }
+    await fetch(`http://localhost:3005/posts/${postID}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedPostLikedBy)
+    })
+    setSnowflakeClicked(updatedLikedBy.includes(currentUserID))
+  }
 
   const handleSnowflakeClick = async () => {
-    setSnowflakeClicked(true);
-    setLikedBy(prevLikedBy => [...prevLikedBy, currentUserID])
+    const updatedLikedBy = [...likedBy, currentUserID];
+    await setLikedBy(updatedLikedBy);
     const updatedCount = snowflakeCount + 1;
-    setSnowflakeCount(prevCount => prevCount += 1)
+    setSnowflakeCount(prevCount => prevCount + 1);
     await updateCurrentPost(updatedCount);
-    setRefreshProfile(true)
+    await updateLikedBy(updatedLikedBy);
+    setSnowflakeClicked(true);
+    setRefreshProfile(true);
   }
 
   const handleSnowflakeUnclick = async () => {
-    setSnowflakeClicked(false);
-    setLikedBy(prevLikedBy => prevLikedBy.filter(userID => userID !== currentUserID))
+    const updatedLikedBy = likedBy.filter(userID => userID !== currentUserID);
+    await setLikedBy(updatedLikedBy);
     const updatedCount = snowflakeCount - 1;
-    setSnowflakeCount(prevCount => prevCount -= 1);
+    setSnowflakeCount(prevCount => prevCount - 1);
     await updateCurrentPost(updatedCount);
-    setRefreshProfile(false)
+    await updateLikedBy(updatedLikedBy);
+    setSnowflakeClicked(false);
+    setRefreshProfile(false);
   }
-
-
 
   return (
     <>

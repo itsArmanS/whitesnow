@@ -49,7 +49,7 @@
       },
       "followers": [],
       "following": [],
-      "flakes": 0,
+      "flakes": 2,
       "country": "🇹🇫 French Southern and Antarctic Lands",
       "hobby": "Walking",
       "emoji": "🫤",
@@ -266,7 +266,9 @@
       "date": "4-8",
       "userID": "e158e107-80c7-418f-9598-27fb07b96f3c",
       "flakes": 1,
-      "likedBy": []
+      "likedBy": [
+        "e158e107-80c7-418f-9598-27fb07b96f3c"
+      ]
     }
   ],
   "dummies": [

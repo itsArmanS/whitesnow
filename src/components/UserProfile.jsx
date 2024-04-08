@@ -68,10 +68,6 @@ function UserProfile({ userID }) {
 
   }, [refreshProfile]);
 
-  if (userFlakes) {
-    console.log(userFlakes)
-  }
-
   return (
     <>
       <div className="user-profile-wrapper">
