@@ -31,57 +31,40 @@ function SnowflakeButton({ postID }) {
     getCurrentPost();
   }, [postID, currentUserID]);
 
-  const updateCurrentPost = async (updatedCount) => {
-    let updatedFlakeCount = {
+  const updateLikedBy = async (updatedLikedBy, updatedCount) => {
+    let updatedData = {
       ...postData,
-      flakes: updatedCount,
-    }
-    try {
-      const response = await fetch(`http://localhost:3005/posts/${postID}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(updatedFlakeCount)
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  const updateLikedBy = async (updatedLikedBy) => {
-    let updatedPostLikedBy = {
-      ...postData,
-      likedBy: updatedLikedBy
+      likedBy: updatedLikedBy,
+      flakes: updatedCount
     }
     await fetch(`http://localhost:3005/posts/${postID}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(updatedPostLikedBy)
+      body: JSON.stringify(updatedData)
     })
     setSnowflakeClicked(updatedLikedBy.includes(currentUserID))
   }
 
   const handleSnowflakeClick = async () => {
     const updatedLikedBy = [...likedBy, currentUserID];
-    await setLikedBy(updatedLikedBy);
     const updatedCount = snowflakeCount + 1;
+    setLikedBy(updatedLikedBy);
     setSnowflakeCount(prevCount => prevCount + 1);
-    await updateCurrentPost(updatedCount);
-    await updateLikedBy(updatedLikedBy);
+    // await updateCurrentPost(updatedCount);
+    await updateLikedBy(updatedLikedBy, updatedCount);
     setSnowflakeClicked(true);
     setRefreshProfile(true);
   }
 
   const handleSnowflakeUnclick = async () => {
     const updatedLikedBy = likedBy.filter(userID => userID !== currentUserID);
-    await setLikedBy(updatedLikedBy);
     const updatedCount = snowflakeCount - 1;
+    setLikedBy(updatedLikedBy);
     setSnowflakeCount(prevCount => prevCount - 1);
-    await updateCurrentPost(updatedCount);
-    await updateLikedBy(updatedLikedBy);
+    // await updateCurrentPost(updatedCount);
+    await updateLikedBy(updatedLikedBy, updatedCount);
     setSnowflakeClicked(false);
     setRefreshProfile(false);
   }

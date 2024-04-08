@@ -14,7 +14,8 @@
         "emoji": "❄️",
         "userSince": "2024-03-28",
         "profileImage": "/images/profilepic/btman.jpeg"
-      }
+      },
+      "flakes": 0
     },
     {
       "id": "233a3563-ed31-4518-aa4e-475312575b11",
@@ -49,7 +50,7 @@
       },
       "followers": [],
       "following": [],
-      "flakes": 2,
+      "flakes": 0,
       "country": "🇹🇫 French Southern and Antarctic Lands",
       "hobby": "Walking",
       "emoji": "🫤",
@@ -256,8 +257,10 @@
       "body": "sjkwhuhiuwjkencw",
       "date": "4-8",
       "userID": "e158e107-80c7-418f-9598-27fb07b96f3c",
-      "flakes": 1,
-      "likedBy": []
+      "flakes": 2,
+      "likedBy": [
+        "e158e107-80c7-418f-9598-27fb07b96f3c"
+      ]
     },
     {
       "id": "c2bcd559-7",

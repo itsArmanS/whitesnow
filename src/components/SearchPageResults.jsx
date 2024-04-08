@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../styles/searchPage.css"
 import SearchPageUserList from "./SearchPageUserList";
+import SnowflakeButton from "./SnowflakeButton";
 
 function SearchPageResults({ posts, dummyPosts, searchedTerm }) {
   const [allPosts, setAllPosts] = useState([]);
@@ -55,6 +56,7 @@ function SearchPageResults({ posts, dummyPosts, searchedTerm }) {
                 <div className="search-post-author">
                   -@{post.username}
                 </div>
+                <SnowflakeButton postID={post.id} />
               </div>
             ))
             :

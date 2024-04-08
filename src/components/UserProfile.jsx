@@ -36,7 +36,9 @@ function UserProfile({ userID }) {
         .then(data => {
           let flakeCount = 0
           data.forEach(post => {
-            setUserFlakes(flakeCount += post.flakes)
+            if (post) {
+              setUserFlakes(flakeCount += post.flakes)
+            }
           })
         })
         .catch(error => {
