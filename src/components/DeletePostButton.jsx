@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
 import "../styles/profileFeed.css"
+import RefreshProfileContext from "./contexts/RefreshProfileContext";
 
 function DeletePostButton({ postID, setRefresh }) {
   const [post, setPost] = useState(null)
+  const { setRefreshProfile } = useContext(RefreshProfileContext)
 
   useEffect(() => {
     const getCurrentPost = async () => {
@@ -28,7 +30,7 @@ function DeletePostButton({ postID, setRefresh }) {
       .then(response => {
         if (response) {
           setRefresh(prevRefresh => !prevRefresh);
-          console.log("Deleted Post")
+          setRefreshProfile(true)
         } else {
           console.error()
         }

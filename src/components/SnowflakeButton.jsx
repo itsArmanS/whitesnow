@@ -1,12 +1,15 @@
 import React, { useEffect, useState, useContext } from "react";
 import "../styles/profileFeed.css"
 import RefreshProfileContext from "./contexts/RefreshProfileContext";
+import AuthContext from "./contexts/AuthContext";
 
 function SnowflakeButton({ postID }) {
   const [snowflakeCount, setSnowflakeCount] = useState(null);
   const [snowflakeClicked, setSnowflakeClicked] = useState(false);
   const [postData, setPostData] = useState([]);
+  const [likedBy, setLikedBy] = useState([]);
   const { setRefreshProfile } = useContext(RefreshProfileContext)
+  const { currentUserID } = useContext(AuthContext)
 
   useEffect(() => {
     const getCurrentPost = async () => {
@@ -15,6 +18,7 @@ function SnowflakeButton({ postID }) {
         const data = await response.json();
         const post = data[0];
         if (post) {
+          setLikedBy(post.likedBy)
           setPostData(post);
           setSnowflakeCount(post.flakes);
         }
@@ -26,8 +30,32 @@ function SnowflakeButton({ postID }) {
     getCurrentPost();
   }, [postID]);
 
+  useEffect(() => {
+    const updateLikedBy = async () => {
+      let updatedLikedBy = {
+        ...postData,
+        likedBy: likedBy
+      }
+
+      await fetch(`http://localhost:3005/posts/${postID}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedLikedBy)
+      })
+    }
+    updateLikedBy();
+
+  }, [snowflakeClicked])
+
+
   const updateCurrentPost = async (updatedCount) => {
-    let updatedFlakeCount = { ...postData, flakes: updatedCount }
+    let updatedFlakeCount = {
+      ...postData,
+      flakes: updatedCount,
+    }
+
     try {
       const response = await fetch(`http://localhost:3005/posts/${postID}`, {
         method: "PATCH",
@@ -41,21 +69,27 @@ function SnowflakeButton({ postID }) {
     }
   }
 
+
+
   const handleSnowflakeClick = async () => {
-    const updatedCount = snowflakeCount + 1;
     setSnowflakeClicked(true);
+    setLikedBy(prevLikedBy => [...prevLikedBy, currentUserID])
+    const updatedCount = snowflakeCount + 1;
     setSnowflakeCount(prevCount => prevCount += 1)
-    updateCurrentPost(updatedCount);
+    await updateCurrentPost(updatedCount);
     setRefreshProfile(true)
   }
 
-  const handleSnowflakeUnclick = () => {
+  const handleSnowflakeUnclick = async () => {
+    setSnowflakeClicked(false);
+    setLikedBy(prevLikedBy => prevLikedBy.filter(userID => userID !== currentUserID))
     const updatedCount = snowflakeCount - 1;
     setSnowflakeCount(prevCount => prevCount -= 1);
-    setSnowflakeClicked(false);
-    updateCurrentPost(updatedCount);
-    setRefreshProfile(true)
+    await updateCurrentPost(updatedCount);
+    setRefreshProfile(false)
   }
+
+
 
   return (
     <>

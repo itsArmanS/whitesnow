@@ -12,7 +12,7 @@ function PostList({ posts, setRefresh }) {
   return (
     <>
       {posts.map((post) => (
-        <div className="post-body" key={post.id} onClick={() => console.log(post)}>
+        <div className="post-body" key={post.id}>
           <div className="post-user-data">
             <div className="post-user">
               <div>
