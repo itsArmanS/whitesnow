@@ -61,6 +61,7 @@
 .settings-window {
   flex: 1;
   background-color: #659CEF;
+  border-radius: 0 1rem 1rem 0;
 }
 
 .settings-button-wrapper {
@@ -93,18 +94,19 @@
 
 .settings-indicator {
   position: absolute;
-  top: 5.7px;
-  left: -30%;
+  top: 5.55px;
+  left: -63%;
   width: 2rem;
   height: 2rem;
   background-color: #659CEF;
-  transform: rotate(45deg);
+  transform: rotate(60deg);
   transition: all 0.5s ease-in-out;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
 }
 
 .settings-panel-buttons>button {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   height: 3rem;
   width: 100%;
@@ -120,4 +122,25 @@
   gap: 1rem;
   box-sizing: border-box;
   padding: 1rem;
+}
+
+.change-image-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+.change-image-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.change-image-input>input {
+  height: 2.15rem;
+  border-radius: 0.2rem;
+  border: none;
+  outline-color: #2684FF;
 }

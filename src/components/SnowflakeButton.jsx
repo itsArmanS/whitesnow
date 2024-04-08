@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../styles/profileFeed.css"
+import RefreshProfileContext from "./contexts/RefreshProfileContext";
 
 function SnowflakeButton({ postID }) {
   const [snowflakeCount, setSnowflakeCount] = useState(null);
   const [snowflakeClicked, setSnowflakeClicked] = useState(false);
   const [postData, setPostData] = useState([]);
+  const { setRefreshProfile } = useContext(RefreshProfileContext)
 
   useEffect(() => {
     const getCurrentPost = async () => {
@@ -28,7 +30,7 @@ function SnowflakeButton({ postID }) {
     let updatedFlakeCount = { ...postData, flakes: updatedCount }
     try {
       const response = await fetch(`http://localhost:3005/posts/${postID}`, {
-        method: "PUT",
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json"
         },
@@ -44,6 +46,7 @@ function SnowflakeButton({ postID }) {
     setSnowflakeClicked(true);
     setSnowflakeCount(prevCount => prevCount += 1)
     updateCurrentPost(updatedCount);
+    setRefreshProfile(true)
   }
 
   const handleSnowflakeUnclick = () => {
@@ -51,7 +54,7 @@ function SnowflakeButton({ postID }) {
     setSnowflakeCount(prevCount => prevCount -= 1);
     setSnowflakeClicked(false);
     updateCurrentPost(updatedCount);
-
+    setRefreshProfile(true)
   }
 
   return (

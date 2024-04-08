@@ -35,7 +35,7 @@
     {
       "id": "e158e107-80c7-418f-9598-27fb07b96f3c",
       "username": "q",
-      "password": "1234567",
+      "password": "q",
       "email": "q@11.com",
       "profile": {
         "followers": [],
@@ -45,8 +45,16 @@
         "hobby": "Walking",
         "emoji": "🫤",
         "userSince": "2024-03-29",
-        "profileImage": "/images/profilepic/hdhkjns22bnbb.jpeg"
-      }
+        "profileImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png"
+      },
+      "followers": [],
+      "following": [],
+      "flakes": 0,
+      "country": "🇹🇫 French Southern and Antarctic Lands",
+      "hobby": "Walking",
+      "emoji": "🫤",
+      "userSince": "2024-03-29",
+      "profileImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Test-Logo.svg/783px-Test-Logo.svg.png"
     },
     {
       "id": "7ae4e585-d5e5-4ac5-b77d-d23b957c7661",
@@ -248,7 +256,7 @@
       "body": "ccccccccccccccccc",
       "date": "4-2",
       "userID": "e158e107-80c7-418f-9598-27fb07b96f3c",
-      "flakes": 0
+      "flakes": 1
     },
     {
       "id": "9bcfa3b0-4",
@@ -256,7 +264,7 @@
       "body": "ygdjhasfjksfa",
       "date": "4-5",
       "userID": "e158e107-80c7-418f-9598-27fb07b96f3c",
-      "flakes": 0
+      "flakes": 1
     }
   ],
   "dummies": [

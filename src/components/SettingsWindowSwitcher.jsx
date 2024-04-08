@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/settings.css"
 import SettingsProfileInputs from "./SettingsProfileInputs";
 import SettingsPasswordWindow from "./SettingsPasswordWindow";
+import ChangeProfileImage from "./ChangeProfileImage";
 
 function SettingsWindowSwitcher({ switcher, userData, toggleSettingsDialog, setRefreshProfile }) {
   let content;
@@ -14,7 +15,7 @@ function SettingsWindowSwitcher({ switcher, userData, toggleSettingsDialog, setR
       content = <SettingsPasswordWindow userData={userData} toggleSettingsDialog={toggleSettingsDialog} setRefreshProfile={setRefreshProfile} />
       break;
     case 2:
-      content = <div>3</div>
+      content = <ChangeProfileImage userData={userData} toggleSettingsDialog={toggleSettingsDialog} />
       break;
     case 3:
       content = <div>4</div>

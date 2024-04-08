@@ -1,13 +1,13 @@
 import React, { useState, useContext, useEffect } from "react";
 import "../styles/settings.css";
 import { useForm } from 'react-hook-form';
-import { DevTool } from "@hookform/devtools";
 import SettingsUsernameInput from "./SettingsUsernameInput";
 import SettingsCountryInput from "./SettingsCountryInput";
 import SettingsHobbyInput from "./SettingsHobbyInput"
 import AuthContext from "./contexts/AuthContext";
 import RefreshProfileContext from "./contexts/RefreshProfileContext";
 import SettingsEmojiInput from "./SettingsEmojiInput";
+import SettingsSaveCloseButtons from "./SettingsSaveCloseButtons";
 
 function SettingsProfileInputs({ userData, toggleSettingsDialog }) {
   const { currentUserID } = useContext(AuthContext);
@@ -79,12 +79,8 @@ function SettingsProfileInputs({ userData, toggleSettingsDialog }) {
         <SettingsCountryInput name="country" control={control} />
         <SettingsHobbyInput register={register} errors={errors} userData={userData} />
         <SettingsEmojiInput register={register} errors={errors} userData={userData} />
-        <div className="settings-button-wrapper">
-          <button className="close-settings-dialog" onClick={toggleSettingsDialog}>Cancel</button>
-          <button className="save-profile-settings">Save</button>
-        </div>
+        <SettingsSaveCloseButtons toggleSettingsDialog={toggleSettingsDialog} />
       </form>
-      <DevTool control={control} />
     </>
   )
 }

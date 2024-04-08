@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import "../styles/settings.css"
 import { useForm } from "react-hook-form";
 import AuthContext from "./contexts/AuthContext";
+import SettingsSaveCloseButtons from "./SettingsSaveCloseButtons"
 
 function SettingsPasswordWindow({ userData, toggleSettingsDialog, setRefreshProfile }) {
 
@@ -111,8 +112,7 @@ function SettingsPasswordWindow({ userData, toggleSettingsDialog, setRefreshProf
         />
         <p className="error">{errors.changePassword2?.message}</p>
       </div>
-      <button type="button" onClick={toggleSettingsDialog}>Cancel</button>
-      <button>Save</button>
+      <SettingsSaveCloseButtons toggleSettingsDialog={toggleSettingsDialog} />
     </form>
   )
 }

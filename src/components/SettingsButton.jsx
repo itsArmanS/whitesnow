@@ -22,11 +22,7 @@ function SettingsButton() {
     fetch(`http://localhost:3005/users/${currentUserID}`)
       .then(response => response.json())
       .then(data => setUserData(data))
-      .catch(error => console.log)
-  }
-
-  if (userData) {
-    console.log(userData)
+      .catch(error => console.log(error))
   }
 
   const toggleSettingsDialog = () => {

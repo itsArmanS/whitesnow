@@ -9,6 +9,7 @@ function UserProfile({ userID }) {
   const [profileData, setProfileData] = useState([]);
   const [userData, setUserData] = useState([])
   const [username, setUsername] = useState(null)
+  let [userFlakes, setUserFlakes] = useState(0)
 
   useEffect(() => {
     const getUserProfile = async () => {
@@ -28,8 +29,48 @@ function UserProfile({ userID }) {
           console.log(error)
         })
     }
+
+    const getUserFlakeCount = () => {
+      fetch(`http://localhost:3005/posts?userID=${userID}`)
+        .then(response => response.json())
+        .then(data => {
+          let flakeCount = 0
+          data.forEach(post => {
+            setUserFlakes(flakeCount += post.flakes)
+          })
+        })
+        .catch(error => {
+          console.log(error)
+        })
+    }
+
+    const updateUserFlakeCount = () => {
+      const updatedProfileFlakes = {
+        ...userData,
+        ...userData.profile,
+        flakes: userFlakes
+      }
+
+      fetch(`http://localhost:3005/users/${userID}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(updatedProfileFlakes)
+      })
+
+
+    }
+
     getUserProfile()
+    getUserFlakeCount()
+    updateUserFlakeCount()
+
   }, [refreshProfile]);
+
+  if (userFlakes) {
+    console.log(userFlakes)
+  }
 
   return (
     <>
@@ -46,7 +87,7 @@ function UserProfile({ userID }) {
               <>
                 <li>Country: {profileData.country}</li>
                 <li>Hobby: {profileData.hobby}</li>
-                <li>Flakes: {profileData.flakes}</li>
+                <li>Flakes: {userFlakes}</li>
                 <li>Emoji: {profileData.emoji}</li>
                 <li>User Since: {profileData.userSince}</li>
               </>

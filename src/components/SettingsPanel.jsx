@@ -22,7 +22,7 @@ function SettingsPanel({ getIndicatorLocation }) {
           ACCOUNT SECURITY
         </button>
         <button className="account-security-section" onClick={() => { changeIndicator(2) }}>
-          AAASSS
+          CHANGE IMAGE
         </button>
         <button className="account-security-section" onClick={() => { changeIndicator(3) }}>
           AAA
