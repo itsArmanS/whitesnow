@@ -8,7 +8,7 @@ function Wheel() {
 
   useEffect(() => {
     const fetchDummyPosts = async () => {
-      const response = await fetch("http://localhost:3005/dummies");
+      const response = await fetch("http://localhost:3005/posts");
       const data = await response.json();
       setPosts(data)
     }
