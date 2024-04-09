@@ -95,11 +95,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0.3rem;
 }
 
 .user-info-wrapper>div>img {
   width: 1rem;
   height: 1rem;
+  border-radius: 0.5rem;
 }
 
 .follow-button-wrapper {

@@ -57,6 +57,11 @@
   padding: 0.5rem;
 }
 
+.search-results>div {
+  color: white;
+  text-align: center;
+}
+
 .post-result-wrapper {
   width: 100%;
   min-height: 4rem;

@@ -27,7 +27,7 @@ function UserProfilePostsLayout({ userID, userData }) {
     <div className="profile-feed">
       <ProfilePostHeaderButtons currentUserID={currentUserID} userID={userID} userData={userData} />
       <div className="profile-posts">
-        <PostList posts={posts} setRefresh={setRefresh} />
+        <PostList posts={posts} setRefresh={setRefresh} userData={userData} />
       </div>
     </div>
   )

@@ -51,6 +51,29 @@ function MiddleWheel() {
                 </div>
               </div>
             ))}
+            {posts.map((post) => (
+              <div className="wheel-post-body" key={post.id} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                <div className="post-user-data">
+                  <div className="post-user">
+                    <div className="profile-image">
+                      <img src={post.profileImage} alt="" />
+                    </div>
+                    <div className="user-username">
+                      {` • @${post.username} • `}
+                    </div>
+                    <div className="post-date">
+                      {post.date}
+                    </div>
+                  </div>
+                  <div className="post-text">
+                    {post.body}
+                  </div>
+                </div>
+                <div className="post-user-buttons">
+                  <HomeSnowflakeButton postID={post.id} />
+                </div>
+              </div>
+            ))}
           </div>
           :
           <div className="loading-div">Loading...</div>

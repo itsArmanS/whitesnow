@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../styles/profileTopUsers.css"
 import FollowButton from "./FollowButton";
 import { v4 as uuid } from "uuid";

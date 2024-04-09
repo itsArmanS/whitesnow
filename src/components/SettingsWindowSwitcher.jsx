@@ -17,9 +17,6 @@ function SettingsWindowSwitcher({ switcher, userData, toggleSettingsDialog, setR
     case 2:
       content = <ChangeProfileImage userData={userData} toggleSettingsDialog={toggleSettingsDialog} />
       break;
-    case 3:
-      content = <div>4</div>
-      break;
   }
   return <div>{content}</div>
 }

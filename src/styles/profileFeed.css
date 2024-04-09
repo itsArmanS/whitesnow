@@ -26,8 +26,19 @@
   border-bottom: 1.5px solid gray;
 }
 
-.profile-header-buttons:nth-child(2) {
-  display: flex;
+.general-profile-header-buttons>button,
+.additional-profile-header-buttons>button {
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.no-posts {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.general-profile-header-buttons>button:hover,
+.additional-profile-header-buttons>button:hover {
+  box-shadow: 0.3rem 0.3rem 5px white;
 }
 
 .profile-flakes,
@@ -127,6 +138,7 @@
 .profile-image {
   width: 2rem;
   height: 2rem;
+  border-radius: 1rem;
 }
 
 .post-text {
@@ -171,4 +183,9 @@
   border: none;
   background-image: url("/public/images/deletePost.svg");
   cursor: pointer;
+}
+
+.additional-profile-header-buttons {
+  display: flex;
+  align-items: center;
 }

@@ -24,9 +24,6 @@ function SettingsPanel({ getIndicatorLocation }) {
         <button className="account-security-section" onClick={() => { changeIndicator(2) }}>
           CHANGE IMAGE
         </button>
-        <button className="account-security-section" onClick={() => { changeIndicator(3) }}>
-          AAA
-        </button>
       </div>
       <div className="settings-panel-indication">
         {indicatorPosition === 0 ?

@@ -24,7 +24,7 @@ function SearchResults({ posts, dummyPosts }) {
             {postResult.body}
           </button>
         ))
-        : <div>Loading...</div>
+        : <div>Found nothing :( </div>
       }
     </div>
   )
