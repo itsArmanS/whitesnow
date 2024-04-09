@@ -18,7 +18,7 @@ function PostList({ posts, setRefresh, userData }) {
               <div className="post-user">
                 <div>
                   <div className="profile-image">
-                    {userData && <img src={userData.profile.profileImage} alt="" />}
+                    <img src={userData?.profile?.profileImage ?? '/images/default-user-image.png'} alt="" />
                   </div>
                   <div className="user-username">
                     {`• @${currentUser} • `}

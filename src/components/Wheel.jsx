@@ -7,13 +7,29 @@ function Wheel() {
   const wheelRef = useRef(null)
 
   useEffect(() => {
-    const fetchDummyPosts = async () => {
-      const response = await fetch("http://localhost:3005/posts");
-      const data = await response.json();
-      setPosts(data)
-    }
-    fetchDummyPosts();
-  }, [])
+    const fetchPostsAndUsers = async () => {
+      const postsResponse = await fetch("http://localhost:3005/posts");
+      let posts = await postsResponse.json();
+
+      const usersPromises = posts.map(post =>
+        fetch(`http://localhost:3005/users/${post.userID}`)
+          .then(response => response.json())
+      );
+      const users = await Promise.all(usersPromises);
+
+      const postsWithUserData = posts.map((post, index) => {
+        return {
+          ...post,
+          username: users[index].username,
+          userProfileImage: users[index].profile.profileImage,
+        };
+      });
+
+      setPosts(postsWithUserData);
+    };
+
+    fetchPostsAndUsers();
+  }, []);
 
   const handleMouseEnter = () => {
     wheelRef.current.style.animationPlayState = "paused";

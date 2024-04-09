@@ -9,7 +9,7 @@ function HomeSnowflakeButton({ postID }) {
   useEffect(() => {
     const getCurrentPost = async () => {
       try {
-        const response = await fetch(`http://localhost:3005/dummies?id=${postID}`);
+        const response = await fetch(`http://localhost:3005/posts?id=${postID}`);
         const data = await response.json();
         const post = data[0];
         if (post) {

@@ -36,7 +36,7 @@ function SearchInput({ page, searchedTermTransfer }) {
       }
     } else if (postType === "dummy") {
       try {
-        const response = await fetch(`http://localhost:3005/dummies?body_like=${searchedTerm}`)
+        const response = await fetch(`http://localhost:3005/posts?body_like=${searchedTerm}`)
         if (!response.ok) {
           throw new Error('Failed to fetch data');
         }
