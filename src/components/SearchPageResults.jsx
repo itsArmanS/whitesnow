@@ -3,15 +3,15 @@ import "../styles/searchPage.css"
 import SearchPageUserList from "./SearchPageUserList";
 import SnowflakeButton from "./SnowflakeButton";
 
-function SearchPageResults({ posts, dummyPosts, searchedTerm }) {
+function SearchPageResults({ posts, searchedTerm }) {
   const [allPosts, setAllPosts] = useState([]);
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    if (posts && dummyPosts) {
-      setAllPosts([...posts, ...dummyPosts])
+    if (posts) {
+      setAllPosts(posts)
     }
-  }, [posts, dummyPosts]);
+  }, [posts]);
 
   const handleClick = (postId, postUser) => {
     console.log(postId, postUser, "postID");
@@ -56,7 +56,9 @@ function SearchPageResults({ posts, dummyPosts, searchedTerm }) {
                 <div className="search-post-author">
                   -@{post.username}
                 </div>
-                <SnowflakeButton postID={post.id} />
+                <div className="search-post-interactions">
+                  <SnowflakeButton postID={post.id} />
+                </div>
               </div>
             ))
             :

@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../styles/postWheels.css"
-import HomeSnowflakeButton from "./HomeSnowflakeButton";
+import SnowflakeButton from "./SnowflakeButton";
 
 function MiddleWheel() {
   const [posts, setPosts] = useState(null);
-  const [userData, setUserData] = useState([])
   const wheelRef = useRef(null)
 
   useEffect(() => {
@@ -51,7 +50,7 @@ function MiddleWheel() {
                 <div className="post-user-data">
                   <div className="post-user">
                     <div className="profile-image">
-                      <img src={post.profileImage} alt="" />
+                      <img src={post.userProfileImage} alt="" />
                     </div>
                     <div className="user-username">
                       {` • @${post.username} • `}
@@ -65,7 +64,7 @@ function MiddleWheel() {
                   </div>
                 </div>
                 <div className="post-user-buttons">
-                  <HomeSnowflakeButton postID={post.id} />
+                  <SnowflakeButton postID={post.id} />
                 </div>
               </div>
             ))}
@@ -88,7 +87,7 @@ function MiddleWheel() {
                   </div>
                 </div>
                 <div className="post-user-buttons">
-                  <HomeSnowflakeButton postID={post.id} />
+                  <SnowflakeButton postID={post.id} />
                 </div>
               </div>
             ))}

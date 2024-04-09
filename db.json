@@ -2,8 +2,8 @@
   "users": [
     {
       "id": "4b0900d9-b755-499b-9644-b84827d32092",
-      "username": "a",
-      "password": "a",
+      "username": "admin",
+      "password": "admin",
       "email": "a@a.com",
       "profile": {
         "followers": [],
@@ -18,8 +18,8 @@
     },
     {
       "id": "233a3563-ed31-4518-aa4e-475312575b11",
-      "username": "1",
-      "password": "1",
+      "username": "Ultimatum",
+      "password": "password50",
       "email": "test@test.com",
       "profile": {
         "followers": [],
@@ -34,8 +34,8 @@
     },
     {
       "id": "e158e107-80c7-418f-9598-27fb07b96f3c",
-      "username": "q",
-      "password": "q",
+      "username": "Qwerty",
+      "password": "uiop",
       "email": "q@11.com",
       "profile": {
         "followers": [],
@@ -51,8 +51,8 @@
     },
     {
       "id": "7ae4e585-d5e5-4ac5-b77d-d23b957c7661",
-      "username": "username",
-      "password": "password",
+      "username": "Caution Heavy",
+      "password": "password801",
       "email": "testetet@gmail.com",
       "profile": {
         "followers": [],
@@ -310,27 +310,14 @@
   ],
   "posts": [
     {
-      "id": "3ecd1aab-66",
-      "body": "The power of imagination makes us infinite. In the cosmic symphony of creativity, imagination is the conductor orchestrating infinite possibilities across the expanse of existence.",
-      "date": "4-14",
-      "userID": "7ae4e585-d5e5-4ac5-b77d-d23b957c7661",
-      "flakes": 1
-    },
-    {
-      "id": "80a032d1-67",
-      "body": "Simplicity is the ultimate sophistication. In the cosmic dance of elegance, simplicity emerges as the prima ballerina, captivating the audience with grace and refinement.",
-      "date": "4-12",
-      "userID": "7ae4e585-d5e5-4ac5-b77d-d23b957c7661",
-      "flakes": 1
-    },
-    {
       "id": "76911b6a-68",
       "body": "Every moment is a fresh beginning. In the cosmic tapestry of time, each moment is a brushstroke painting the canvas of eternity with the hues of possibility.",
       "date": "4-11",
       "userID": "4b0900d9-b755-499b-9644-b84827d32092",
-      "flakes": 1,
+      "flakes": 2,
       "likedBy": [
-        "4b0900d9-b755-499b-9644-b84827d32092"
+        "4b0900d9-b755-499b-9644-b84827d32092",
+        "e158e107-80c7-418f-9598-27fb07b96f3c"
       ]
     },
     {
